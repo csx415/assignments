@@ -1,41 +1,65 @@
 ---
-title: "The stringr package"
-author: Gwen Rino
-date: April 11, 2018
-output: revealjs::revealjs_presentation
+title: "THE STRINGR PACKAGE"
+subtitle: "by Gwen Rino"
+author: CSX 415.1
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: 
+  revealjs::revealjs_presentation:
+    incremental: true
+    center: true
 ---
-
-## R Markdown
-
-This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
-
-## Slide with Bullets
-
-- Bullet 1
-- Bullet 2
-- Bullet 3
-
-## Slide with R Code and Output
-
-```{r}
-summary(cars)
+```{r echo=FALSE}
+library(stringr)
 ```
 
-## Slide with Plot
-
-```{r, echo=FALSE}
-plot(cars)
-```
-
-
-## stringr  
+## STRINGR  
 has four families of functions
 
-- CHARACTER MANIPULATION
-- WHITESPACE TOOLS
-- LOCALE SENSITIVE OPERATIONS
-- PATTERN MATCHING FUNCTIONS
+- CHARACTER MANIPULATION  
+- WHITESPACE TOOLS  
+- LOCALE SENSITIVE OPERATIONS  
+- PATTERN MATCHING FUNCTIONS  
 
+## CHARACTER MANIPULATION
+
+## CHARACTER MANIPULATION
+
+`str_length()` returns the length of a string:
+```{r}
+str_length("abcde")
+```
+
+## CHARACTER MANIPULATION
+
+`str_sub()` accesses individual characters in a string.  
+
+```{r}
+vec <- c("a string", "another string")
+
+# Returns the third character in each string in the vector
+str_sub(vec, 3, 3)
+
+# Returns characters 3-5 in each string in the vector
+str_sub(vec, 3, 5)
+
+# Can count from right using negative numbers
+str_sub(vec, -4, -1)
+```
+
+## CHARACTER MANIPULATION
+
+You can use `str_sub()` to modify strings:
+```{r}
+str_sub(vec, 3, 3) <- "X"
+vec
+```
+
+## CHARACTER MANIPULATION
+
+You can use `str_dup()` to duplicate strings:
+```{r}
+str_dup(vec, c(2,3))
+```
+
+## WHITESPACE TOOLS
 
