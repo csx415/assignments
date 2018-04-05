@@ -157,3 +157,10 @@ Verbs (navigation, editing, synchronization, informational)
   status  (informational)
     most useful in conjucntion w/ commit/add, see which files are staged. 
 
+# Assignments
+Craft a formal problem statement. Need to check out website to get more detailed requirements.
+Business requirements of project.
+Lays out what project is trying to accomplish; formal statement.
+R markdown doc that does this. (Knit)
+Create an Rmarkdown template.
+10-12 pages text (typical in industry) -- not expected to do this.
