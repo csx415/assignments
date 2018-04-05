@@ -6,7 +6,7 @@ This is the repository for CSX415 assignments.
 The classes uses **git** and **github** for all assignments.  IN order to minimize merge conflicts, always 
 
 - **pull** new assignments from the original "upstream" repository: https://github.com/csx415/assignments 
-- **push** to your completed work to your fork of the repository: https://github.com/**{{YOURID}}**/csx415-assignments. 
+- **push** to your completed work to your fork of the repository: https://github.com/kannu.priya/csx415-assignments. 
 
 
 ## Assignment 0: Using git/github
