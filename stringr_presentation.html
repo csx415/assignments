@@ -633,6 +633,120 @@ vec</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_to_lower</span>(x, <span class="st">&quot;tr&quot;</span>)</code></pre></div>
 <pre><code>## [1] &quot;ı like horses.&quot;</code></pre>
 </section>
+<section id="pattern-matching" class="slide level2">
+<h2>PATTERN MATCHING</h2>
+</section>
+<section class="slide level2">
+
+<p>stringr includes a number of functions that are used to process a character vector of strings for matches with a single pattern.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Character vector to process</span>
+strings &lt;-<span class="st"> </span><span class="kw">c</span>(
+  <span class="st">&quot;apple&quot;</span>, 
+  <span class="st">&quot;219 733 8965&quot;</span>, 
+  <span class="st">&quot;329-293-8753&quot;</span>, 
+  <span class="st">&quot;Work: 579-499-7527; Home: 543.355.3679&quot;</span>
+)
+
+<span class="co"># Pattern to match </span>
+<span class="co"># (This is a regular expression designed to match US phone numbers)</span>
+phone &lt;-<span class="st"> &quot;([2-9][0-9]{2})[- .]([0-9]{3})[- .]([0-9]{4})&quot;</span></code></pre></div>
+</section>
+<section id="str_detect" class="slide level2">
+<h2><code>str_detect()</code></h2>
+<p><code>str_detect()</code> detects the presence or absence of a pattern and returns a logical vector.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Does each string contain a phone number?</span>
+<span class="kw">str_detect</span>(strings, phone)</code></pre></div>
+<pre><code>## [1] FALSE  TRUE  TRUE  TRUE</code></pre>
+</section>
+<section id="str_subset" class="slide level2">
+<h2><code>str_subset()</code></h2>
+<p><code>str_subset()</code> returns the elements of a character vector that match a pattern.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Which strings contain phone numbers?</span>
+<span class="kw">str_subset</span>(strings, phone)</code></pre></div>
+<pre><code>## [1] &quot;219 733 8965&quot;                          
+## [2] &quot;329-293-8753&quot;                          
+## [3] &quot;Work: 579-499-7527; Home: 543.355.3679&quot;</code></pre>
+</section>
+<section id="str_count" class="slide level2">
+<h2><code>str_count()</code></h2>
+<p><code>str_count()</code> counts the number of matches in each string.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># How many phone numbers are in each string?</span>
+<span class="kw">str_count</span>(strings, phone)</code></pre></div>
+<pre><code>## [1] 0 1 1 2</code></pre>
+</section>
+<section class="slide level2">
+
+<p><code>str_locate()</code> locates the first position of a pattern and returns a matrix with start and end positions as columns.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Where in each string is the first phone number located?</span>
+<span class="kw">str_locate</span>(strings, phone)</code></pre></div>
+<pre><code>##      start end
+## [1,]    NA  NA
+## [2,]     1  12
+## [3,]     1  12
+## [4,]     7  18</code></pre>
+</section>
+<section class="slide level2">
+
+<p><code>str_locate_all()</code> locates all matches and returns a list of matrices.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Where are all the phone numbers located?</span>
+<span class="kw">str_locate_all</span>(strings, phone)</code></pre></div>
+<pre><code>## [[1]]
+##      start end
+## 
+## [[2]]
+##      start end
+## [1,]     1  12
+## 
+## [[3]]
+##      start end
+## [1,]     1  12
+## 
+## [[4]]
+##      start end
+## [1,]     7  18
+## [2,]    27  38</code></pre>
+</section>
+<section class="slide level2">
+
+<p><code>str_extract()</code> extracts text corresponding to the first match, returning a character vector.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># What is the first phone number in each string?</span>
+<span class="kw">str_extract</span>(strings, phone)</code></pre></div>
+<pre><code>## [1] NA             &quot;219 733 8965&quot; &quot;329-293-8753&quot; &quot;579-499-7527&quot;</code></pre>
+<p>You can also do <code>str_extract_all()</code>, which returns a list of character vectors.</p>
+</section>
+<section class="slide level2">
+
+<p><code>str_match()</code> extracts capture groups from the first match formed by () in the regular expression. It returns a character matrix with one column for the complete match and one column for each group.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Pull out the three components of the first match in each string</span>
+<span class="kw">str_match</span>(strings, phone)</code></pre></div>
+<pre><code>##      [,1]           [,2]  [,3]  [,4]  
+## [1,] NA             NA    NA    NA    
+## [2,] &quot;219 733 8965&quot; &quot;219&quot; &quot;733&quot; &quot;8965&quot;
+## [3,] &quot;329-293-8753&quot; &quot;329&quot; &quot;293&quot; &quot;8753&quot;
+## [4,] &quot;579-499-7527&quot; &quot;579&quot; &quot;499&quot; &quot;7527&quot;</code></pre>
+<p>You can also do <code>str_match_all()</code>, which extracts capture groups from all matches and returns a list of character matrices.</p>
+</section>
+<section class="slide level2">
+
+<p><code>str_replace()</code> replaces the first matched pattern and returns a character vector.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_replace</span>(strings, phone, <span class="st">&quot;XXX-XXX-XXXX&quot;</span>)</code></pre></div>
+<pre><code>## [1] &quot;apple&quot;                                 
+## [2] &quot;XXX-XXX-XXXX&quot;                          
+## [3] &quot;XXX-XXX-XXXX&quot;                          
+## [4] &quot;Work: XXX-XXX-XXXX; Home: 543.355.3679&quot;</code></pre>
+<p><code>str_replace_all()</code> replaces all matches.</p>
+</section>
+<section class="slide level2">
+
+<p><code>str_split()</code> splits a string into a variable number of pieces based on a pattern and returns a list of character vectors.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_split</span>(<span class="st">&quot;a-b-c&quot;</span>, <span class="st">&quot;-&quot;</span>)</code></pre></div>
+<pre><code>## [[1]]
+## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</code></pre>
+<p><code>str_split_fixed()</code> splits a string into a fixed number of pieces and returns a character matrix.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str_split_fixed</span>(<span class="st">&quot;a-b-c&quot;</span>, <span class="st">&quot;-&quot;</span>, <span class="dt">n =</span> <span class="dv">2</span>)</code></pre></div>
+<pre><code>##      [,1] [,2] 
+## [1,] &quot;a&quot;  &quot;b-c&quot;</code></pre>
+</section>
     </div>
   </div>
 
