@@ -1,0 +1,24 @@
+---
+title: 'Template: Formal Problem Statement'
+author: "Benjamin Cole"
+date: "April 7, 2018"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction and client information
+
+# Problem this project will address
+
+# Project goals and expectations
+
+# Model deployment
+
+# Project risk assessment
+
+# Project timeline

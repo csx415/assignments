@@ -1,0 +1,31 @@
+---
+title: 'Template: Formal Problem Statement'
+author: "Benjamin Cole"
+date: "April 7, 2018"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction and client information
+MicroSeek is a (fictional) microbiome sequencing and analysis company that contracts with clients in the healthcare, agricultural, and municipal sectors. Its mission is to provide its clients with accurate, comprehensive, and insightful microbial ecological information to drive decision making and discovery. The primary service that MicroSeek offers its clients is 16S ribosomal RNA (16S rRNA) sequence profiling of the microbial community in a sample (provided by the client). As all bacteria and archea species harbor distinct 16S rRNA molecules (identifiable at the sequence level), high-throughput sequencing of the entire population of these molecules makes it possible to identify an (often) characteristic abundance profile of organismal diversity in a given sample. Using these profiles, clients can make specific determinations about the origin of their samples, including:
+
+* Abnormal gut microbiome content (could indicate gastrointestinal problems)
+* Disease state of agricultural soil, pathogen counts on plant samples
+* Clues as to the origin of an unknown sample
+
+These samples can be in the form of unprocesses specimens (e.g. soil, fecal, or unknown samples), or in the form of pre-processed and isolated ribosomal RNA.
+
+# Problem this project will address
+
+# Project goals and expectations
+
+# Model deployment
+
+# Project risk assessment
+
+# Project timeline
