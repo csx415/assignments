@@ -1,9 +1,13 @@
 ---
-title: 'Template: Formal Problem Statement'
+title: "MicroSeek Sample Classifier"
 author: "Benjamin Cole"
 date: "April 7, 2018"
-output: html_document
-editor_options: 
+output:
+  html_document:
+    toc: yes
+  pdf_document:
+    toc: yes
+editor_options:
   chunk_output_type: console
 ---
 
@@ -16,13 +20,20 @@ MicroSeek is a (fictional) microbiome sequencing and analysis company that contr
 
 * Abnormal gut microbiome content (could indicate gastrointestinal problems)
 * Disease state of agricultural soil, pathogen counts on plant samples
-* Clues as to the origin of an unknown sample
+* Clues as to the origin of an unknown sample from a crime scene
 
-These samples can be in the form of unprocesses specimens (e.g. soil, fecal, or unknown samples), or in the form of pre-processed and isolated ribosomal RNA.
+These samples can be in the form of unprocessed specimens (e.g. soil, fecal, or unknown samples), or in the form of pre-processed and isolated ribosomal RNA. Sequencing is performed after processing the sample (by extracting and amplifying rRNA molecules, if applicable, and then incorporating the processed sample into a sequencing library). The analysis team at MicroSeek then transforms the sequence data from these samples into tables containing the counts of each Operational Taxonomic Unit (OTU table; the number of each distinct 16S rRNA molecule observed in the sample). This OTU table is then further analyzed to look for insight into what features underly variation within the microbial composition (e.g. a spike in *Vibrionales* in food poisening patients), including any anomalies or sample quality issues. MicroSeek returns to the client the raw sequencing data, the processed OTU tables, and an analysis report.
 
 # Problem this project will address
+MicroSeek processes over 100,000 samples per week, and charges its clients ~$100 per sample (typically sent in ~100 batchs of 96 or 384). Data generation takes 24-48 hours per batch, however analysis efforts usually take up to 40 hours of an expert's time, depending on the complexity of the client's request (many clients request extensive analysis of their sample batches). 
+
+As samples from disparate sources (e.g. agricultural soils and human skin samples) are processed together to more efficiently utilize sequencing machine and reagent use, mistakes in sample processing are occasinally made, leading to mislabeling of materials, cross-contamination between samples, or sample degradation. While rare (< 5% of all batches), these issues take the analysis group a non-trivial amount of time to discover. Once the errors are discovered, MicroSeek can either resequence the samples on hand, or ask the clients for additional samples (if available); these measures are inexpensive, however the time required to realize the error can cost the company up to \$500 per batch in the data analysts' time and resources, sometimes totaling over $100k per year.
 
 # Project goals and expectations
+The MicroSeek management team has asked me (as part of its data analysis and QC group) to implement a sample classification tool that can predict how likely a given sample originated from the source indicated by the client. This method would flag potentially problematic samples (e.g soil samples that look like sea water samples, based on the microbial composition) to be resequenced automatically prior to being examined by the data analysis team. It would also alert the analysis team to samples that might contain abnormalities, which would require additional resources to analyze, so they can better allocate their time. In addition to alleviating time spent on mislabeled specimens, the management team also hopes that an automated sample classifier will facilitate unknown sample identification efforts for its forensics clients.
+
+This classifier will be an automated model that, given an OTU table, predicts the most likely origin of the sammple the OTU table derived from. To significantly reduce the cost burden associated with sample mislabeling (by at least \$50,000 annually), the classifier should 90% of mislabeled specimens. In order to achieve this goal, the model itself should have an overal true positive rate (accuracy) of at least 90%. In addition, the model should report as few false positives as possible (under 5% as an upper threshold, to control for costs associated with looking into incorrectly flagged samples).
+
 
 # Model deployment
 
