@@ -4,9 +4,8 @@ subtitle: "by Gwen Rino"
 author: CSX 415.1
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output: 
-  revealjs::revealjs_presentation:
+  beamer_presentation:
     incremental: true
-    center: true
 ---
 ```{r echo=FALSE}
 library(stringr)
