@@ -1,0 +1,97 @@
+---
+title: "Title of project proposal"
+author: "Author of project proposal"
+date: "Date of project proposal"
+output: html_document
+---
+
+## Table of Contents
+  + [Project Goals](#project_goals)    
+  + [Background](#background)
+      + [About Us](#about_us)
+      + [How We Can Help](#help)
+      + [Additional](#additional)
+  + [Project Details](#project_details)
+      + [Project Plan](#plan)
+      + [Project Timeline](#timeline)
+      + [Project Cost](#cost)
+  + [Communication Plan](#communication_plan)
+  + [Project Results](#project_results)
+      + [Success Metric](#success_metric)
+  + [Potential Risks](#potential_risks)
+      + [Major Risks](#major)
+      + [Minor Risks](#minor)
+      + [Risk Mitigation Plan](#mitigation)
+  + [Post Implementation](#post_implementation)
+      + [Model Maintenance](#model_maintenance)
+      + [Revisiting the Model](#revisit)
+  + [Acknowledgements](#acknowledgements)
+
+
+## <a id="project_goals"></a>Project Goals
+
+"The goal of (project name) is... In this section, briefly describe what the goal of the project statement is. In this section, go into an overview about what question(s) you want to answer with the project proposal and what problem(s) you want to solve. This section should be very short and contain only a few sentences. 
+
+
+## <a id="background"></a>Background
+
+In this section, you want to go into more detail about what the problem is that you want to solve. Use this section to go into the history of the company and describe why the problem that you are trying to fix currently exists. This section should go into detail about what the problem is and why it exists/why it should be fixed. Here are some questions you want to make sure are answered: What is the current state of the company? Why does the issue exist? Why does there need to be a change? Why can this change help move the company forward in the right direction?
+
+#### <a id = "about_us"></a>About Us
+
+3D Solutions is a consulting firm that helps companies develop solutions to solve their data related problems. 3D stands for "Determine", "Decide", "Design". We first help our clients determine what data related problem they are trying to solve. Next, we work with our clients to decide what the best course of action is needed to create a cohesive solution to their problem. Finally, we design meaningful data platforms and tools that will ensure that our clients have a competitive advantage in their respective industries. 
+
+#### <a id = "help"></a>How We Can Help
+
+3D Solutions is excited to create a partnership with (insert company name here). Go into detail about the partnership that can be created. 3D Solutions has a talented team of Data Scientists with years of experience creating large scale data models. Our Data Scientists are excited to work with (insert company name)'s technical and product teams to create a data platform that will (insert information about the project). 
+
+#### <a id ="additional"></a>Addditional
+
+Any additional information based on project
+
+
+## <a id="project_details"></a>Project Details
+
+In this section, you want to go into mroe detail about what the actual project proposal is. You want to go into detail about who the project will benefit. Here are some questions you want to answer in this section: What changes are you proposing? Who will the project benefit? What can be done about the problem that exists? What is the solution that you are proposing to fix the problem? Who will this project affect? Who does this project benefit?
+
+#### <a id ="plan"></a>Project Plan
+
+#### <a id ="timeline"></a>Project Timeline
+
+#### <a id ="cost"></a>Project Cost
+
+## <a id ="communication_plan"></a>Communication Plan
+
+In this section, go into detail about how 3D Solutions will update client about progress of project. This section can be altered based on clients' needs. 
+
+## <a id ="project_results"></a>Project Results
+
+#### <a id="success_metric"></a>Success Metric
+
+In this section and sub-section, go into detail about what benefits the company will experience if they move forward with your project proposal. Here are some questions you should be able to answer in this section: If the project succeeds, what benefits will the company experience? What benefits will the end users experience? What does success mean? How will success be measured? How do you know if you have achieved the goals outlined in the goals and background?
+
+
+## <a id="potential_risks"></a>Potential Risks
+
+#### <a id ="major"></a>Major Risks
+
+#### <a id ="minor"></a>Minor Risks
+
+#### <a id ="mitigation"></a>Mitigation Plan
+
+In this section and sub-sections, go into detail about the potential risks that can affect the project and/or the company. Here are some questions you want to answer in this section: What are the potential risks that can affect the project? What are the potential risks that can affect the company? Where can the project fall short? What is the plan to decrease/mitigate risks? 
+
+
+
+## <a id="post_implementation"></a>Post Implementation
+
+#### <a id="model_maintenance"></a>Model Maintenance
+
+#### <a id="revisit"></a>Revisiting the Model
+
+In this section, go into detail about the future implications of the project. You should answer these questions in this section: How will the project be maintained? What is the cost of maintenance? What are the resources required for maintaining the model? Who is responsible for any changes required for the model and how will those changes be made? How will success continue to be determined?
+
+
+## <a id="acknowledgements"></a>Acknowledgements
+
+Use this section to include any relevant acknowledgements. 
