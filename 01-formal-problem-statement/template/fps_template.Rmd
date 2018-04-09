@@ -13,9 +13,17 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction and client information
 
-# Problem this project will address
+# Problem
 
 # Project goals and expectations
+
+### Project summary
+
+### Project goals
+
+### Project requirements
+
+### Success metrics
 
 # Model deployment
 
