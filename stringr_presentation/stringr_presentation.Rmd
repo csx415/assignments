@@ -3,18 +3,19 @@ title: "THE STRINGR PACKAGE"
 subtitle: "by Gwen Rino"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output: 
-  beamer_presentation
+  beamer_presentation:
+    theme: Madrid
 ---
 ```{r echo=FALSE}
 library(stringr)
 ```
 
-***
+## THE STRINGR PACKAGE
 
 The **stringr** package provides a set of internally consistent tools for working with character strings in R.  
   
-*** 
-**stringr** is good for  
+ 
+## **stringr** is good for  
   
 - detecting matches in strings  
 - subsetting strings  
@@ -23,8 +24,8 @@ The **stringr** package provides a set of internally consistent tools for workin
 - joining and splitting strings  
 - ordering strings  
 
-*** 
-**stringr** is good for  
+
+## **stringr** is good for  
   
 - **detecting matches in strings**  
 - subsetting strings  
@@ -70,8 +71,8 @@ str_count(fruit, "ap")
 str_locate(fruit, "ap")
 ```
 
-*** 
-**stringr** is good for  
+ 
+## **stringr** is good for  
   
 - detecting matches in strings  
 - **subsetting strings**  
@@ -119,8 +120,8 @@ matrix with a column for each () group in pattern.  (Also **`str_match_all()`**)
 str_match(sentences, "(a|the) ([^ ]+)") 
 ```
 
-*** 
-**stringr** is good for  
+
+## **stringr** is good for  
   
 - detecting matches in strings  
 - subsetting strings   
@@ -169,8 +170,8 @@ str_trim(y, "left")
 str_trim(y, "right")
 ```
 
-*** 
-**stringr** is good for  
+
+## **stringr** is good for  
   
 - detecting matches in strings  
 - subsetting strings   
@@ -195,7 +196,7 @@ str_trim(y, "right")
 **`str_sub() <- value`** replaces substrings by identifying the substrings with `str_sub()` and assigning into the results.
 ```{r}
 fruit.1 <- c("apple", "banana", "orange")
-str_sub(fruit.1, 2, 3) <- "xx" 
+str_sub(fruit.1, 3, 4) <- "xx" 
 fruit.1
 ```
 
@@ -215,14 +216,14 @@ str_to_upper(y)
 str_to_title(y)
 ```
 ***
-These stringr functions are locale-sensitive, which means that they can perform differently to accommodate different languages.  
+Some stringr functions, including `str_to_lower()`, `str_to_upper()`, and `str_to_title()`, are locale-sensitive, which means that they can perform differently to accommodate different languages.  
   
 The default is always English. You can accommodate different languages by setting the `locale` argument to a two letter ISO-639-1 code.  
   
 You can see a complete list of available locales by running `stringi::stri_locale_list()`.
 
-*** 
-**stringr** is good for  
+
+## **stringr** is good for  
   
 - detecting matches in strings  
 - subsetting strings   
@@ -248,8 +249,8 @@ str_sort(letters, locale = "lt")
 str_order(letters, locale = "lt")
 ```
 
-*** 
-**stringr** is good for  
+ 
+## **stringr** is good for  
   
 - detecting matches in strings  
 - subsetting strings   
@@ -298,5 +299,5 @@ str_split_fixed(fruit, " ", n = 2)
 letters %>% str_c(collapse = "") %>% str_dup(3)
 ```
 
-I like it!
+**I like it!**
 
