@@ -4,12 +4,172 @@ subtitle: "by Gwen Rino"
 author: CSX 415.1
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output: 
-  beamer_presentation:
-    incremental: true
+  beamer_presentation
 ---
 ```{r echo=FALSE}
 library(stringr)
 ```
+
+***
+
+The **stringr** package provides a set of internally consistent tools for working with character strings in R.  
+  
+*** 
+**stringr** is good for  
+  
+- detecting matches in strings  
+- subsetting strings  
+- managing lengths of strings  
+- mutating strings  
+- joining and splitting strings  
+- ordering strings  
+
+*** 
+**stringr** is good for  
+  
+- **detecting matches in strings**  
+- subsetting strings  
+- managing lengths of strings  
+- mutating strings  
+- joining and splitting strings  
+- ordering strings  
+
+## DETECTING MATCHES   
+  
+**stringr** offers four functions for **detecting matches**, all with the same two arguments (string, pattern).   
+  
+- **`str_detect()`**  
+- **`str_which()`**  
+- **`str_count()`**  
+- **`str_locate()`**  
+
+## DETECTING MATCHES  
+  
+**`str_detect()`** detects the presence of a pattern match in a string.  
+```{r}
+str_detect(fruit, "a")
+```
+
+## DETECTING MATCHES  
+  
+**`str_which()`** finds the indexes of strings that contain a pattern match.  
+```{r}
+str_which(fruit, "a")
+```
+
+## DETECTING MATCHES  
+  
+**`str_count()`** counts the number of matches in a string.  
+```{r}
+str_count(fruit, "a")
+```
+
+## DETECTING MATCHES  
+  
+**`str_locate()`** locates the positions of the first pattern match in a string. (Also **`str_locate_all()`**)
+```{r}
+str_locate(fruit, "a")
+```
+
+*** 
+**stringr** is good for  
+  
+- detecting matches in strings  
+- **subsetting strings**  
+- managing lengths of strings  
+- mutating strings  
+- joining and splitting strings  
+- ordering strings  
+
+## SUBSETTING STRINGS   
+  
+**stringr** offers four functions for **subsetting strings**.  
+  
+- **`str_sub()`**  
+- **`str_subset()`**  
+- **`str_extract()`**  
+- **`str_match()`**  
+
+## SUBSETTING STRINGS  
+  
+**`str_sub()`** extracts substrings from a character vector. Arguments are (string, start, end).  
+```{r}
+str_sub(fruit, 1, 3)
+```
+
+## SUBSETTING STRINGS  
+  
+**`str_subset()`** returns only the strings that contain a pattern match. Arguments are (string, pattern).
+```{r}
+str_subset(fruit, "b")
+```
+
+## SUBSETTING STRINGS  
+  
+**`str_extract()`** returns the first pattern match found in each string, as a vector. Arguments are (string, pattern). (Also **`str_extract_all()`**)
+```{r}
+str_extract(fruit, "be")
+```
+
+## SUBSETTING STRINGS  
+  
+**`str_match()`** returns the first pattern match found in each string, as a
+matrix with a column for each () group in pattern.  Arguments are (string, pattern). (Also **`str_match_all()`**)
+```{r}
+str_match(sentences, "(a|the) ([^ ]+)") # regex for word "a" or "the" and following word
+```
+
+*** 
+**stringr** is good for  
+  
+- detecting matches in strings  
+- subsetting strings   
+- **managing lengths of strings**  
+- mutating strings  
+- joining and splitting strings  
+- ordering strings  
+
+## MANAGING LENGTHS   
+  
+**stringr** offers four functions for **managing lengths** of strings.  
+  
+- **`str_length()`**  
+- **`str_pad()`**  
+- **`str_trunc()`**  
+- **`str_trim()`**  
+
+## MANAGING LENGTHS   
+  
+**`str_length()`** returns the width of strings (i.e. the number of characters).
+```{r}
+str_length(fruit)
+```
+
+## MANAGING LENGTHS  
+  
+**`str_pad`** pads strings to a constant width. Arguments are (string, width, side = c("left", "right", "both"), pad = " ").
+```{r}
+str_pad(fruit, 15, "left")
+```
+
+## MANAGING LENGTHS  
+  
+**`str_trunc`** truncates the width of strings, replacing content with ellipsis. Arguments are (string, width, side = c("left", "right", "both"), ellipsis = "...").
+```{r}
+str_trunc("Thisstringisquitelong", 13, "right")
+```
+
+## MANAGING LENGTHS  
+  
+**`str_trim`** trims white space from the start or end of a string. Arguments are (string, side = c("left", "right", "both")).
+```{r}
+y <- c("   a", "b   ", "  c  ")
+str_trim(y) # Default trims white space from both sides
+str_trim(y, "left")
+str_trim(y, "right")
+```
+
+
 
 ## STRINGR  
 has four families of functions
@@ -159,8 +319,7 @@ strings <- c(
   "Work: 579-499-7527; Home: 543.355.3679"
 )
 
-# Pattern to match 
-# (This is a regular expression designed to match US phone numbers)
+# Pattern to match (a regex to match US phone numbers)
 phone <- "([2-9][0-9]{2})[- .]([0-9]{3})[- .]([0-9]{4})"
 ```
 
