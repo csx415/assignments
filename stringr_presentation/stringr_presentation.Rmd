@@ -1,0 +1,250 @@
+---
+title: "THE STRINGR PACKAGE"
+subtitle: "by Gwen Rino"
+author: CSX 415.1
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: 
+  beamer_presentation:
+    incremental: true
+---
+```{r echo=FALSE}
+library(stringr)
+```
+
+## STRINGR  
+has four families of functions
+
+- CHARACTER MANIPULATION  
+- WHITESPACE TOOLS  
+- LOCALE SENSITIVE OPERATIONS  
+- PATTERN MATCHING FUNCTIONS  
+
+## CHARACTER MANIPULATION
+
+## `str_length()`
+
+`str_length()` returns the length of a string.  
+
+```{r}
+str_length("abcde")
+```
+
+## `str_sub()`
+
+`str_sub()` accesses individual characters in a string.  
+
+```{r}
+vec <- c("a string", "another string")
+
+# Returns the third character in each string
+str_sub(vec, 3, 3)
+
+# Returns characters 3-5 in each string
+str_sub(vec, 3, 5)
+
+# Count from right using negative numbers
+str_sub(vec, -4, -1)
+```
+
+
+## `str_sub()`
+
+You can use `str_sub()` to modify strings.  
+
+```{r}
+vec <- c("a string", "another string")
+
+str_sub(vec, 3, 3) <- "X"
+vec
+```
+
+## `str_dup()`
+
+You can use `str_dup()` to duplicate strings.  
+
+```{r}
+print(vec)
+str_dup(vec, c(2,3))
+```
+
+## WHITESPACE TOOLS
+
+## `str_pad()`
+
+`str_pad()` pads a string to a given length by adding white space.  
+
+```{r}
+x <- c("z", "abcedfg")
+str_pad(x, 10) # Default padding is on the left
+str_pad(x, 10, "right")
+str_pad(x, 10, "both")
+```
+
+## `str_pad()`
+
+You can pad with characters other than spaces using the `pad` argument.  
+
+```{r}
+x <- c("z", "abcedfg")
+
+str_pad(x, 3, pad="X")
+```
+<small>*Notice that padding to a length < the length of the string does not truncate the string!</small>
+
+## `str_trunc()`
+You can truncate a string to a given length (including a 3 character ellipsis) using `str_trunc()`.  
+```{r}
+str_trunc("Thisstringisquitelong", 13, "right")
+```
+
+## `str_trim()`
+The opposite of `str_pad()` is `str_trim()`. It trims leading and trailing white space.
+
+```{r}
+y <- c("   a", "b   ", "  c  ")
+str_trim(y) # Default trims white space from both sides
+str_trim(y, "left")
+str_trim(y, "right")
+```
+
+## `str_wrap()`
+You can use `str_wrap()` to wrap a paragraph of text, finding whitespace breaks such that the width of each line is as similar to the given argument as possible.
+```{r}
+jabberwocky <- "`Twas brillig, and the slithy toves did gyre and gimble 
+in the wabe: All mimsy were the borogoves and the mome raths outgrabe."
+
+str_wrap(jabberwocky, width = 40)
+cat(str_wrap(jabberwocky, width = 40))
+```
+
+## LOCALE SENSITIVE OPERATIONS
+
+***
+A few stringr functions are locale-sensitive, which means that they can perform differently to accommodate different languages.  
+
+The default is always English. You can accommodate different languages by setting the `locale` argument to a two letter ISO-639-1 code.
+
+You can see a complete list of available locales by running `stringi::stri_locale_list()`.
+
+## `str_sort()` and `str_order()`
+
+For example, in Lithuanian, y comes between i and j.
+
+```{r}
+str_order(letters)
+str_order(letters, locale = "lt")
+str_sort(letters, locale = "lt")
+```
+
+## `str_to_lower()`
+
+Another example: Turkish has two different letters 'i', one with and one without a dot.
+
+```{r}
+x <- "I like horses."
+str_to_lower(x)
+str_to_lower(x, "tr")
+```
+
+## PATTERN MATCHING
+
+***
+stringr includes a number of functions that are used to process a character vector of strings for matches with a single pattern.
+```{r}
+# Character vector to process
+strings <- c(
+  "apple", 
+  "219 733 8965", 
+  "329-293-8753", 
+  "Work: 579-499-7527; Home: 543.355.3679"
+)
+
+# Pattern to match 
+# (This is a regular expression designed to match US phone numbers)
+phone <- "([2-9][0-9]{2})[- .]([0-9]{3})[- .]([0-9]{4})"
+```
+
+## `str_detect()`
+
+`str_detect()` detects the presence or absence of a pattern and returns a logical vector.
+
+```{r}
+# Does each string contain a phone number?
+str_detect(strings, phone)
+```
+
+## `str_subset()`
+
+`str_subset()` returns the elements of a character vector that match a pattern.
+
+```{r}
+# Which strings contain phone numbers?
+str_subset(strings, phone)
+```
+
+## `str_count()`
+
+`str_count()` counts the number of matches in each string.
+
+```{r}
+# How many phone numbers are in each string?
+str_count(strings, phone)
+```
+
+***
+
+`str_locate()` locates the first position of a pattern and returns a matrix with start and end positions as columns. 
+```{r}
+# Where in each string is the first phone number located?
+str_locate(strings, phone)
+```
+
+***
+`str_locate_all()` locates all matches and returns a list of matrices.
+
+```{r}
+# Where are all the phone numbers located?
+str_locate_all(strings, phone)
+```
+
+***
+
+`str_extract()` extracts text corresponding to the first match, returning a character vector.  
+
+```{r}
+# What is the first phone number in each string?
+str_extract(strings, phone)
+```
+You can also do `str_extract_all()`, which returns a list of character vectors.
+
+***
+
+`str_match()` extracts capture groups from the first match formed by () in the regular expression. It returns a character matrix with one column for the complete match and one column for each group.  
+
+```{r}
+# Pull out the three components of the first match in each string
+str_match(strings, phone)
+```
+You can also do `str_match_all()`, which extracts capture groups from all matches and returns a list of character matrices.
+
+***
+
+`str_replace()` replaces the first matched pattern and returns a character vector. 
+
+```{r}
+str_replace(strings, phone, "XXX-XXX-XXXX")
+```
+`str_replace_all()` replaces all matches.
+
+***
+
+`str_split()` splits a string into a variable number of pieces based on a pattern and returns a list of character vectors.  
+
+```{r}
+str_split("a-b-c", "-")
+```
+`str_split_fixed()` splits a string into a fixed number of pieces and returns a character matrix.
+```{r}
+str_split_fixed("a-b-c", "-", n = 2)
+```
+

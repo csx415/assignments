@@ -1,0 +1,29 @@
+
+\texttt{str\_split()} splits a string into a variable number of pieces
+based on a pattern and returns a list of character vectors.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{str_split}\NormalTok{(}\StringTok{"a-b-c"}\NormalTok{, }\StringTok{"-"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [[1]]
+## [1] "a" "b" "c"
+\end{verbatim}
+
+\texttt{str\_split\_fixed()} splits a string into a fixed number of
+pieces and returns a character matrix.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{str_split_fixed}\NormalTok{(}\StringTok{"a-b-c"}\NormalTok{, }\StringTok{"-"}\NormalTok{, }\DataTypeTok{n =} \DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2]
+## [1,] "a"  "b-c"
+\end{verbatim}
+
