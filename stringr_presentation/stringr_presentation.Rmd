@@ -1,7 +1,6 @@
 ---
 title: "THE STRINGR PACKAGE"
 subtitle: "by Gwen Rino"
-author: CSX 415.1
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output: 
   beamer_presentation
@@ -31,8 +30,8 @@ The **stringr** package provides a set of internally consistent tools for workin
 - subsetting strings  
 - managing lengths of strings  
 - mutating strings  
-- joining and splitting strings  
 - ordering strings  
+- joining and splitting strings  
 
 ## DETECTING MATCHES   
   
@@ -47,28 +46,28 @@ The **stringr** package provides a set of internally consistent tools for workin
   
 **`str_detect()`** detects the presence of a pattern match in a string.  
 ```{r}
-str_detect(fruit, "a")
+str_detect(fruit, "ap")
 ```
 
 ## DETECTING MATCHES  
   
 **`str_which()`** finds the indexes of strings that contain a pattern match.  
 ```{r}
-str_which(fruit, "a")
+str_which(fruit, "ap")
 ```
 
 ## DETECTING MATCHES  
   
 **`str_count()`** counts the number of matches in a string.  
 ```{r}
-str_count(fruit, "a")
+str_count(fruit, "ap")
 ```
 
 ## DETECTING MATCHES  
   
 **`str_locate()`** locates the positions of the first pattern match in a string. (Also **`str_locate_all()`**)
 ```{r}
-str_locate(fruit, "a")
+str_locate(fruit, "ap")
 ```
 
 *** 
@@ -78,8 +77,8 @@ str_locate(fruit, "a")
 - **subsetting strings**  
 - managing lengths of strings  
 - mutating strings  
-- joining and splitting strings  
 - ordering strings  
+- joining and splitting strings  
 
 ## SUBSETTING STRINGS   
   
@@ -99,24 +98,25 @@ str_sub(fruit, 1, 3)
 
 ## SUBSETTING STRINGS  
   
-**`str_subset()`** returns only the strings that contain a pattern match. Arguments are (string, pattern).
+**`str_subset()`** returns only the strings that contain a pattern match. 
 ```{r}
-str_subset(fruit, "b")
+str_subset(fruit, "ap")
 ```
 
 ## SUBSETTING STRINGS  
   
-**`str_extract()`** returns the first pattern match found in each string, as a vector. Arguments are (string, pattern). (Also **`str_extract_all()`**)
+**`str_extract()`** returns the first pattern match found in each string, as a vector. (Also **`str_extract_all()`**)
 ```{r}
-str_extract(fruit, "be")
+str_extract(fruit, "ap")
 ```
 
 ## SUBSETTING STRINGS  
   
 **`str_match()`** returns the first pattern match found in each string, as a
-matrix with a column for each () group in pattern.  Arguments are (string, pattern). (Also **`str_match_all()`**)
+matrix with a column for each () group in pattern.  (Also **`str_match_all()`**)
 ```{r}
-str_match(sentences, "(a|the) ([^ ]+)") # regex for word "a" or "the" and following word
+# regex for word "a" or "the" and following word
+str_match(sentences, "(a|the) ([^ ]+)") 
 ```
 
 *** 
@@ -126,8 +126,8 @@ str_match(sentences, "(a|the) ([^ ]+)") # regex for word "a" or "the" and follow
 - subsetting strings   
 - **managing lengths of strings**  
 - mutating strings  
-- joining and splitting strings  
 - ordering strings  
+- joining and splitting strings  
 
 ## MANAGING LENGTHS   
   
@@ -147,263 +147,156 @@ str_length(fruit)
 
 ## MANAGING LENGTHS  
   
-**`str_pad`** pads strings to a constant width. Arguments are (string, width, side = c("left", "right", "both"), pad = " ").
+**`str_pad`** pads strings to a constant width. 
 ```{r}
 str_pad(fruit, 15, "left")
 ```
 
 ## MANAGING LENGTHS  
   
-**`str_trunc`** truncates the width of strings, replacing content with ellipsis. Arguments are (string, width, side = c("left", "right", "both"), ellipsis = "...").
+**`str_trunc`** truncates the width of strings, replacing content with ellipsis. 
 ```{r}
-str_trunc("Thisstringisquitelong", 13, "right")
+str_trunc("Thisstringisquitelong", 16, "right")
 ```
 
 ## MANAGING LENGTHS  
   
-**`str_trim`** trims white space from the start or end of a string. Arguments are (string, side = c("left", "right", "both")).
+**`str_trim`** trims white space from the start or end of a string. 
 ```{r}
 y <- c("   a", "b   ", "  c  ")
-str_trim(y) # Default trims white space from both sides
+str_trim(y, "both")
 str_trim(y, "left")
 str_trim(y, "right")
 ```
 
+*** 
+**stringr** is good for  
+  
+- detecting matches in strings  
+- subsetting strings   
+- managing lengths of strings   
+- **mutating strings**  
+- ordering strings  
+- joining and splitting strings  
 
 
-## STRINGR  
-has four families of functions
+## MUTATING STRINGS  
+  
+**stringr** offers five functions for **mutating strings**.   
+  
+- **`str_sub()`**  
+- **`str_replace()`**  
+- **`str_to_lower()`**  
+- **`str_to_upper()`** 
+- **`str_to_title()`** 
 
-- CHARACTER MANIPULATION  
-- WHITESPACE TOOLS  
-- LOCALE SENSITIVE OPERATIONS  
-- PATTERN MATCHING FUNCTIONS  
-
-## CHARACTER MANIPULATION
-
-## `str_length()`
-
-`str_length()` returns the length of a string.  
-
+## MUTATING STRINGS  
+  
+**`str_sub() <- value`** replaces substrings by identifying the substrings with `str_sub()` and assigning into the results.
 ```{r}
-str_length("abcde")
+fruit.1 <- c("apple", "banana", "orange")
+str_sub(fruit.1, 2, 3) <- "xx" 
+fruit.1
 ```
 
-## `str_sub()`
-
-`str_sub()` accesses individual characters in a string.  
-
+## MUTATING STRINGS  
+  
+**`str_replace()`** replaces the first matched pattern in each string. (Also **`str_replace_all()`**)
 ```{r}
-vec <- c("a string", "another string")
-
-# Returns the third character in each string
-str_sub(vec, 3, 3)
-
-# Returns characters 3-5 in each string
-str_sub(vec, 3, 5)
-
-# Count from right using negative numbers
-str_sub(vec, -4, -1)
+str_replace(fruit.1, "a", "Q")
 ```
 
-
-## `str_sub()`
-
-You can use `str_sub()` to modify strings.  
-
+## MUTATING STRINGS  
+  
 ```{r}
-vec <- c("a string", "another string")
-
-str_sub(vec, 3, 3) <- "X"
-vec
+y <- "ZEN and the ART of motorcycle maintenance"
+str_to_lower(y)
+str_to_upper(y)
+str_to_title(y)
 ```
-
-## `str_dup()`
-
-You can use `str_dup()` to duplicate strings.  
-
-```{r}
-print(vec)
-str_dup(vec, c(2,3))
-```
-
-## WHITESPACE TOOLS
-
-## `str_pad()`
-
-`str_pad()` pads a string to a given length by adding white space.  
-
-```{r}
-x <- c("z", "abcedfg")
-str_pad(x, 10) # Default padding is on the left
-str_pad(x, 10, "right")
-str_pad(x, 10, "both")
-```
-
-## `str_pad()`
-
-You can pad with characters other than spaces using the `pad` argument.  
-
-```{r}
-x <- c("z", "abcedfg")
-
-str_pad(x, 3, pad="X")
-```
-<small>*Notice that padding to a length < the length of the string does not truncate the string!</small>
-
-## `str_trunc()`
-You can truncate a string to a given length (including a 3 character ellipsis) using `str_trunc()`.  
-```{r}
-str_trunc("Thisstringisquitelong", 13, "right")
-```
-
-## `str_trim()`
-The opposite of `str_pad()` is `str_trim()`. It trims leading and trailing white space.
-
-```{r}
-y <- c("   a", "b   ", "  c  ")
-str_trim(y) # Default trims white space from both sides
-str_trim(y, "left")
-str_trim(y, "right")
-```
-
-## `str_wrap()`
-You can use `str_wrap()` to wrap a paragraph of text, finding whitespace breaks such that the width of each line is as similar to the given argument as possible.
-```{r}
-jabberwocky <- "`Twas brillig, and the slithy toves did gyre and gimble 
-in the wabe: All mimsy were the borogoves and the mome raths outgrabe."
-
-str_wrap(jabberwocky, width = 40)
-cat(str_wrap(jabberwocky, width = 40))
-```
-
-## LOCALE SENSITIVE OPERATIONS
-
 ***
-A few stringr functions are locale-sensitive, which means that they can perform differently to accommodate different languages.  
-
-The default is always English. You can accommodate different languages by setting the `locale` argument to a two letter ISO-639-1 code.
-
+These stringr functions are locale-sensitive, which means that they can perform differently to accommodate different languages.  
+  
+The default is always English. You can accommodate different languages by setting the `locale` argument to a two letter ISO-639-1 code.  
+  
 You can see a complete list of available locales by running `stringi::stri_locale_list()`.
 
-## `str_sort()` and `str_order()`
+*** 
+**stringr** is good for  
+  
+- detecting matches in strings  
+- subsetting strings   
+- managing lengths of strings   
+- mutating strings   
+- **ordering strings**  
+- joining and splitting strings 
+ 
 
-For example, in Lithuanian, y comes between i and j.
+## ORDERING STRINGS  
+  
+**stringr** offers two functions for **ordering strings**.   
+  
+- **`str_order()`**  
+- **`str_sort()`**  
 
+## ORDERING STRINGS  
+  
+**`str_sort()`** sorts a character vector. **`str_order()`** returns the vector of indexes that sorts a character vector. These functions are locale-sensitive.
 ```{r}
-str_order(letters)
-str_order(letters, locale = "lt")
+letters
 str_sort(letters, locale = "lt")
+str_order(letters, locale = "lt")
 ```
 
-## `str_to_lower()`
+*** 
+**stringr** is good for  
+  
+- detecting matches in strings  
+- subsetting strings   
+- managing lengths of strings   
+- mutating strings   
+- ordering strings  
+- **joining and splitting strings** 
+ 
 
-Another example: Turkish has two different letters 'i', one with and one without a dot.
+## JOINING AND SPLITTING STRINGS  
+  
+**stringr** offers three functions for **joining and splitting strings**.   
+  
+- **`str_c()`**  
+- **`str_dup()`**  
+- **`str_split()`**
 
+## JOINING AND SPLITTING STRINGS  
+  
+**`str_c()`** joins strings.
 ```{r}
-x <- "I like horses."
-str_to_lower(x)
-str_to_lower(x, "tr")
+letters
+str_c(letters, collapse = "")
 ```
 
-## PATTERN MATCHING
-
-***
-stringr includes a number of functions that are used to process a character vector of strings for matches with a single pattern.
+## JOINING AND SPLITTING STRINGS  
+  
+**`str_dup()`** repeats strings.
 ```{r}
-# Character vector to process
-strings <- c(
-  "apple", 
-  "219 733 8965", 
-  "329-293-8753", 
-  "Work: 579-499-7527; Home: 543.355.3679"
-)
-
-# Pattern to match (a regex to match US phone numbers)
-phone <- "([2-9][0-9]{2})[- .]([0-9]{3})[- .]([0-9]{4})"
+str_dup("foo", 3)
 ```
 
-## `str_detect()`
-
-`str_detect()` detects the presence or absence of a pattern and returns a logical vector.
-
+## JOINING AND SPLITTING STRINGS  
+  
+**`str_split_fixed()`** splits a vector of strings (splitting at occurrences of a pattern match) and returns a matrix of substrings. (**`str_split()`** returns substrings as a list.)
 ```{r}
-# Does each string contain a phone number?
-str_detect(strings, phone)
+str_split_fixed(fruit, " ", n = 2)
 ```
 
-## `str_subset()`
-
-`str_subset()` returns the elements of a character vector that match a pattern.
-
+## EVALUATION OF STRINGR PACKAGE  
+  
+**stringr** recreates essential base R functions with simpler, more consistent syntax.  
+  
+**stringr** functions can be used with the pipe operator.
 ```{r}
-# Which strings contain phone numbers?
-str_subset(strings, phone)
+letters %>% str_c(collapse = "") %>% str_dup(3)
 ```
 
-## `str_count()`
-
-`str_count()` counts the number of matches in each string.
-
-```{r}
-# How many phone numbers are in each string?
-str_count(strings, phone)
-```
-
-***
-
-`str_locate()` locates the first position of a pattern and returns a matrix with start and end positions as columns. 
-```{r}
-# Where in each string is the first phone number located?
-str_locate(strings, phone)
-```
-
-***
-`str_locate_all()` locates all matches and returns a list of matrices.
-
-```{r}
-# Where are all the phone numbers located?
-str_locate_all(strings, phone)
-```
-
-***
-
-`str_extract()` extracts text corresponding to the first match, returning a character vector.  
-
-```{r}
-# What is the first phone number in each string?
-str_extract(strings, phone)
-```
-You can also do `str_extract_all()`, which returns a list of character vectors.
-
-***
-
-`str_match()` extracts capture groups from the first match formed by () in the regular expression. It returns a character matrix with one column for the complete match and one column for each group.  
-
-```{r}
-# Pull out the three components of the first match in each string
-str_match(strings, phone)
-```
-You can also do `str_match_all()`, which extracts capture groups from all matches and returns a list of character matrices.
-
-***
-
-`str_replace()` replaces the first matched pattern and returns a character vector. 
-
-```{r}
-str_replace(strings, phone, "XXX-XXX-XXXX")
-```
-`str_replace_all()` replaces all matches.
-
-***
-
-`str_split()` splits a string into a variable number of pieces based on a pattern and returns a list of character vectors.  
-
-```{r}
-str_split("a-b-c", "-")
-```
-`str_split_fixed()` splits a string into a fixed number of pieces and returns a character matrix.
-```{r}
-str_split_fixed("a-b-c", "-", n = 2)
-```
+I like it!
 

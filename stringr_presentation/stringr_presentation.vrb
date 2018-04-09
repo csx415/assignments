@@ -1,29 +1,19 @@
+\frametitle{EVALUATION OF STRINGR PACKAGE}
 
-\texttt{str\_split()} splits a string into a variable number of pieces
-based on a pattern and returns a list of character vectors.
+\textbf{stringr} recreates essential base R functions with simpler, more
+consistent syntax.
+
+\textbf{stringr} functions can be used with the pipe operator.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{str_split}\NormalTok{(}\StringTok{"a-b-c"}\NormalTok{, }\StringTok{"-"}\NormalTok{)}
+\NormalTok{letters }\OperatorTok{%>%}\StringTok{ }\KeywordTok{str_c}\NormalTok{(}\DataTypeTok{collapse =} \StringTok{""}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{str_dup}\NormalTok{(}\DecValTok{3}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [[1]]
-## [1] "a" "b" "c"
+## [1] "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
 \end{verbatim}
 
-\texttt{str\_split\_fixed()} splits a string into a fixed number of
-pieces and returns a character matrix.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{str_split_fixed}\NormalTok{(}\StringTok{"a-b-c"}\NormalTok{, }\StringTok{"-"}\NormalTok{, }\DataTypeTok{n =} \DecValTok{2}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##      [,1] [,2]
-## [1,] "a"  "b-c"
-\end{verbatim}
+I like it!
 
