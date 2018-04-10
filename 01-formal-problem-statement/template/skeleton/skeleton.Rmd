@@ -1,0 +1,41 @@
+---
+title: 'Formal Problem Statement'
+author:
+  - name: Hakan Egeli
+    email: hakanegeli@gmail.com
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Executive Summary
+
+# Background
+
+# Problem
+
+## Opportunity
+
+## Challange
+
+# Project
+
+## Stakeholders
+
+## Objectives
+
+## Assumptions
+
+## Risks
+
+## Critical Success Factors
+
+## Requirements
+
+## Delivery/Deployment
+
+## Project Plan
+
+## Cost Estimate
