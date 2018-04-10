@@ -1,19 +1,19 @@
 \frametitle{EVALUATION OF STRINGR PACKAGE}
 
-\textbf{stringr} recreates essential base R functions with simpler, more
+\textbf{stringr} recreates base R functions with simpler, more
 consistent syntax.
 
 \textbf{stringr} functions can be used with the pipe operator.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{letters }\OperatorTok{%>%}\StringTok{ }\KeywordTok{str_c}\NormalTok{(}\DataTypeTok{collapse =} \StringTok{""}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{str_dup}\NormalTok{(}\DecValTok{3}\NormalTok{)}
+\NormalTok{letters }\OperatorTok{%>%}\StringTok{ }\KeywordTok{str_c}\NormalTok{(}\DataTypeTok{collapse =} \StringTok{""}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{str_dup}\NormalTok{(}\DecValTok{2}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+## [1] "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
 \end{verbatim}
 
-\textbf{I like it!}
+\textbf{It's great!}
 

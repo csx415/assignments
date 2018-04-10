@@ -12,7 +12,7 @@ library(stringr)
 
 ## THE STRINGR PACKAGE
 
-The **stringr** package provides a set of internally consistent tools for working with character strings in R.  
+The **stringr** package, written by Hadley Wickham and included in the tidyverse, provides a set of internally consistent tools for working with character strings in R.  
   
  
 ## **stringr** is good for  
@@ -71,6 +71,14 @@ str_count(fruit, "ap")
 str_locate(fruit, "ap")
 ```
 
+## DETECTING MATCHES
+
+Note that there are four engines for pattern matching.  
+  
+- **`regex()`**: regular expression, the default  
+- **`fixed()`**: match exact bytes  
+- **`coll()`**: match human letters  
+- **`boundary()`**: match boundaries
  
 ## **stringr** is good for  
   
@@ -290,14 +298,24 @@ str_dup("foo", 3)
 str_split_fixed(fruit, " ", n = 2)
 ```
 
+## SIMILAR PACKAGES  
+  
+**stringi** allows for fast, correct, consistent, portable, convenient character string/text processing in every locale and any native encoding. (**stringr** actually a set of wrappers around **stringi**.)  
+  
+**stringdist** implements approximate string matching. 
+
+**gsubfn** is used for string matching, substitution and parsing.  
+  
+(Note that base R also includes string manipulation functions and pattern matching.)
+
 ## EVALUATION OF STRINGR PACKAGE  
   
-**stringr** recreates essential base R functions with simpler, more consistent syntax.  
+**stringr** recreates base R functions with simpler, more consistent syntax.  
   
 **stringr** functions can be used with the pipe operator.
 ```{r}
-letters %>% str_c(collapse = "") %>% str_dup(3)
+letters %>% str_c(collapse = "") %>% str_dup(2)
 ```
 
-**I like it!**
+**It's great!**
 
