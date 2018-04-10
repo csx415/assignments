@@ -52,7 +52,7 @@ Any additional information based on project
 
 ## <a id="project_details"></a>Project Details
 
-In this section, you want to go into mroe detail about what the actual project proposal is. You want to go into detail about who the project will benefit. Here are some questions you want to answer in this section: What changes are you proposing? Who will the project benefit? What can be done about the problem that exists? What is the solution that you are proposing to fix the problem? Who will this project affect? Who does this project benefit?
+In this section, you want to go into more detail about what the actual project proposal is. You want to go into detail about who the project will benefit. Here are some questions you want to answer in this section: What changes are you proposing? Who will the project benefit? What can be done about the problem that exists? What is the solution that you are proposing to fix the problem? Who will this project affect? Who does this project benefit?
 
 #### <a id ="plan"></a>Project Plan
 
