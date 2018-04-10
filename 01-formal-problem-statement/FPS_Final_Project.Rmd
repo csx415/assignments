@@ -1,0 +1,103 @@
+---
+title: 'Formal Problem Statement for Final Project'
+author:
+  - name: Hakan Egeli
+    email: hakanegeli@gmail.com
+date: 'April 10, 2018'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Executive Summary
+
+Purpose of this study is to examine if a model can be developed to assist the client, a jewelry manufacturer, to asses the credit risk of a potential new customer (retailer) and assign a credit limit for this new customer so that the client can determine the amount of buy-in that would be required from the retailer and the amount of inventory investment the client has to make to sell the brand at the retailer's store.
+
+# Background
+
+Benchmark is a U.S. based jewelry manufacturer that primarily focuses on wedding rings. As a manufacturer, Benchmark sells to retailers and wholesalers but not directly to consumers.
+
+Benchmark develops the brand, but the retailers are the frontlines to the consumers. It is critical for Benchmark to carefully select the retailers and continuously assist them with product support and sales support. This relationship requires investment both by the retailers and the manufacturer.
+
+Consumers who visit the brick and mortar stores want to see the actual product before making a purchase. Also, when a customer walks into a store they want to see the latest products for that brand and what is trending in the industry. Today, best sellers of each brand or product line is showcased using displays at the retail stores, and new displays are added as new product offerings become available or the displays are updated as the best sellers change. Up until now, retailers were expected to purchase the initial display inventory. Because this inventory is made from precious metals it is a big investment to the retailers. Additionally, retailers are required to keep this inventory (if they sell from it they have to replenish it) as long as they carry the brand or the product lines. Inarguably retailers are looking into ways to carry product lines without making the same amount of investment on their part.
+
+Over the years, the industry has become competitive and manufacturers are offering creative ways to place their products at the retailer stores while addressing the cost of entry to carry a product line for jewelry especially in a market where the precious metal prices are going up every year. One of the ways manufacturers are addressing this problem is by offering the display as a memo order where the order is not booked as a sale to the customer and the inventory still belongs to the manufacturer but resides at the retailer's store.
+
+# Problem
+
+Initial investment the retail stores must make is high and even though this investment shows commitment by the retailer, they can be easily persuaded with other manufacturers to carry their products if this initial investment for the retailer is significantly less. 
+
+The industry is moving towards where the manufacturer is placing portion of their inventory at the retailer's store and this is shifting the risk to the manufacturers. 
+
+To compete in the market place, Benchmark must also offer memo orders. This requires a substantial investment on Benchmark's part and a careful selection and vetting of retailers.
+
+There are around 2000 active retailers and the memo program is currently limited to around 50 customers, which is around 2.5% of the customer base. If the memo program is to be extended to the 25% of the active retailers (based on Benchmarks projections), and assuming around $10,000 average cost per display that would require minimum a $5,000,000 investment for Benchmark. Last year 100 new customers were added, and that number is expected to increase this year. If last years number to be taken into account for an estimate, and if 25% of those new customers were to acquire displays on memo this year, an additional $250,000 would be needed per year.
+
+## Opportunity
+
+If we can identify the right customers we can reduce the risk, make the investment with the right customer and maximize the return on our investment.
+
+## Challange
+
+Determining credit limit is done through the Jewelers Board of Trade's credit rating. JBT provides commercial credit information, collections, marketing services, and statistics on thousands of jewelry retailers, wholesalers and manufacturers but does not make credit recommendations. Each JBT member makes their own determination how to use this data.
+
+If the retailer is not a member of JBT there is no credit rating to base the credit limit.
+
+There is no formal lead/prospect pipeline managed by Benchmark. The new customer pipeline depends on the sales rep assigned to a territory.
+
+Sales reps are independent contractors and familiar with their own territories and they build their own territory. These is an inherit conflict of interest between the sales rep's willingness to make a sale vs selecting the right retailer for Benchmark.
+
+# Project
+
+We want to build a model by examining correlations between the credit ratings or credit limits using the past sales history and market data and be able to evaluate each new customer's credit limit if they do not have a JBT credit rating associated with them so that we can properly invest and put inventory at the retailer's store.
+
+## Stakeholders
+
+Management, Sales Team
+
+## Objectives
+
+* Establish a reliable model that determines a credit limit for a new customer who does not have a JBT credit rating.
+
+## Assumptions
+
+* Dependent and the independent variables are correlated.
+
+* Majors and Wholesalers may behave differently in sales, units sold, payments and credit limits compared to the Retailer segment, therefore they will be excluded from the problem and the model development.
+
+## Risks
+
+If the model underestimates the credit limit for the new customer this would result in a higher percentage of buy in from the retailer. This by itself is not a major problem since this is the current practice and it lowers the overall risk for the client. However, as the industry moves more towards manufacturers offering inventory on memo and the increased competition from the other manufacturers, some prospects could be lost to the competition which affects the potential profits and the market share of the company.
+
+If the model over estimates the credit limit for the new customer, this would result in higher percentage of investment by the client and lower buy in by the retailer. Potentially the client may not do as well as the model predicted and the investment the client made building and placing the inventory at the retailer's store would not provide the expected return. The other bigger risk is where the retailer goes out of business and the model did not detect the potential credit risk and assessed a higher credit limit. In this case the client would potentially lose their inventory and any credit limit that they have extended to the retailer as part of their payment terms.
+
+## Critical Success Factors
+
+* 96% or better accuracy compared to the credit limits derived from JBT ratings.
+
+* Ease of use of the model.
+
+* Frequent updates to the model to correct model decay.
+
+## Requirements
+
+1. Customers with who have purchased products for the current year and the last year.
+
+2. Monthly JBT ratings for the current customers to be able to calculate the credit limits so that we can train the model.
+
+3. Sales and Payment aggregates for the customers going back a year.
+Market Data, potential size of the market, size of the supply, expected growth, etc. to supplement the sales and payment data.
+
+## Delivery/Deployment
+
+Ease of use and access to the model is critical for the acceptance of the solution. Currently, all the customer data and the sales history reside in a cloud-based ERP system and the model should integrate with the data that is in this system to reduce the amount of entry the user has to make to obtain a prediction. Because making changes to this third-party ERP system is costly and, in some cases, not possible, deploying a model designed and trained in R in this environment may also be not feasible. Our model may require us to build another cloud-based web service which would provide a wrapper to the R model. The service would expose the model predictions as an API and return a JSON or an XML formatted response back to the caller function. Then a small enhancement can be done to the ERP system extract the Lead/Prospect data and pass it to the web API and receive the result and update a certain field on the ERP system.
+
+## Project Plan
+
+We plan to provide a detailed project plan during the "Formalization" phase which will include a list of project backlog items, planned sprints and releases.
+
+## Cost Estimate
+
+Once we have a detailed project plan we plan to provide a detailed cost estimate. The cost estimate will include cost related to the development and validation of the model, development, deployment and integration of the proposed solution and expected on going cost for the delivery platform.
