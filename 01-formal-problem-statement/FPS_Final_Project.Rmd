@@ -13,41 +13,44 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Executive Summary
 
-Purpose of this study is to examine if a model can be developed to assist the client, a jewelry manufacturer, to asses the credit risk of a potential new customer (retailer) and assign a credit limit for this new customer so that the client can determine the amount of buy-in that would be required from the retailer and the amount of inventory investment the client has to make to sell the brand at the retailer's store.
+Purpose of this study is to examine if a model can be developed to assist the client, a jewelry manufacturer, to asses the credit risk of a potential new customer (retailer) and assign a credit limit for this new customer so that the client can determine the amount of buy-in that would be required from the retailer and the amount of inventory investment the client has to make to sell their product lines at the retailer's store.
 
 # Background
 
 Benchmark is a U.S. based jewelry manufacturer that primarily focuses on wedding rings. As a manufacturer, Benchmark sells to retailers and wholesalers but not directly to consumers.
 
-Benchmark develops the brand, but the retailers are the frontlines to the consumers. It is critical for Benchmark to carefully select the retailers and continuously assist them with product support and sales support. This relationship requires investment both by the retailers and the manufacturer.
+Benchmark develops the brand, but the retailers are the frontlines to the consumers. It is critical for Benchmark to carefully select the retailers and continuously assist them with product and sales support. This relationship requires an investment both from the retailers and the manufacturer and this investment is usually a large buy-in to a sales and marketing program in terms of display inventory.
 
-Consumers who visit the brick and mortar stores want to see the actual product before making a purchase. Also, when a customer walks into a store they want to see the latest products for that brand and what is trending in the industry. Today, best sellers of each brand or product line is showcased using displays at the retail stores, and new displays are added as new product offerings become available or the displays are updated as the best sellers change. Up until now, retailers were expected to purchase the initial display inventory. Because this inventory is made from precious metals it is a big investment to the retailers. Additionally, retailers are required to keep this inventory (if they sell from it they have to replenish it) as long as they carry the brand or the product lines. Inarguably retailers are looking into ways to carry product lines without making the same amount of investment on their part.
+Consumers who visit the brick and mortar stores want to see the actual product before making a purchase. Also, when a customer walks into a store they want to see the latest products for that brand and what is trending in the industry. Today, best sellers of each brand or product line is showcased using displays at the retail stores, and new displays are added as new product offerings become available or the displays are updated as the best sellers change. Up until now, retailers were expected to purchase the initial display inventory. Because this inventory is made from precious metals it is a big investment to the retailers. Additionally, retailers are required to keep this inventory as long as they carry the brand or the product lines (if they sell from it they have to replenish it). Inarguably, retailers are looking into ways to carry product lines without making this large amount of investment.
 
-Over the years, the industry has become competitive and manufacturers are offering creative ways to place their products at the retailer stores while addressing the cost of entry to carry a product line for jewelry especially in a market where the precious metal prices are going up every year. One of the ways manufacturers are addressing this problem is by offering the display as a memo order where the order is not booked as a sale to the customer and the inventory still belongs to the manufacturer but resides at the retailer's store.
+Over the years, the industry has become competitive and manufacturers are offering creative ways to place their products at the retailer stores while addressing the cost of entry to carry a brand or a product line for jewelry, especially in a market where the precious metal prices are going up every year. One of the ways manufacturers are addressing this problem is by offering the display as a memo order where the order is not booked as a sale to the customer and the inventory continues to belong to the manufacturer but resides at the retailer's store.
 
 # Problem
 
-Initial investment the retail stores must make is high and even though this investment shows commitment by the retailer, they can be easily persuaded with other manufacturers to carry their products if this initial investment for the retailer is significantly less. 
+Initial investment the retail stores must make to carry the displays for the product lines is high. Even though this buy-in shows commitment by the retailer, the retailer can be easily persuaded by the competition to carry their products if this investment is significantly less for the retailer.
 
-The industry is moving towards where the manufacturer is placing portion of their inventory at the retailer's store and this is shifting the risk to the manufacturers. 
+The industry is moving towards where the manufacturer is putting portion of their inventory at the retailer's store and this is shifting the risk to the manufacturers and reducing the burden of entry to carry product lines for the retailers. 
 
-To compete in the market place, Benchmark must also offer memo orders. This requires a substantial investment on Benchmark's part and a careful selection and vetting of retailers.
+To compete in the market place, Benchmark must also offer memo orders. This requires a substantial investment on Benchmark's part and a careful selection and vetting of the retailers.
 
-There are around 2000 active retailers and the memo program is currently limited to around 50 customers, which is around 2.5% of the customer base. If the memo program is to be extended to the 25% of the active retailers (based on Benchmarks projections), and assuming around $10,000 average cost per display that would require minimum a $5,000,000 investment for Benchmark. Last year 100 new customers were added, and that number is expected to increase this year. If last years number to be taken into account for an estimate, and if 25% of those new customers were to acquire displays on memo this year, an additional $250,000 would be needed per year.
+Benchmark currently has around 2,000 active retailers and the memo program is limited to about 50 customers, which is around 2.5% of the active customer base. If the memo program is to be extended to grow to 25% of the active retailers (Benchmark's current projections), and assuming around $10,000 average cost per display, that would require minimum a $5,000,000 investment for Benchmark to offer the program to the existing customers. In 2017, 100 new customers were added, and that number is expected to increase this year. If we were to use last year's new customers as our expected rate of signing up new customers for this year, and if 25% of those new customers were to acquire displays on memo, an additional investment of $250,000 would be needed.
+
+To stay competitive, Benchmark has to make this investment and currently Benchmark does not have a good way to invest in new customers who are not proven (had a long relationship with Benchmark).
 
 ## Opportunity
 
-If we can identify the right customers we can reduce the risk, make the investment with the right customer and maximize the return on our investment.
+If we can develop a way to determine how much credit can be extended to a customer that we don't have an existing relationship, then we can increase our brand's market share by targeting the right new leads/prospects while we reduce the risk and maximize the return on our investment.
 
 ## Challange
 
-Determining credit limit is done through the Jewelers Board of Trade's credit rating. JBT provides commercial credit information, collections, marketing services, and statistics on thousands of jewelry retailers, wholesalers and manufacturers but does not make credit recommendations. Each JBT member makes their own determination how to use this data.
+At Benchmark, determining credit limits is done through the Jewelers Board of Trade's (JBT) credit rating system. JBT provides commercial credit information, collections, marketing services, and statistics on thousands of jewelry retailers, wholesalers and manufacturers but does not make credit recommendations. Each JBT member makes their own determination how to use this data and Benchmark do the same by assigning credit limits based on these ratings.
 
-If the retailer is not a member of JBT there is no credit rating to base the credit limit.
+If the retailer is not a member of JBT there is no credit rating to base the credit limit and it is done based on business intuition.
 
-There is no formal lead/prospect pipeline managed by Benchmark. The new customer pipeline depends on the sales rep assigned to a territory.
+There is no formal lead/prospect pipeline managed by Benchmark. The new customer pipeline depends on the sales rep who is assigned to a territory. The initial due diligence depends on the sales rep.
 
-Sales reps are independent contractors and familiar with their own territories and they build their own territory. These is an inherit conflict of interest between the sales rep's willingness to make a sale vs selecting the right retailer for Benchmark.
+Sales reps are independent contractors and familiar with their own territories and these is an inherit conflict of interest between the sales rep's willingness to make a sale vs selecting the right retailer for Benchmark. There is no proven process that both Benchmark and the sales reps can apply to evaluate a potential new customer and it is always a source of contention between the sales team and the management.
+
 
 # Project
 
@@ -55,17 +58,24 @@ We want to build a model by examining correlations between the credit ratings or
 
 ## Stakeholders
 
-Management, Sales Team
+We have identified the Management, Sales Team as the key stakeholders for this project. Management will have to develop and vet the proposed model and the sales team will have to provide the necessary data during the prospect development as an input to the model to obtain a prediction.
 
 ## Objectives
 
 * Establish a reliable model that determines a credit limit for a new customer who does not have a JBT credit rating.
+
+* Be able to do these predictions based on data that can be obtained relatively easy from the potential customer.
+
+* The model has to be easily accessible by the sales team so that they do not bypass this process.
 
 ## Assumptions
 
 * Dependent and the independent variables are correlated.
 
 * Majors and Wholesalers may behave differently in sales, units sold, payments and credit limits compared to the Retailer segment, therefore they will be excluded from the problem and the model development.
+
+* Any overrides that are being made to the existing customer's credit limits are based on perceived credit rating increase or based on past sales and payment performance.
+
 
 ## Risks
 
