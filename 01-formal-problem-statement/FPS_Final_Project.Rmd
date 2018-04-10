@@ -93,16 +93,19 @@ If the model over estimates the credit limit for the new customer, this would re
 
 ## Requirements
 
-1. Customers with who have purchased products for the current year and the last year.
+1. List of Customers who have purchased products during the last and this callendar year, their JBT account number and location information .
 
-2. Monthly JBT ratings for the current customers to be able to calculate the credit limits so that we can train the model.
+2. Monthly JBT ratings for the current customers to calculate the credit limits.
 
 3. Sales and Payment aggregates for the customers going back a year.
-Market Data, potential size of the market, size of the supply, expected growth, etc. to supplement the sales and payment data.
+
+4. Market Data, potential size of the market, size of the supply, expected growth, etc. to supplement the sales and payment data.
 
 ## Delivery/Deployment
 
-Ease of use and access to the model is critical for the acceptance of the solution. Currently, all the customer data and the sales history reside in a cloud-based ERP system and the model should integrate with the data that is in this system to reduce the amount of entry the user has to make to obtain a prediction. Because making changes to this third-party ERP system is costly and, in some cases, not possible, deploying a model designed and trained in R in this environment may also be not feasible. Our model may require us to build another cloud-based web service which would provide a wrapper to the R model. The service would expose the model predictions as an API and return a JSON or an XML formatted response back to the caller function. Then a small enhancement can be done to the ERP system extract the Lead/Prospect data and pass it to the web API and receive the result and update a certain field on the ERP system.
+Ease of use and access to the model is critical for the acceptance of the solution. Currently, all the customer, prospect data and the sales history for the current customers reside in a cloud-based ERP system (NetSuite). The model should integrate with the data that is readily available in this system to reduce the amount of entry the users have to make to obtain a prediction.
+
+Making changes to this third-party ERP system is costly and, in some cases, not possible. Therefore, deploying a model designed and trained in R in this environment may also be not feasible. Our model may require us to build another cloud-based web service which would provide a wrapper to the R model. The service would expose the model predictions as an API and return a JSON or an XML formatted response back to the caller. Then a small enhancement can be done to the ERP system make the API call, the script can extract the Lead/Prospect data from the ERP system and pass it to the web API, and receive the result and update a certain field on the ERP system Customer/Prospect page.
 
 ## Project Plan
 
