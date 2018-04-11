@@ -1,0 +1,71 @@
+---
+title: "Formal Problem Statement"
+author: "Laura Winger"
+date: "4/10/2018"
+output: html_document
+---
+
+## Project Background
+
+Brief project description that explains what the problem is that the project is seeking to address.
+
+
+## Project Stakeholders
+
+Identify the people who will be involved in the project. Address who has the problem or who is the client/customer. This section should identify who will determine whether or not the problem has been resolved. This could include the following roles:
+- management, owners, stakeholders, users, SMEs, etc.
+
+
+## Reason For Project
+
+Why is this project being considered (and why is this team needed)?
+
+
+## Project Business Value
+
+Estimate benefits of the project to the business / department. Make sure to identify quantitiative and qualitative benefits of the project.
+
+
+## Project Scope and Limitations
+
+What is the scope of the project? What limitations are there on the project in terms of time, money, resources, technical tools? What does the client want in terms of a 'data product'? What are the model deployment expectations?
+
+
+## Project Success Criteria
+
+Define what will determine the project's success:
+- Define a success metric for the project, a single quantifiable, unambiguous metric, that will be used to determine if your project is a success. This is not just a technical metrics, but one use at the managerial level. This of this is how "the needle must move" by your solution
+- Define (very precisely) the performance/power of the model or analysis that is necessary to achieve that success to achieve the success
+
+
+## Risks to Success
+
+Estimate the risks to the project success:
+- What if the success metric is not met?
+- What if the model performance metric is not met?
+
+
+## Business Users 
+
+Identify who the users of the model are and how the model will used:
+- Discuss what changes have to happen within the organization to deploy the model
+- Discuss risks to model deployment, (e.g. push-back by employees )
+
+
+## Proposed Project Timeline
+
+- When you will have preliminary results of model/analysis performance?
+- When you need or expect to have determined whether the model performance?
+- How much time it will take to deploy the solutions?
+
+
+
+
+
+
+
+
+
+
+
+
