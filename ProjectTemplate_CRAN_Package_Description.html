@@ -199,6 +199,13 @@ load.project()</code></pre>
 </div>
 <div id="packages-similar-to-projecttemplate" class="section level2">
 <h2>Packages Similar to ProjectTemplate</h2>
+<p>Instead of writing an analysis as a single or set of R scripts, a package can be created which include the analysis as well as the data. Packages impose a relatively simple structure on your project directory. The folder /R contains the .R files, the /data can contain any .RData or .rda as well as .txt, .tab, .csv files that you might need. (or they may go in /inst/extdata). Other required files are DESCRIPTION and NAMESPACE.</p>
+<p>Using the <code>package.skeleton()</code> function provided by the <code>util</code> package gets you started with creating an R package. Using the <code>devtools</code> package also makes the “make package development easier by providing R functions that simplify common tasks”.</p>
+<p>However, the ProjectTemplate project web site specifically states that ProjectTemplate is not designed to help with package development. Here is how ProjectTemplate differentiates itself from R packages:</p>
+<ul>
+<li>A project is built around exactly one data set, while a package should work with many different data sets.</li>
+<li>A project is something specific: your goal is to learn a specific fact about the world from a specific data set. In contrast, a package should contain general purpose tools for analyzing many different data sets.</li>
+</ul>
 </div>
 
 
