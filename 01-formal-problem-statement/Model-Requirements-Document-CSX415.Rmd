@@ -69,7 +69,7 @@ The president of Benchmark Rings is the key sponsor of this project. The preside
 
 The president of Benchmark Rings has taken the ownership to work with the sales managers, to convince them, to implement this model in Benchmark's key decision making for evaluating new customers. 
 
-Benchmark does not have any resident data scientist. We will be engaged with the software engineering manager and his team  to enable them with the model. We will provide container based packaging and help establish process to build, deploy, execute and update the model. We will also be working with the software engineering team to establish regular validation and testing process to ensure quality.
+Benchmark does not have any resident data scientist. We will be engaged with the software engineering manager and his team to enable them with the model. We will provide container based packaging and help establish process to build, deploy, execute and update the model. We will also be working with the software engineering team to establish regular validation and testing process to ensure quality.
 
 We will also ensure that the packaging for data preprocessing and model execution is easy enough to be used by the president of Benchmark and his sales team with less support from engineering.
 
@@ -79,7 +79,7 @@ We will also be documenting the code with detailed comments on Github check ins,
 Management : President of Benchmark
 Owner : Software Manager 
 Users : Sales Managers of Benchmark
-Otehr Stakeholders : Software engineering team, External consultants
+Other Stakeholders : Software engineering team, External consultants
 SMEs : Benchmark does not have a resident Data Scientist. Till Benchmark finds enough value in hiring full time data scientist, it will bank on consultant data scientists to fill in the role
 
 
@@ -91,16 +91,16 @@ Based on the approximate analysis of data, the sales and profitability of Benchm
 This will also make Benchmark less dependent on the aging sales experts who are otherwise hard to replace.
 
 ### Success Criteria
-The project for the sales enablement model will be considered a success if the profit for Benchmark Rings, attributed to the difference in decisons by the model for customer qualification and credit line extension, goes up by 10%.
+The project for the sales enablement model will be considered a success if the profit for Benchmark Rings, attributed to the difference in decisions by the model for customer qualification and credit line extension, goes up by 10%.
 
-Also this has a potential for improveing the pay roll if the model proves to exceed expert quality decision making.
+Also this has a potential for improving the pay roll if the model proves to exceed expert quality decision making.
 
 Considering that size of Benchmark’s data set, latest generation Intel Xeon Serves with 32 GB of RAM will be good enough to run the model.
 
 ### Risk Management
 Splitting the existing data into a training set and a test set will help evaluate the validity of the model and contain risk.
 
-ALso during initial deployment of the model, a human vetting of model decision will help alleviate concerns and likely generate more confidence in model performance.
+Also during initial deployment of the model, a human vetting of model decision will help alleviate concerns and likely generate more confidence in model performance.
 
 ### Timeline of Delivery
 The preliminary results for this model will be available around 23rd May, 2018.
