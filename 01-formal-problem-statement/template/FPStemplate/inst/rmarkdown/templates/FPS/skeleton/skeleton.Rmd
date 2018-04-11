@@ -1,35 +1,42 @@
 ---
 title: "Formal Problem Statement"
-author: "Gwen Rino"
 output: html_document
 ---
 
-## Project Name:
-## Client:
-## Date: 
+#### Project Name: 
+#### Client: 
+#### Date: `r format(Sys.time(), '%d %B %Y')`
+#### By: 
 
 ## Description of Problem
+***
 
 (What is the problem to be addressed)
 
 ## Why Address This Problem
+***
 
 (Benefits, tangible and intangible)
 
 ## Key Roles
+***
 
 ## Success Metrics
+***
 
 (For project, for model)
 
 ## Risk Estimates
+***
 
 (If success metric is not met, if model performance metric is not met)
 
 ## Model Deployment
+***
 
 (Who are the users, what organizational changes are required, potential risks)
 
 ## Timeline
+***
 
 (Preliminary results, evaluation of model, deployment of solutions)
