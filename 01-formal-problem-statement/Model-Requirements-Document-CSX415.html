@@ -131,10 +131,11 @@ $(document).ready(function () {
 <li><a href="#business-model">Business Model</a></li>
 <li><a href="#problem-definition-and-business-justification">Problem Definition and Business Justification</a></li>
 <li><a href="#scope">Scope</a></li>
+<li><a href="#model-usage">Model Usage</a></li>
+<li><a href="#stakeholder-interactions">Stakeholder Interactions</a></li>
 <li><a href="#benefit-estimation">Benefit Estimation</a></li>
 <li><a href="#success-criteria">Success Criteria</a></li>
 <li><a href="#risk-management">Risk Management</a></li>
-<li><a href="#model-usage">Model Usage</a></li>
 <li><a href="#timeline-of-delivery">Timeline of Delivery</a></li>
 <li><a href="#technology-and-deployment">Technology and Deployment</a></li>
 </ul>
@@ -158,7 +159,7 @@ $(document).ready(function () {
 <li>The store may go out of business without returning the jewellery</li>
 <li>Cost of metal and inventory value changes regularly</li>
 </ul>
-<p><B>Missed pportunity</B> to make profit :</p>
+<p><B>Missed opportunity</B> to make profit :</p>
 <ul>
 <li>Failure to do business with a retail store customer for erroneous risk assessment is loss of opportunity to make money</li>
 <li>Failure to offer enough credit line to the retail store, before payments are settled, may result in loss of profit</li>
@@ -172,6 +173,24 @@ $(document).ready(function () {
 <h3>Scope</h3>
 <p>The model will be limited to estimate the risk and credit lines for smaller jewellery store customers who are in vast majority.</p>
 <p>For bigger retailers like Amazon and Zales the business model is different. Also data points are very different which likely will not help making a robust model.</p>
+</div>
+<div id="model-usage" class="section level3">
+<h3>Model Usage</h3>
+<p>Model will be primarily used by the sales managers of Benchmark and the president who is an engineer himself and shows keen interest.</p>
+<p>Once the model is deployed and validated, model will quantify the risk assessment and estimate the credit rating, when it is absent for a new jewellery store customer. This will replace the ad hoc credit rating assignment by the sales manager. Also based on the model inference, the credit line to customers will be determined.</p>
+<p>This is quite a shift from the sales manager having a free reign in determining the risks and credit worthiness of the customers. It will likely have some resentment. But the president of Benchmark Rings is on board and driving this change.</p>
+</div>
+<div id="stakeholder-interactions" class="section level3">
+<h3>Stakeholder Interactions</h3>
+<p>The president of Benchmark Rings is the key sponsor of this project. The president being an engineer himself is keenly aware of the benefits of data science and has been personally working to provide us with additional data. He is convinced that he will be able to optimize the business processes at Benchmark to improve his profits. This is a real company with a real business need.</p>
+<p>The president of Benchmark Rings has taken the ownership to work with the sales managers, to convince them, to implement this model in Benchmark’s key decision making for evaluating new customers.</p>
+<p>Benchmark does not have any resident data scientist. We will be engaged with the software engineering manager and his team to enable them with the model. We will provide container based packaging and help establish process to build, deploy, execute and update the model. We will also be working with the software engineering team to establish regular validation and testing process to ensure quality.</p>
+<p>We will also ensure that the packaging for data preprocessing and model execution is easy enough to be used by the president of Benchmark and his sales team with less support from engineering.</p>
+<p>We will also be documenting the code with detailed comments on Github check ins, to share insight on the model development to help future engagement of other software engineers in advancing this model.</p>
+<div id="key-roles" class="section level4">
+<h4>Key Roles</h4>
+<p>Management : President of Benchmark Owner : Software Manager Users : Sales Managers of Benchmark Otehr Stakeholders : Software engineering team, External consultants SMEs : Benchmark does not have a resident Data Scientist. Till Benchmark finds enough value in hiring full time data scientist, it will bank on consultant data scientists to fill in the role</p>
+</div>
 </div>
 <div id="benefit-estimation" class="section level3">
 <h3>Benefit Estimation</h3>
@@ -189,12 +208,6 @@ $(document).ready(function () {
 <h3>Risk Management</h3>
 <p>Splitting the existing data into a training set and a test set will help evaluate the validity of the model and contain risk.</p>
 <p>ALso during initial deployment of the model, a human vetting of model decision will help alleviate concerns and likely generate more confidence in model performance.</p>
-</div>
-<div id="model-usage" class="section level3">
-<h3>Model Usage</h3>
-<p>Model will be primarily used by the sales managers of Benchmark and the president who is an engineer himself and shows keen interest.</p>
-<p>Once the model is deployed and validated, model will quantify the risk assessment and estimate the credit rating, when it is absent for a new jewellery store customer. This will replace the ad hoc credit rating assignment by the sales manager. Also based on the model inference, the credit line to customers will be determined.</p>
-<p>This is quite a shift from the sales manager having a free reign in determining the risks and credit worthiness of the customers. It will likely have some resentment. But the president of Benchmark Rings is on board and driving this change.</p>
 </div>
 <div id="timeline-of-delivery" class="section level3">
 <h3>Timeline of Delivery</h3>
