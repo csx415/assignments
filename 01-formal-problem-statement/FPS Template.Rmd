@@ -1,0 +1,60 @@
+---
+title: "FPS Template"
+author: "Eduardo Rosillo"
+date: "April 9, 2018"
+output: html_document
+        
+        
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#### Prepard by Author(s) of document: enter name(s), official title(s), company name,
+[enter here: supervisor/project manager, name and title] 
+
+[enter here: client(s) name/official title company name, prepared for]   
+
+[enter here: other relevant personel; users]      
+
+
+#### Project title: enter title ex:[Project: Building name where work is to be conducted, cost reduction analysis]
+What is the reason for the client's interest in hiring the author and team to develop this project? What "problem" does the client have that the author and team can develop a solution for? If the client or owners do not necessarily have a clear "problem", what is something the client said that can have parameters built around it?
+
+Notes?
+
+#### Goal of Project [description]: starting point - Benefits/Risks, design a success metric for the project and model performance
+Benefits of the project are determined by the client's interest, if possible define any qualitative variables.
+What is it that determines the success/failure of the project according to the interests of the clients and project manager? At this point define quantifiable variables. ex: cost of energy unit per day, etc.  
+
+Then, using the quantifiable variable and the clients inital interests, develop a metric for endgame success (ex: reduce number of energy units used per day by some amount to save money). Using stastical methods, define how successful the model/analysis must be in order to achieve project success.
+
+**Project Risk Assesment**:  
+
+[Describe how can the project risk failure if the metric of success is not met]
+
+[Describe how can the project risk failure if the model performs poorly]
+
+**note**: If project failure seemingling iminent given preliminary results, are there are known solutions to allieviate the risk of failure? Describe a solution.
+
+#### Deployment: Users and Model
+
+**Discuss deployemnt of model used**: who will use it, how will they use it on a time basis (ex:daily,weekly), will the users be required to learn anything to use the model? etc.
+
+**Risk assessment (model deployment)**: how can the deployment fail before it even begins?, will the users reject the model?, what sort of steps can be taken to prevent failure of model deployment?
+
+#### Timeline
+
+| Stage | Task 1 | Task 2 | Task (n) | Time (units) |
+| ---------- | --------- | --------- | --------- | --------- |
+| Preliminary |
+| Intermediate |
+| Final |
+
+**Prelimnary steps**: time necessary to deliver early predictions of model/analysis performance
+
+**Intermediate steps**: revaluate model, includes determining whether or not the model/analysis performs under success metric (how strong is the model, calculate using statistical methods) describe how long it will take to realize a solution to model if underperforms.
+
+**Final steps**: Model deployment and presentation to clients.
+
