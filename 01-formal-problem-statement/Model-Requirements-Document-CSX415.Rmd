@@ -1,0 +1,114 @@
+---
+title: "CSX415 Project: Customer Viability Prediction and Risk Assessment for Jewellery Manufacturer"
+author: "Soumyendu Sarkar - X123160"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    fig_caption: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+### Summary Statement
+
+Objective is to develop risk assessment and credit line evaluation model for a  jewellery  manufacturer, <B>Benchmark Rings</B>. This model would help the <B>stakeholders, the president of the company and the sales managers</B>, to evaluate jewellery  stores who are potential new customers, to predict the profitability to make decision to whether to engage in business with them.
+
+
+### Business Model
+
+Benchmark Rings give sample  jewellery on loan to the jewellery retailers to get shelf space in stores. Benchmark Rings only make money when the end customer makes a purchase at the store, the jewellery is ordered and shipped from Benchmark and the payment is settled after 30 days of delivery.
+
+
+### Problem Definition and Business Justification
+
+In Benchmark's business model there are several <B>risks for losses</B> :
+
+-  The store may default on payment
+-  The store may be unable to sell enough jewellery and keep inventory blocked 
+-  Benchmark has to recover the money that it spends on taxes it has to pay on memo inventory (loaned) at the end of the year 
+-  The store may go out of business without returning the jewellery
+-  Cost of metal and inventory value changes regularly
+
+<B>Missed pportunity</B> to make profit :
+
+- Failure to do business with a retail store customer for erroneous risk assessment is loss of opportunity to make money
+- Failure to offer enough credit line to the retail store, before payments are settled, may result in loss of profit
+ 
+
+The key question is how much credit can Benchmark offer to jewellery stores to compete with other jewellery manufacturers to get shelf space in store.
+Benchmark also cannot take too much risk in giving out large lines of credit
+
+<B>Key decision making bottleneck</B>
+
+Many new and smaller jewellery stores does not have credit rating evaluated by the Jewellery retailer credit bureau. Currently business engagements with such customers are made and credit lines determined on ad hoc perceived risk estimation.
+
+Credit rating are just one indicator of what the credit line should be. Benchmark needs more thorough quantitative analysis for better decision making.
+
+
+### Scope
+
+The model will be limited to estimate the risk and credit lines for smaller jewellery store customers who are in vast majority.
+
+For bigger retailers like Amazon and Zales the business model is different. Also data points are very different which likely will not help making a robust model.
+
+### Benefit Estimation
+
+With the model the key stakeholders, the sales managers of Benchmark Rings, will be able empowered to take more robust data driven decisions. These decision are in regards to whether they want to engage with new jewellery store customer and how much credit line they will be willing to offer.
+
+Based on the approximate analysis of data, the sales and profitability of Benchmark can go up by 20% for the smaller jewellery store customers.
+
+This will also make Benchmark less dependent on the aging sales experts who are otherwise hard to replace.
+
+### Success Criteria 
+
+The project for the sales enablement model will be considered a success if the profit for Benchmark Rings, attributed to the difference in decisons by the model for customer qualification and credit line extension, goes up by 10%.  
+
+Also this has a potential for improveing the pay roll if the model proves to exceed expert quality decision making.
+
+Considering that size of Benchmark's data set, latest generation Intel Xeon Serves with 32 GB of RAM will be good enough to run the model.
+
+### Risk Management
+
+Splitting the existing data into a training set and a test set will help evaluate the validity of the model and contain risk.
+
+ALso during initial deployment of the model, a human vetting of model decision will help alleviate concerns and likely generate more confidence in model performance.
+
+### Model Usage
+
+Model will be primarily used by the sales managers of Benchmark and the president who is an engineer himself and shows keen interest.
+
+Once the model is deployed and validated, model will quantify the risk assessment and estimate the credit rating, when it is absent for a new jewellery store customer. This will replace the ad hoc credit rating assignment by the sales manager. Also based on the model inference, the credit line to customers will be determined. 
+
+This is quite a shift from the sales manager having a free reign in determining the risks and credit worthiness of the customers. It will likely have some resentment. But the president of Benchmark Rings is on board and driving this change. 
+
+### Timeline of Delivery
+
+The preliminary results for this model will be available around 23rd May, 2018.
+
+The results based on validation data set will be done before the course ends on 30th May, 2018.
+
+It will take around 2 weeks to fully deploy and put the model in production.
+
+### Technology and Deployment
+
+#### Code Base and Code Development (IDE)
+R Studio and R libraries will be used for model development.
+
+#### Version Control
+Git will be used for version control.
+
+#### Code Storage / Management
+Github will be used for code storage and management.
+
+#### Deployment / Tracking
+The model will be packaged in a Docker container for easy deployment.
+Also the model performance will be evaluated with new data every week and the model will be updated with version control. New data is generated when new customers are engaged, decisions are made and the profitability and other data of existing and new customers are updated.
+
+
+
+
+
