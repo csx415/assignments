@@ -56,7 +56,11 @@ library('ProjectTemplate')
 load.project()
 ```
 
+### Data Loading
+
 During the load process ProjectTemplate looks through the data directory for files with recognized extensions, such as **.csv** or **.sql**, it will load the files into the memory generally in an R data frame format and assign a variable with the same name as the file name (without the extension).
+
+### Library Loading
 
 Besides automatically loading data into the memory, the ProjectTemplate can also load required libraries for your project such as tidyr, dplyr, stringr, ggplot2, etc. To indicate which libraries you would like to load automatically, you have to edit the libraries `configuration` setting in the **config/global.dcf** file. For example:
 
@@ -68,4 +72,13 @@ If you want to stop auto loading libraries set the following setting to `FALSE`.
 
 In a similar way, you can control data loading as well. The data loading can be turned on or off by setting the `data_loading` to `TRUE` or `FALSE`.
 
+### Munging
+
+With munging turned on the system will execute the files in the `munge` directory sequentially using the order implied by the `sort()` function.
+
+For example, if you wanted to create some aggregates for the data file automatically loaded from the data directory, you would do the following:
+
+1. Create a file with and extension .R and place it into the munge directory (remember all files in this directory will be excuted in an alphabetical order)
+
+2. put a line of code similart to this, assuming the `sales_data` variable is assigned to the data read from the sales_data.csv and this .csv file has a CustomerId column with unique ids for the customers: `customer.count <- ddply(sales_data, c('CustomerId'), nrow)`
 

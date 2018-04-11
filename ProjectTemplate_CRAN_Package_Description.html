@@ -161,12 +161,27 @@ create.project('&lt;name_of_your_project&gt;')</code></pre>
 <pre class="r"><code>setwd('path_to_your_project')
 library('ProjectTemplate')
 load.project()</code></pre>
+<div id="data-loading" class="section level3">
+<h3>Data Loading</h3>
 <p>During the load process ProjectTemplate looks through the data directory for files with recognized extensions, such as <strong>.csv</strong> or <strong>.sql</strong>, it will load the files into the memory generally in an R data frame format and assign a variable with the same name as the file name (without the extension).</p>
+</div>
+<div id="library-loading" class="section level3">
+<h3>Library Loading</h3>
 <p>Besides automatically loading data into the memory, the ProjectTemplate can also load required libraries for your project such as tidyr, dplyr, stringr, ggplot2, etc. To indicate which libraries you would like to load automatically, you have to edit the libraries <code>configuration</code> setting in the <strong>config/global.dcf</strong> file. For example:</p>
 <p><code>libraries: tidyr, dplyr, stringr, ggplot2</code></p>
 <p>If you want to stop auto loading libraries set the following setting to <code>FALSE</code>.</p>
 <p><code>load_libraries: FALSE</code></p>
 <p>In a similar way, you can control data loading as well. The data loading can be turned on or off by setting the <code>data_loading</code> to <code>TRUE</code> or <code>FALSE</code>.</p>
+</div>
+<div id="munging" class="section level3">
+<h3>Munging</h3>
+<p>With munging turned on the system will execute the files in the <code>munge</code> directory sequentially using the order implied by the <code>sort()</code> function.</p>
+<p>For example, if you wanted to create some aggregates for the data file automatically loaded from the data directory, you would do the following:</p>
+<ol style="list-style-type: decimal">
+<li><p>Create a file with and extension .R and place it into the munge directory (remember all files in this directory will be excuted in an alphabetical order)</p></li>
+<li><p>put a line of code similart to this, assuming the <code>sales_data</code> variable is assigned to the data read from the sales_data.csv and this .csv file has a CustomerId column with unique ids for the customers: <code>customer.count &lt;- ddply(sales_data, c('CustomerId'), nrow)</code></p></li>
+</ol>
+</div>
 </div>
 
 
