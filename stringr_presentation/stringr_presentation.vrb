@@ -1,9 +1,10 @@
 \frametitle{EVALUATION OF STRINGR PACKAGE}
 
 \textbf{stringr} recreates base R functions with simpler, more
-consistent syntax.
+consistent syntax. These functions are easy to learn and remember.
 
-\textbf{stringr} functions can be used with the pipe operator.
+\textbf{stringr} functions can be used with the pipe operator, since the
+first argument is always the string. This is very convenient.
 
 \begin{Shaded}
 \begin{Highlighting}[]
