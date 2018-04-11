@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="author" content="Madhuri Kalani" />
+
+<meta name="date" content="2018-04-10" />
+
+<title>Formal Problem Statement: Ad Fraud Detection</title>
+
+
+
+
+
+
+<link href="data:text/css;charset=utf-8,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23header%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%20code%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Formal Problem Statement: Ad Fraud Detection</h1>
+<h4 class="author"><em>Madhuri Kalani</em></h4>
+<h4 class="date"><em>2018-04-10</em></h4>
+
+
+
+<div id="table-of-contents" class="section level2">
+<h2>Table of Contents</h2>
+<p>1 Business Problem Statement</p>
+<p>2 Project Description and Objectives</p>
+<p>3 Stakeholders</p>
+<p>4 Business Value - Benefits of the project</p>
+<p>5 Non-quantifiable benefits associated with project</p>
+<p>6 Success Criteria - Determining the project’s success?</p>
+<p>7 Success Metric</p>
+<p>8 Impacted Areas</p>
+<p>9 Key Dependencies</p>
+<p>10 Project Risks and Mitigation Strategies</p>
+<p>11 If the success metric is not met</p>
+<p>12 If the model performance metric is not met</p>
+<p>13 Users of the model are and how the model will be used</p>
+<p>14 Changes that have to happen within the organization to deploy the model</p>
+<p>15 Risks to model deployment</p>
+<p>16 Schedule / Milestones- Timeline for delivery of the project</p>
+<p>17 Timeline to measure preliminary results of model/analysis performance</p>
+<p>18 Determining whether the model performance is good or bad</p>
+<p>19 Time required to deploy the solutions</p>
+<p>20 Project Communication Plan</p>
+</div>
+<div id="business-problem-statement" class="section level2">
+<h2>1 Business Problem Statement</h2>
+<p>TData (big data services provider) handles 3 billion clicks per day, of which over 90% are fraudulent. They came in contact with a new agency which helped them to detect and prevent ad fraud by installing anti-fraud technology and but soon they started receiving complaints/feedback from users on how ads are often interruptive, annoying and irrelevant. Soon they realized that something was wrong with their technology and digital advertising.</p>
+</div>
+<div id="project-description-and-objectives" class="section level2">
+<h2>2 Project Description and Objectives</h2>
+</div>
+<div id="description" class="section level2">
+<h2>2.1 Description</h2>
+<p>TData (big data services provider) covers 70% of active mobile devices in Japan. They handle 3 billion clicks per day, of which over 90% are fraudulent. The technology they built with the help of an agency was not helpful in filtering the traffic.</p>
+<p>Soon after they started receiving complaints from the app users about irrelevant ad clicks, they setup a team to dive deep into the problem.</p>
+<p>To begin, team also noticed some suspicious activity and decided to evaluate the ad-campaigns.</p>
+<p>The process they want to follow is to track user clicks across their portfolio and identify IP address that produce a lot of clicks but never end up installing the app. The clicks made here are non-human and are generated by (ro)bots which are computer programs that can mimic human clicking patterns and Web surfing.</p>
+<p>These illegitimate bots usually do so with the purpose to delude digital ad metrics and steal from ad-buyers. These bots are employed for malicious intent and are an immense problem for digital ad buyers and the digital ad industry at large.</p>
+<p>Once they have this information, they can block those IP addresses and devices. The objective here is also to find out which users actually end up installing the app.</p>
+</div>
+<div id="objectives" class="section level2">
+<h2>2.2 Objectives</h2>
+<ol style="list-style-type: decimal">
+<li><p>Identify IP address that produce a lot of clicks but never end up installing the app.</p></li>
+<li><p>Users actually end up installing the app.</p></li>
+<li><p>Mr. Mazel wants to ensure that $10 million digital budget was being used most effectively.</p></li>
+<li><p>Reduce 11% rate of fraud traffic by atleast 50% to start with from the already-filtered traffic</p></li>
+</ol>
+</div>
+<div id="stakeholders" class="section level2">
+<h2>3 Stakeholders</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Stakeholder</th>
+<th align="left">Department</th>
+<th align="left">Role</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Mr. Mazel</td>
+<td align="left">Vice President /Sponsor (End User)</td>
+<td align="left">Project Manager and head of the remodeling team</td>
+</tr>
+<tr class="even">
+<td align="left">Ms. Jenny</td>
+<td align="left">Marketing Project Manager</td>
+<td align="left">Project Manager and head of the marketing team. Work closely with Analytics manager of Model development team or data science team.Track the ongoing project, and ensure proposed projct aligns with strategic performance</td>
+</tr>
+<tr class="odd">
+<td align="left">Mr. Hiabc</td>
+<td align="left">Analytics Manager</td>
+<td align="left">Estimate benefits, identify deployment end points, identify business risks.</td>
+</tr>
+<tr class="even">
+<td align="left">Mr. Brick and Mr. Wright</td>
+<td align="left">Model Development team</td>
+<td align="left">Build the model, create necessary documentation for future use, evaluate the model and maintain it</td>
+</tr>
+<tr class="odd">
+<td align="left">Mr. Rana</td>
+<td align="left">Model Deployment Team</td>
+<td align="left">Use feature specification and model spec. documents to operationally deploy the model. Inspect and perform final deployment process</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="business-value---benefits-of-the-project" class="section level2">
+<h2>4 Business Value - Benefits of the project</h2>
+<ol style="list-style-type: decimal">
+<li><p>The end result is no artificial boost of campaign metrics.</p></li>
+<li><p>No waste in advertising budgets.</p></li>
+<li><p>Business users will gain visibility on ad-traffic.</p></li>
+<li><p>Marketing team can track ad-frauds and respond.</p></li>
+<li><p>Process will be streamlined to build reports for marketing head.</p></li>
+</ol>
+</div>
+<div id="non-quantifiable-benefits-associated-with-project" class="section level2">
+<h2>5 Non-quantifiable benefits associated with project</h2>
+<p>Since a model will be build to detect ad-fraud, the team will have clear visibility on the data and will be able to detect fraud in the future by seeing reports.</p>
+<p>They will not have to go through all the campaigns to detect suspicious activity.</p>
+</div>
+<div id="success-criteria---determining-the-projects-success" class="section level2">
+<h2>6 Success Criteria - Determining the project’s success?</h2>
+<ol style="list-style-type: decimal">
+<li><p>The success criteria for this project are if we are able to solve all the problems of this project.</p></li>
+<li><p>We are able to complete the project before 20th June and keep it under budget of $10M.</p></li>
+<li><p>Also, Mr.Mazel is happy to see users actually downloading the apps through reports.</p></li>
+</ol>
+</div>
+<div id="success-metric" class="section level2">
+<h2>7 Success Metric</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Deliverables</th>
+<th align="left">Expected_Result</th>
+<th align="left">SuccessOrFailure</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">% decrease in Ad fraud traffic</td>
+<td align="left">50-70%</td>
+<td align="left">Unknown</td>
+</tr>
+<tr class="even">
+<td align="left">% increase in users actually downloading the mobile app</td>
+<td align="left">50-80%</td>
+<td align="left">Unknown</td>
+</tr>
+<tr class="odd">
+<td align="left">Requirements are understood by the model development team</td>
+<td align="left">-</td>
+<td align="left">Unknown</td>
+</tr>
+<tr class="even">
+<td align="left">Appropriate models are suggested by the team</td>
+<td align="left">-</td>
+<td align="left">Unknown</td>
+</tr>
+<tr class="odd">
+<td align="left">Model is well executed and performing as required</td>
+<td align="left">-</td>
+<td align="left">Unknown</td>
+</tr>
+<tr class="even">
+<td align="left">A/B test are performed before deployment</td>
+<td align="left">-</td>
+<td align="left">Unknown</td>
+</tr>
+<tr class="odd">
+<td align="left">Deployment team understands the requirements</td>
+<td align="left">-</td>
+<td align="left">Unknown</td>
+</tr>
+<tr class="even">
+<td align="left">Code is well deployed</td>
+<td align="left">-</td>
+<td align="left">Unknown</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="key-dependencies" class="section level2">
+<h2>8 Key Dependencies</h2>
+<ol style="list-style-type: decimal">
+<li><p>Availability of dataset required to build a model</p></li>
+<li><p>Availability of Model Developers listed for this project</p></li>
+<li><p>Availability of Control-M team to schedule a job</p></li>
+<li><p>Avallability of Application development team</p></li>
+<li><p>Availability of respective managers for approvals required through the project</p></li>
+<li><p>Availability Deployment team to deploy the solution</p></li>
+</ol>
+</div>
+<div id="impacted-areas" class="section level2">
+<h2>9 Impacted Areas</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="left">S_no</th>
+<th align="left">Communication_Plan</th>
+<th align="left">Risk_Involved</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">Appoint special skilled team to handle this project</td>
+<td align="left">High</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">It may affect other project timelines and bandwidth of resources</td>
+<td align="left">Medium</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">You will not be able to see immediate results</td>
+<td align="left">Medium</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">Reports will not be ready for review anytime sooner</td>
+<td align="left">Medium</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left">Build new application and control M jobs to pull ad-campaigns data</td>
+<td align="left">Low</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="project-risks-and-mitigation-strategies" class="section level2">
+<h2>10 Project Risks and Mitigation Strategies</h2>
+<ol style="list-style-type: decimal">
+<li>$10M digital ad spending is at risk as there are no technical suggestions/solution formulated on how the problem will be solved.</li>
+<li>Additional cost of resources, time and technology.</li>
+<li>Build a new application to support the model build by team, it will require a series of approval from the higher management and thus will add to lead time.</li>
+<li>Involvement of Control-M team to setup an automated job of implementing model.</li>
+<li>Involvement of sftp team so as to setup a connection between marketing team to pull the files from their system</li>
+</ol>
+</div>
+<div id="if-the-success-metric-is-not-met" class="section level2">
+<h2>11 If the success metric is not met</h2>
+<p>Since a huge budget is involved in digital advertising, the team will perform tests on the development and sandbox server before pushing the code in production.</p>
+<p>If still the team notices suspicious activity, they will either rollback the code or determine the cause and fix it by applying a patch.</p>
+</div>
+<div id="if-the-model-performance-metric-is-not-met" class="section level2">
+<h2>12 If the model performance metric is not met</h2>
+<ol style="list-style-type: decimal">
+<li><p>Team will work on improving the performance of the model or build a new model.</p></li>
+<li><p>Code will be rolled back until a new patch is implemented if not the work load of Dev-ops team will increase so as to manage the job failure.</p></li>
+<li><p>Analytics Manger will track the work, performance and deliverables.</p></li>
+<li><p>He will also work on the areas which need improvement and lessons learned.</p></li>
+</ol>
+</div>
+<div id="users-of-the-model-are-and-how-the-model-will-be-used" class="section level2">
+<h2>13 Users of the model are and how the model will be used</h2>
+<p>The model will be used by data science/Model Development team and marketing team. They will be working closely to detect the ad fraud taking place with the past ad-campaigns before the marketing team starts to create campaigns for mobile apps</p>
+<p>Using this model, the team can track user profiles and activity.</p>
+<p>Whether the user is human or non-human (bot)</p>
+<p>Point out from reports those IP addresses and devices which are creating multiple fake download/clicks.</p>
+</div>
+<div id="changes-that-have-to-happen-within-the-organization-to-deploy-the-model" class="section level2">
+<h2>14 Changes that have to happen within the organization to deploy the model</h2>
+<ol style="list-style-type: decimal">
+<li><p>There will be no structural changes within the organization.</p></li>
+<li><p>There will be some technical additions to the system such as building a new application to support the project and model development by team.</p></li>
+<li><p>Since we are just building reports for Mr. Mazel to track results of ad-fraud, no additional infrastructure will be required.</p></li>
+<li><p>Mr. Mazel is going to hire a couple of experts to help him make strategic decisions.</p></li>
+</ol>
+</div>
+<div id="risks-to-model-deployment" class="section level2">
+<h2>15 Risks to model deployment</h2>
+<p>The risks involved with Model development could be:</p>
+<ol style="list-style-type: decimal">
+<li>Difficulty to scale up the model with large datasets</li>
+<li>Issue with calibrating the model</li>
+<li>Errors while evaluating the model</li>
+<li>Picking up a wrong model for this project implementation</li>
+</ol>
+</div>
+<div id="schedule-milestones--timeline-for-delivery-of-the-project" class="section level2">
+<h2>16 Schedule / Milestones- Timeline for delivery of the project</h2>
+<p>The project involves 6 phases which are:</p>
+<ol style="list-style-type: decimal">
+<li><p>Inception - March 27th to April 1st, 2018</p></li>
+<li><p>Formalization - April 2nd to April 10th, 2018</p></li>
+<li><p>Model Development - April 10th to May 25th, 2018</p></li>
+<li><p>Model Deployment - May 26th to May 29th, 2018</p></li>
+<li><p>Model Management - May 30th to June 7th, 2018</p></li>
+<li><p>Evaluating Results - June 8th to June 11th, 2018</p></li>
+<li><p>Building Reports - June 12th to June 14th, 2018</p></li>
+</ol>
+</div>
+<div id="timeline-to-measure-preliminary-results-of-modelanalysis-performance" class="section level2">
+<h2>17 Timeline to measure preliminary results of model/analysis performance</h2>
+<p>The team will start evaluating the model performance a week after deployment.</p>
+<p>It will take a week as the team has to support and manage the model to make sure there is no system failure and that the job runs successfully.</p>
+<p>After doing that, they will start building reports and evaluating the results of the model which is in the second week after model deployment.</p>
+</div>
+<div id="determining-whether-the-model-performance-is-good-or-bad" class="section level2">
+<h2>18 Determining whether the model performance is good or bad</h2>
+<p>The results and reports build by the team will help to detemine whether the model is performing well or not.</p>
+</div>
+<div id="time-required-to-deploy-the-solutions" class="section level2">
+<h2>19 Time required to deploy the solutions</h2>
+<p>Usually it will take upto 8-12 hours. Depending upon the availability of Deployment team, the solution will either be deployed in batches or in one go.</p>
+<p>Sometimes, it takes more than you expected due to pending approvals or issue with the scripts or application.</p>
+<p>It is always advisable to keep a window of 2-3 days for the deployment team to deploy the solution.</p>
+</div>
+<div id="project-communication-plan" class="section level2">
+<h2>20 Project Communication Plan</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Focus_Area</th>
+<th align="left">Communication_Plan</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Stakeholder Updates</td>
+<td align="left">Bi-weekly updates given by Ms. Jenny via tele-conference meeting</td>
+</tr>
+<tr class="even">
+<td align="left">Project Manger Updates</td>
+<td align="left">Updates meeting every week (Tuesday)</td>
+</tr>
+<tr class="odd">
+<td align="left">Team Progress/Reports</td>
+<td align="left">Meeting every evening to discuss the updates and any hurdles associated with the project conducted by Analytics Manger for the model development team</td>
+</tr>
+<tr class="even">
+<td align="left">Communication Plan</td>
+<td align="left">Regular meeting on these above mentioned days. Meeting will be conducted in meeting rooms, please book in advance and if none available it will be conducted near manager’s desk. Development team can also discuss problems over Slack project group or email</td>
+</tr>
+<tr class="odd">
+<td align="left">Deployment Team Update</td>
+<td align="left">Deployment team to be notified a month in advance about upcoming deployment or atleast two weeks before the deployment</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
