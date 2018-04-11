@@ -116,13 +116,14 @@ str_subset(fruit, "ap")
   
 **`str_extract()`** returns the first pattern match found in each string, as a vector. (Also **`str_extract_all()`**)
 ```{r}
-str_extract(fruit, "ap")
+# regex for any vowel
+str_extract(fruit, "[aeiou]")
 ```
 
 ## SUBSETTING STRINGS  
   
-**`str_match()`** returns the first pattern match found in each string, as a
-matrix with a column for each () group in pattern.  (Also **`str_match_all()`**)
+**`str_match()`** returns the first pattern match found in each string as a
+matrix with a column for each () group in the pattern.  (Also **`str_match_all()`**)
 ```{r}
 # regex for word "a" or "the" and following word
 str_match(sentences, "(a|the) ([^ ]+)") 
@@ -250,7 +251,9 @@ You can see a complete list of available locales by running `stringi::stri_local
 
 ## ORDERING STRINGS  
   
-**`str_sort()`** sorts a character vector. **`str_order()`** returns the vector of indexes that sorts a character vector. These functions are locale-sensitive.
+**`str_sort()`** sorts a character vector.  
+**`str_order()`** returns the vector of indexes that sorts a character vector.   
+These functions are locale-sensitive.
 ```{r}
 letters
 str_sort(letters, locale = "lt")
@@ -306,13 +309,13 @@ str_split_fixed(fruit, " ", n = 2)
 
 **gsubfn** is used for string matching, substitution and parsing.  
   
-(Note that base R also includes string manipulation functions and pattern matching.)
+(Note that base R also includes string manipulation functions and pattern matching, though these functions can be challenging to learn because they all have different syntaxes.)
 
 ## EVALUATION OF STRINGR PACKAGE  
   
-**stringr** recreates base R functions with simpler, more consistent syntax.  
+**stringr** recreates base R functions with simpler, more consistent syntax. These functions are easy to learn and remember.  
   
-**stringr** functions can be used with the pipe operator.
+**stringr** functions can be used with the pipe operator, since the first argument is always the string. This is very convenient.
 ```{r}
 letters %>% str_c(collapse = "") %>% str_dup(2)
 ```
