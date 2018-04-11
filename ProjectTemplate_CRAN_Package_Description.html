@@ -179,9 +179,26 @@ load.project()</code></pre>
 <p>For example, if you wanted to create some aggregates for the data file automatically loaded from the data directory, you would do the following:</p>
 <ol style="list-style-type: decimal">
 <li><p>Create a file with and extension .R and place it into the munge directory (remember all files in this directory will be excuted in an alphabetical order)</p></li>
-<li><p>put a line of code similart to this, assuming the <code>sales_data</code> variable is assigned to the data read from the sales_data.csv and this .csv file has a CustomerId column with unique ids for the customers: <code>customer.count &lt;- ddply(sales_data, c('CustomerId'), nrow)</code></p></li>
+<li><p>Put a line of code similart to this, assuming the <code>sales_data</code> variable is assigned to the data read from the sales_data.csv and this .csv file has a CustomerId column with unique ids for the customers:</p></li>
 </ol>
+<p><code>customer.count &lt;- ddply(sales_data, c('CustomerId'), nrow)</code></p>
 </div>
+<div id="other-features" class="section level3">
+<h3>Other Features</h3>
+<p>Besides the features mentioned above, ProjectTemplate template offers other features, which all can be turned on or off:</p>
+<ul>
+<li>Cache Loading</li>
+<li>Recursive Loading</li>
+<li>Logging</li>
+<li>As Factors</li>
+<li>Data Tables</li>
+<li>Cache Loaded Data</li>
+<li>Sticky Variables</li>
+</ul>
+</div>
+</div>
+<div id="packages-similar-to-projecttemplate" class="section level2">
+<h2>Packages Similar to ProjectTemplate</h2>
 </div>
 
 
