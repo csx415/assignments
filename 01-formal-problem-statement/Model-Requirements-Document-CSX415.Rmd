@@ -76,11 +76,11 @@ We will also ensure that the packaging for data preprocessing and model executio
 We will also be documenting the code with detailed comments on Github check ins, to share insight on the model development to help future engagement of other software engineers in advancing this model.
 
 #### Key Roles
-Management : President of Benchmark
-Owner : Software Manager 
-Users : Sales Managers of Benchmark
-Other Stakeholders : Software engineering team, External consultants
-SMEs : Benchmark does not have a resident Data Scientist. Till Benchmark finds enough value in hiring full time data scientist, it will bank on consultant data scientists to fill in the role
+- Management : President of Benchmark
+- Owner : Software Manager 
+- Users : Sales Managers of Benchmark
+- Other Stakeholders : Software engineering team, External consultants
+- SMEs : Benchmark does not have a resident Data Scientist. Till Benchmark finds enough value in hiring full time data scientist, it will bank on consultant data scientists to fill in the role
 
 
 ### Benefit Estimation
