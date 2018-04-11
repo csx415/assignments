@@ -34,15 +34,6 @@ The **stringr** package, written by Hadley Wickham and included in the tidyverse
 - ordering strings  
 - joining and splitting strings  
 
-## DETECTING MATCHES   
-  
-**stringr** offers four functions for **detecting matches**, all with the same two arguments (string, pattern).   
-  
-- **`str_detect()`**  
-- **`str_which()`**  
-- **`str_count()`**  
-- **`str_locate()`**  
-
 ## DETECTING MATCHES  
   
 **`str_detect()`** detects the presence of a pattern match in a string.  
@@ -70,15 +61,6 @@ str_count(fruit, "ap")
 ```{r}
 str_locate(fruit, "ap")
 ```
-
-## DETECTING MATCHES
-
-Note that there are four engines for pattern matching.  
-  
-- **`regex()`**: regular expression, the default  
-- **`fixed()`**: match exact bytes  
-- **`coll()`**: match human letters  
-- **`boundary()`**: match boundaries
  
 ## **stringr** is good for  
   
@@ -88,15 +70,6 @@ Note that there are four engines for pattern matching.
 - mutating strings  
 - ordering strings  
 - joining and splitting strings  
-
-## SUBSETTING STRINGS   
-  
-**stringr** offers four functions for **subsetting strings**.  
-  
-- **`str_sub()`**  
-- **`str_subset()`**  
-- **`str_extract()`**  
-- **`str_match()`**  
 
 ## SUBSETTING STRINGS  
   
@@ -116,8 +89,7 @@ str_subset(fruit, "ap")
   
 **`str_extract()`** returns the first pattern match found in each string, as a vector. (Also **`str_extract_all()`**)
 ```{r}
-# regex for any vowel
-str_extract(fruit, "[aeiou]")
+str_extract(fruit, "[aeiou]") # regex for any vowel
 ```
 
 ## SUBSETTING STRINGS  
@@ -125,8 +97,7 @@ str_extract(fruit, "[aeiou]")
 **`str_match()`** returns the first pattern match found in each string as a
 matrix with a column for each () group in the pattern.  (Also **`str_match_all()`**)
 ```{r}
-# regex for word "a" or "the" and following word
-str_match(sentences, "(a|the) ([^ ]+)") 
+str_match(sentences, "(a|the) ([^ ]+)") # regex for "a" or "the" + next word
 ```
 
 
@@ -139,14 +110,6 @@ str_match(sentences, "(a|the) ([^ ]+)")
 - ordering strings  
 - joining and splitting strings  
 
-## MANAGING LENGTHS   
-  
-**stringr** offers four functions for **managing lengths** of strings.  
-  
-- **`str_length()`**  
-- **`str_pad()`**  
-- **`str_trunc()`**  
-- **`str_trim()`**  
 
 ## MANAGING LENGTHS   
   
@@ -192,16 +155,6 @@ str_trim(y, "right")
 
 ## MUTATING STRINGS  
   
-**stringr** offers five functions for **mutating strings**.   
-  
-- **`str_sub()`**  
-- **`str_replace()`**  
-- **`str_to_lower()`**  
-- **`str_to_upper()`** 
-- **`str_to_title()`** 
-
-## MUTATING STRINGS  
-  
 **`str_sub() <- value`** replaces substrings by identifying the substrings with `str_sub()` and assigning into the results.
 ```{r}
 fruit.1 <- c("apple", "banana", "orange")
@@ -242,12 +195,6 @@ You can see a complete list of available locales by running `stringi::stri_local
 - joining and splitting strings 
  
 
-## ORDERING STRINGS  
-  
-**stringr** offers two functions for **ordering strings**.   
-  
-- **`str_order()`**  
-- **`str_sort()`**  
 
 ## ORDERING STRINGS  
   
@@ -270,14 +217,6 @@ str_order(letters, locale = "lt")
 - ordering strings  
 - **joining and splitting strings** 
  
-
-## JOINING AND SPLITTING STRINGS  
-  
-**stringr** offers three functions for **joining and splitting strings**.   
-  
-- **`str_c()`**  
-- **`str_dup()`**  
-- **`str_split()`**
 
 ## JOINING AND SPLITTING STRINGS  
   
@@ -320,5 +259,4 @@ str_split_fixed(fruit, " ", n = 2)
 letters %>% str_c(collapse = "") %>% str_dup(2)
 ```
 
-**It's great!**
 

@@ -16,5 +16,3 @@ first argument is always the string. This is very convenient.
 ## [1] "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
 \end{verbatim}
 
-\textbf{It's great!}
-
