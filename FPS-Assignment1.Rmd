@@ -1,0 +1,58 @@
+---
+title: "Formal Problem Statement-CSX415 Project-Assignment1"
+author:
+- Anupama Navaneethan
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: 
+  html_document: 
+    theme: journal
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+
+## Overview 
+
+Indigo bank is seeing an increasing trend in number of non-performing loans, which is not profitable to the bank. Using historical loan data create a model to improve the quality of credit approval decisions.
+
+## Scope
+
+The goal of this project is to assess if a loan application should be approved or rejected based on the historical data on non-performing loans. This is a classification problem and a model will be built based on extracting patterns on existing data points on customers who have defaulted in the past.
+
+## Project Goals
+
+* Identify the percentage of performing VS non-performing loans from historical data. Non-performing loans are ones which are delinquent or the borrower has not made scheduled payments for at least 90 Days.
+
+* Identify the changes to be made to loans approval parameters to decrease percentage of non performing loans.
+
+* Using the new parameters create an automated predictive model that will decide if the loan should be approved or not.
+
+* Create an interface where loan origination personnel can input applicant information and view the suggested credit decision. The interface will be using the model to predict the decision.
+
+* Determine the percentage of non-performing loans that could have been potentially rejected based on the new model. 
+
+## Data Resources and Modeling strategy
+
+The lending club loan data set from 2007-2011 will be used to create the model. The data set contains loan applications that were accepted as well as rejected during the 2007-2011 period. The loan status column from “accepted” subset will be used to identify if a loan is NPL or not. 
+
+Existing data points such as a FICO score ,loan amount ,age ,employer information ,income ,debt to income ratio of the customer will be analyzed to determine the chances of a Loan to default.
+
+We will be exploring models such as below to predict most accurate results
+
+* Logistic regression
+* Decision Trees
+* Support Vector Machine.
+
+60% of the data will be used as the training data set and the rest will be used as test data.
+
+## Project Time Line
+Deliverable | Date
+------------- | -------------
+Define Formal Problem Statement document | 10-April-2018
+Model Development  | 1-May-2018
+Model Deployment   | 8-May-2018
+Model Management/Monitoring | 22-May-2018
+Final Sign Off | 29-May-2018
