@@ -80,7 +80,7 @@ For example, if you wanted to create some aggregates for the data file automatic
 
 1. Create a file with and extension .R and place it into the munge directory (remember all files in this directory will be excuted in an alphabetical order)
 
-2. Put a line of code similart to this, assuming the `sales_data` variable is assigned to the data read from the sales_data.csv and this .csv file has a CustomerId column with unique ids for the customers: 
+2. Put a line of code similart to this, assuming the `salesdata` variable is assigned to the data read from the sales_data.csv and this .csv file has a CustomerId column with unique ids for the customers: 
 
 `customer.count <- ddply(salesdata, c('CustomerId'), nrow)`
 
