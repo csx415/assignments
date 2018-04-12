@@ -82,7 +82,7 @@ For example, if you wanted to create some aggregates for the data file automatic
 
 2. Put a line of code similart to this, assuming the `sales_data` variable is assigned to the data read from the sales_data.csv and this .csv file has a CustomerId column with unique ids for the customers: 
 
-`customer.count <- ddply(sales_data, c('CustomerId'), nrow)`
+`customer.count <- ddply(salesdata, c('CustomerId'), nrow)`
 
 ### Other Features
 
