@@ -128,23 +128,24 @@ $(document).ready(function () {
 <div id="client-departamento-de-salud-de-puerto-rico" class="section level4">
 <h4>Client: Departamento de Salud de Puerto Rico</h4>
 </div>
-<div id="date-10-april-2018" class="section level4">
-<h4>Date: 10 April 2018</h4>
+<div id="date-11-april-2018" class="section level4">
+<h4>Date: 11 April 2018</h4>
 </div>
-<div id="by-gwen-rino-decisions415.1" class="section level4">
-<h4>By: Gwen Rino, Decisions415.1</h4>
+<div id="by-gwen-rino" class="section level4">
+<h4>By: Gwen Rino</h4>
 </div>
-<div id="description-of-problem" class="section level2">
-<h2>Description of Problem</h2>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
 <hr />
-<p>Dengue is a mosquito-borne virus that causes both dengue fever and the more severe dengue hemorrhagic fever (DHF). Incidence of the virus varies with the weather, and global climate change seems to be affecting both the range and the rate of the disease.</p>
-<p>The public health department of Puerto Rico must make weekly decisions about staffing levels for local clinics that treat victims of dengue fever. With a predictive model that accurately anticipates the weekly number of local cases of dengue disease, the health department’s leadership will be able to optimize the deployment of health care workers when and where they are needed.</p>
-<p><em>Note that this is an imagined problem for the purposes of the assignment, and while I have grounded the project in factual information about dengue virus, details about the needs of the Puerto Rican Department of Health are invented.</em></p>
+<p>This goal of this project is to increase efficiency in staffing San Juan’s public health clinic for the treatment of dengue disease, thus saving the Departamento de Salud de Puerto Rico an estimated $() annually.</p>
+<p>The approach is to create a model that predicts the number of weekly cases of dengue disease so that necessary staffing levels can be anticipated, reducing incidences of overstaffing while also meeting minimum staffing requirements without overdependence on costly per diem nurses.</p>
+<p><em>Note that this is an imagined problem for the purposes of the assignment, and while I have grounded the project in factual information about dengue virus, details about the hiring practices and needs of the Puerto Rican Department of Health are invented.</em></p>
 </div>
-<div id="why-address-this-problem" class="section level2">
-<h2>Why Address This Problem</h2>
+<div id="background" class="section level2">
+<h2>Background</h2>
 <hr />
 <p><strong>The big picture: dengue’s impact</strong></p>
+<p>Dengue is a mosquito-borne virus that causes both dengue fever and the more severe dengue hemorrhagic fever (DHF). Incidence of the virus varies with the weather, and global climate change seems to be affecting both the range and the rate of the disease.</p>
 <p>There are about 96 million clinical manifestations of dengue disease worldwide each year, and that number is growing, especially in the Americas. The virus that causes dengue can induce symptoms such as fever, headache, liver dysfunction, and muscle, joint, and abdominal pain. DHF, a less common but more severe dengue infection, is a hemorrhagic illness that is often fatal, especially in children. There is no medication or treatment for dengue disease beyond rest and fluids. However, an early clinical diagnosis and fluid replacement therapy can mitigate the severity of the illness and, in the case of DHF, save lives.</p>
 <p>According to a study in <em>The Lancet Infectious Diseases</em>, the annual global cost of dengue disease is nearly $9 billion in hospitalization, ambulatory treatment, and lost wages. The global cost of the disease, and the human suffering that cost represents, can be addressed by the smart and efficient use of public health resources.</p>
 <p>References:<br />
@@ -152,15 +153,21 @@ $(document).ready(function () {
 <a href="https://ehp.niehs.nih.gov/118-a117/" class="uri">https://ehp.niehs.nih.gov/118-a117/</a><br />
 <a href="http://www.thelancet.com/journals/laninf/article/PIIS1473-3099%2816%2900146-8/fulltext">http://www.thelancet.com/journals/laninf/article/PIIS1473-3099%2816%2900146-8/fulltext</a></p>
 <p><strong>The local picture: optimizing public health resources</strong></p>
-<p>The health department in Puerto Rico must operate within budgetary limits, allocating resources to have the biggest possible positive impact on public health. Dengue management costs include vector control (mosquito abatement), vaccine research, public education, and direct patient care. Among these, the need for direct patient care is the most variable because the local incidence of disease varies significantly from week to week, from no diagnoses at all to several hundred cases per week during periods of outbreak.</p>
-<p>The accepted minimum ratio of care givers to dengue patients (ambulatory and hospitalized) is 1:9. A model that predicts the number of weekly cases of dengue disease, and thus staffing requirements for health clinics, would allow public health administrators to optimize the allocation of resources for staffing. Health clinics can be adequately staffed to meet patient needs during dengue outbreaks, and health care workers can be deployed to other areas and projects during relatively quiet weeks.</p>
+<p>The Departamento de Salud de Puerto Rico (health department of Puerto Rico) must operate within budgetary limits, allocating resources to have the biggest possible positive impact on public health. Dengue management costs include vector control (mosquito abatement), vaccine research, public education, and direct patient care. Among these, the need for direct patient care is the most variable because the local incidence of disease varies significantly from week to week, from no diagnoses at all to several hundred cases per week during periods of outbreak.</p>
+<p>The accepted minimum ratio of care givers to dengue patients (ambulatory and hospitalized) is 1:9. The current staffing plan places 2 health care workers on site year-round, increases that level to () during the () weeks of the (season) when the rate of dengue disease often increases, and hires per diem nurses during outbreaks in order to meet the minimum required ratio.</p>
+<p>Using this plan:<br />
+- The clinic is overstaffed on average () weeks per year at a cost of $500/week/extra staff member, for a total of $()/year.<br />
+- The clinic is understaffed on average () weeks per year, with shortages made up by per diem nurses at a cost of $525/week/year, for a total of $()/year.</p>
+<p>A model that predicts the number of weekly cases of dengue disease with adequate accuracy would allow public health administrators to optimize the allocation of resources for staffing, deploying health care workers when and where they are needed.</p>
 <p>It is worth noting that as global climate change shifts the range and incidence of dengue and other mosquito-borne diseases, public health resources will be increasingly stretched. Any model that helps makes decisions about the efficient and effective allocation of public health resources will be increasingly essential in the coming years and decades.</p>
+<p>Reference:<br />
+<a href="https://nursesalaryguide.net/nurse-salary-in-puerto-rico/" class="uri">https://nursesalaryguide.net/nurse-salary-in-puerto-rico/</a></p>
 </div>
 <div id="key-roles" class="section level2">
 <h2>Key Roles</h2>
 <hr />
 <p>Model creation and deployment:<br />
-- Gwen Rino, Decisions415.1</p>
+- Gwen Rino</p>
 <p>Model users:<br />
 - Departamento de Salud de Puerto Rico administration team</p>
 <p>Subject matter experts:<br />
@@ -175,52 +182,40 @@ $(document).ready(function () {
 <h2>Success Metrics</h2>
 <hr />
 <p><strong>Project success definition:</strong><br />
-This project will be a success if the health department’s predicted number of required workers per week falls within the acceptable range (defined below) of staff-to-patient ratios 90% of the time.</p>
-<p>Notes:<br />
-- The required minimum ratio of health care worker per dengue patient is 1:9.<br />
-- A ratio of health care worker per dengue patient greater than 1:8 is considered overstaffing.<br />
-- Therefore, the acceptable range of staff-to-patient ratios is one health care worker for every 8-9 dengue patients.</p>
+This project will be a success if the health department’s predicted number of required staff per week falls within the acceptable range (1 health care worker for every 8-9 dengue patients) 95% of the time.</p>
 <p><strong>Required model performance:</strong></p>
-<p><em>I put in significant time on this question, but I could not figure out how to determine a measure of model performance that would determine whether the model could be used to meet the project success definition.</em></p>
-<p><em>The model will be a regression, since the target variable is quantitative (number of dengue cases/week). I believe that the best metric of the model’s performance will be Mean Absolute Error (MAE) because in this problem the size of an error is essentially proportional to its undesirability (so squaring the errors (RMSE) is unnecessary), and also because MAE is easy to interpret (in this problem, how many weekly dengue cases were we off by?).</em></p>
-<p><em>Here’s what I’ve figured out about my strategy.</em><br />
-* <em>Actual number of cases/week = x</em><br />
-* <em>Model predicted number of cases/week = x-hat</em><br />
-* <em>Actual required number of staff that week = the least natural number &gt; (x/9) = a</em><br />
-* <em>The least natural number &gt; (x-hat/9) = est. min. number of staff that week = a-hat</em><br />
-* <em>The least natural number &gt; (x-hat/8) = est. max. number of staff that week = b-hat</em><br />
-* <em>(a-hat + b-hat)/2 rounded to nearest integer = recommended number of staff = c-hat</em></p>
-<p><em>I can see that each value of c-hat will be within the acceptable range for (c-hat + 8) different values of x. That gives me a feel for how much play there is in the model and maybe some sense of the acceptable error for x-hat. But I don’t know how to translate this feel for the imagined model into a precise MAE for x-hat that would yield a 90% success rate on the staffing decision.</em></p>
-<p><em>Or perhaps I should be thinking of the error as the difference between c-hat and a (the actual minimum required number of staff) rather than between x-hat and x? Am I modeling the number of cases of dengue, or the number of health care staff required? Perhaps I am conflating the model (which predicts dengue cases) with the deployment (which recommends how many staff will be needed)?</em></p>
-<p><em>I would appreciate some guidance on this task!</em></p>
+<p>Our initial goal for model performance is an Mean Absolute Error (MAE) &lt;= 4.0. This level of performance is our estimate of what is required to achieve project success.</p>
 </div>
 <div id="risk-estimates" class="section level2">
 <h2>Risk Estimates</h2>
 <hr />
 <p><strong>If the project success metric is not met:</strong></p>
-<p>There is an efficiency cost to the health department each time the clinic is over- or understaffed. The cost of overstaffing by one person is the weekly wage of a health care worker who wasn’t needed. The cost of understaffing by one person is the weekly pay rate of a per diem nurse hired to meet the required minimum ratio. This cost can be estimated at $500/incidence based on the average weekly wage of a nurse in Puerto Rico.</p>
-<p>Reference: <a href="https://nursesalaryguide.net/nurse-salary-in-puerto-rico/" class="uri">https://nursesalaryguide.net/nurse-salary-in-puerto-rico/</a></p>
+<p>There is an efficiency cost to the health department each time the clinic is over- or understaffed. The cost of overstaffing by one person is the weekly wage of a health care worker who wasn’t needed ($500/week/extra staff person). The cost of understaffing by one person is the weekly pay rate of a per diem nurse hired to meet the required minimum ratio ($525/week/per diem nurse).</p>
 <p><strong>If the model requirements are not met:</strong></p>
-<p>If the model performance metric is not met, then the model cannot predict the number of weekly dengue cases with adequate accuracy to confidently plan clinic staffing levels. The project goals will need to be revisited and revised.</p>
+<p>If the model performance metric (MAE &lt;= 4.0) is not met, then the model cannot predict the number of weekly dengue cases with adequate accuracy to confidently plan clinic staffing levels. The project goals will need to be revisited and revised.</p>
 </div>
 <div id="model-deployment" class="section level2">
 <h2>Model Deployment</h2>
 <hr />
 <p>The model will be deployed as a tool that outputs predicted weekly cases of dengue disease and the coinciding recommended number of clinic staff to engage (that is, the whole number average of the minimum and maximum number of staff that meet the acceptable staff-to-patient ratios for the predicted number of patients).</p>
-<p>This model deployment requires a new system for making staffing decisions. Health department administrators, who will be the users of the model, will need training in how to use the new system. Health care workers may be resistant to the new system if it requires them to be more flexible about their weekly work assignments than they are accustomed to. The model may require extra reliance on a pool of available per diem nurses to meet required staffing minimums.</p>
+<p>This model deployment requires a new system for making staffing decisions. Health department administrators, who will be the users of the model, will need training in how to use the new system. Health care workers may be resistant to the new system if it requires them to be more flexible about their weekly work assignments than they are accustomed to.</p>
 </div>
 <div id="timeline" class="section level2">
 <h2>Timeline</h2>
 <hr />
 <p>This project is undertaken in the context of the UC Extension course CompSciX415.1, which runs through May 30, 2018. This requires a compressed timeline that will surely be influenced by the instructor’s plans for the course. An estimated timeline follows:</p>
 <p><strong>Phase One</strong><br />
-This Formal Problem Statement assignment addresses the Inception and Formalization phases of the project. I hope we will receive feedback on our work and have the opportunity to revise. Both parties should be in agreement about the details of the Formal Problem Statement <em>by April 18.</em></p>
+This Formal Problem Statement assignment addresses the Inception and Formalization phases of the project. All parties should be in agreement about the details of the Formal Problem Statement <em>by April 18.</em></p>
 <p><strong>Phase Two</strong><br />
 The next phase is Model Development. After working on data management for a week, I expect to have preliminary results of the model <em>by May 2</em> and to have determined whether the model meets the performance requirements by <em>May 16.</em></p>
 <p><strong>Phase Three</strong><br />
 Model Deployment will occupy the next two weeks and be complete <em>by May 23.</em></p>
 <p><strong>Phase Four</strong><br />
 A plan for the final stage, Model Management, will be in place <em>by May 30.</em></p>
+</div>
+<div id="estimated-cost-of-project" class="section level2">
+<h2>Estimated cost of project</h2>
+<hr />
 </div>
 
 
