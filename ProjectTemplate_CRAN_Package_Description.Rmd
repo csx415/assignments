@@ -20,7 +20,7 @@ ProjectTemplate is a system for automating the thoughtless parts of a data analy
 * Loading all of your data sets into memory.
 * Munging and preprocessing your data into a form that's suitable for analysis.
 
-More details can be obtained from the [CRAN](https://cran.r-project.org/web/packages/ProjectTemplate/index.html) package web site.
+More details can be obtained from the [CRAN](https://cran.r-project.org/web/packages/ProjectTemplate/index.html) package site or from the [Project](http://projecttemplate.net/) web site.
 
 
 ## Installation
