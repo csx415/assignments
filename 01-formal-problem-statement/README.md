@@ -50,6 +50,7 @@ template is an asset you are developing that you can use in your career.
 
  - [Reporting with R Markdown](https://www.datacamp.com/courses/reporting-with-r-markdown)
  - [Document Template](https://rmarkdown.rstudio.com/developer_document_templates.html)
+   - [Useful Tutorial](http://ismayc.github.io/ecots2k16/template_pkg/)
 
 
 ## Background
