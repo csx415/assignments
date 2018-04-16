@@ -1,0 +1,72 @@
+---
+title: "Formal Problem Statement"
+output: html_document
+---
+ 
+```{r load_packages, warning=FALSE, message=FALSE, echo=FALSE}
+library(tidyverse)
+library(knitr)
+```
+ 
+  
+#### Project Name: 
+#### Client: 
+#### Date: `r format(Sys.time(), '%d %B %Y')`
+#### By: Gwen Rino
+
+## Overview
+***
+
+
+## Background  
+***
+  
+
+
+## Key Roles
+***
+  
+
+
+## Success Metrics
+***
+  
+**Project success definition:**  
+
+  
+**Required model performance:**  
+
+
+## Risk Estimates
+***
+  
+**If the project success metric is not met:**  
+
+
+**If the model requirements are not met:**
+
+
+
+## Model Deployment
+***
+
+
+  
+
+## Timeline
+***
+
+**Phase One: Inception**  
+
+**Phase Two: Formalization**  
+
+**Phase Three: Model Development**  
+
+**Phase Four: Model Deployment**  
+
+**Phase Two: Model Management**  
+
+## Estimated cost of project
+***
+
+To be determined.

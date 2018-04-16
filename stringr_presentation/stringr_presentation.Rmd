@@ -1,0 +1,262 @@
+---
+title: "THE STRINGR PACKAGE"
+subtitle: "by Gwen Rino"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: 
+  beamer_presentation:
+    theme: Madrid
+---
+```{r echo=FALSE}
+library(stringr)
+```
+
+## THE STRINGR PACKAGE
+
+The **stringr** package, written by Hadley Wickham and included in the tidyverse, provides a set of internally consistent tools for working with character strings in R.  
+  
+ 
+## **stringr** is good for  
+  
+- detecting matches in strings  
+- subsetting strings  
+- managing lengths of strings  
+- mutating strings  
+- joining and splitting strings  
+- ordering strings  
+
+
+## **stringr** is good for  
+  
+- **detecting matches in strings**  
+- subsetting strings  
+- managing lengths of strings  
+- mutating strings  
+- ordering strings  
+- joining and splitting strings  
+
+## DETECTING MATCHES  
+  
+**`str_detect()`** detects the presence of a pattern match in a string.  
+```{r}
+str_detect(fruit, "ap")
+```
+
+## DETECTING MATCHES  
+  
+**`str_which()`** finds the indexes of strings that contain a pattern match.  
+```{r}
+str_which(fruit, "ap")
+```
+
+## DETECTING MATCHES  
+  
+**`str_count()`** counts the number of matches in a string.  
+```{r}
+str_count(fruit, "ap")
+```
+
+## DETECTING MATCHES  
+  
+**`str_locate()`** locates the positions of the first pattern match in a string. (Also **`str_locate_all()`**)
+```{r}
+str_locate(fruit, "ap")
+```
+ 
+## **stringr** is good for  
+  
+- detecting matches in strings  
+- **subsetting strings**  
+- managing lengths of strings  
+- mutating strings  
+- ordering strings  
+- joining and splitting strings  
+
+## SUBSETTING STRINGS  
+  
+**`str_sub()`** extracts substrings from a character vector. Arguments are (string, start, end).  
+```{r}
+str_sub(fruit, 1, 3)
+```
+
+## SUBSETTING STRINGS  
+  
+**`str_subset()`** returns only the strings that contain a pattern match. 
+```{r}
+str_subset(fruit, "ap")
+```
+
+## SUBSETTING STRINGS  
+  
+**`str_extract()`** returns the first pattern match found in each string, as a vector. (Also **`str_extract_all()`**)
+```{r}
+str_extract(fruit, "[aeiou]") # regex for any vowel
+```
+
+## SUBSETTING STRINGS  
+  
+**`str_match()`** returns the first pattern match found in each string as a
+matrix with a column for each () group in the pattern.  (Also **`str_match_all()`**)
+```{r}
+str_match(sentences, "(a|the) ([^ ]+)") # regex for "a" or "the" + next word
+```
+
+
+## **stringr** is good for  
+  
+- detecting matches in strings  
+- subsetting strings   
+- **managing lengths of strings**  
+- mutating strings  
+- ordering strings  
+- joining and splitting strings  
+
+
+## MANAGING LENGTHS   
+  
+**`str_length()`** returns the width of strings (i.e. the number of characters).
+```{r}
+str_length(fruit)
+```
+
+## MANAGING LENGTHS  
+  
+**`str_pad`** pads strings to a constant width. 
+```{r}
+str_pad(fruit, 15, "left")
+```
+
+## MANAGING LENGTHS  
+  
+**`str_trunc`** truncates the width of strings, replacing content with ellipsis. 
+```{r}
+str_trunc("Thisstringisquitelong", 16, "right")
+```
+
+## MANAGING LENGTHS  
+  
+**`str_trim`** trims white space from the start or end of a string. 
+```{r}
+y <- c("   a", "b   ", "  c  ")
+str_trim(y, "both")
+str_trim(y, "left")
+str_trim(y, "right")
+```
+
+
+## **stringr** is good for  
+  
+- detecting matches in strings  
+- subsetting strings   
+- managing lengths of strings   
+- **mutating strings**  
+- ordering strings  
+- joining and splitting strings  
+
+
+## MUTATING STRINGS  
+  
+**`str_sub() <- value`** replaces substrings by identifying the substrings with `str_sub()` and assigning into the results.
+```{r}
+fruit.1 <- c("apple", "banana", "orange")
+str_sub(fruit.1, 3, 4) <- "xx" 
+fruit.1
+```
+
+## MUTATING STRINGS  
+  
+**`str_replace()`** replaces the first matched pattern in each string. (Also **`str_replace_all()`**)
+```{r}
+str_replace(fruit.1, "a", "Q")
+```
+
+## MUTATING STRINGS  
+  
+```{r}
+y <- "ZEN and the ART of motorcycle maintenance"
+str_to_lower(y)
+str_to_upper(y)
+str_to_title(y)
+```
+***
+Some stringr functions, including `str_to_lower()`, `str_to_upper()`, and `str_to_title()`, are locale-sensitive, which means that they can perform differently to accommodate different languages.  
+  
+The default is always English. You can accommodate different languages by setting the `locale` argument to a two letter ISO-639-1 code.  
+  
+You can see a complete list of available locales by running `stringi::stri_locale_list()`.
+
+
+## **stringr** is good for  
+  
+- detecting matches in strings  
+- subsetting strings   
+- managing lengths of strings   
+- mutating strings   
+- **ordering strings**  
+- joining and splitting strings 
+ 
+
+
+## ORDERING STRINGS  
+  
+**`str_sort()`** sorts a character vector.  
+**`str_order()`** returns the vector of indexes that sorts a character vector.   
+These functions are locale-sensitive.
+```{r}
+letters
+str_sort(letters, locale = "lt")
+str_order(letters, locale = "lt")
+```
+
+ 
+## **stringr** is good for  
+  
+- detecting matches in strings  
+- subsetting strings   
+- managing lengths of strings   
+- mutating strings   
+- ordering strings  
+- **joining and splitting strings** 
+ 
+
+## JOINING AND SPLITTING STRINGS  
+  
+**`str_c()`** joins strings.
+```{r}
+letters
+str_c(letters, collapse = "")
+```
+
+## JOINING AND SPLITTING STRINGS  
+  
+**`str_dup()`** repeats strings.
+```{r}
+str_dup("foo", 3)
+```
+
+## JOINING AND SPLITTING STRINGS  
+  
+**`str_split_fixed()`** splits a vector of strings (splitting at occurrences of a pattern match) and returns a matrix of substrings. (**`str_split()`** returns substrings as a list.)
+```{r}
+str_split_fixed(fruit, " ", n = 2)
+```
+
+## SIMILAR PACKAGES  
+  
+**stringi** allows for fast, correct, consistent, portable, convenient character string/text processing in every locale and any native encoding. (**stringr** actually a set of wrappers around **stringi**.)  
+  
+**stringdist** implements approximate string matching. 
+
+**gsubfn** is used for string matching, substitution and parsing.  
+  
+(Note that base R also includes string manipulation functions and pattern matching, though these functions can be challenging to learn because they all have different syntaxes.)
+
+## EVALUATION OF STRINGR PACKAGE  
+  
+**stringr** recreates base R functions with simpler, more consistent syntax. These functions are easy to learn and remember.  
+  
+**stringr** functions can be used with the pipe operator, since the first argument is always the string. This is very convenient.
+```{r}
+letters %>% str_c(collapse = "") %>% str_dup(2)
+```
+
+
