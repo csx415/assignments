@@ -45,5 +45,16 @@ FPS Should:
 
 
 ## NOTES
-
- - ...
+ 
+ - Solid effort.
+ 
+ - Always lead with the lede... state the most important thing first, e.g. 
+ 
+    Accurate predictions of customer can increase profits on smaller jewelery
+    stores by 20%.
+    
+ - You do not have to and should not include technical details of how the model 
+   are to be built, how code is managed or what hardware is used.
+    
+    
+ - I appreciate that you have a different take on this than your partner.
