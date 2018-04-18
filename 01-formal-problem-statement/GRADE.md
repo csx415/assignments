@@ -46,4 +46,20 @@ FPS Should:
 
 ## NOTES
 
- - ...
+ - Use Tite Case for your title
+ 
+ - Start by stating what benefits you intend to provide.
+ 
+ - You need to use complete sentences and clearly articulate a problem that you 
+   are attempting to solve.
+   
+ - This is not a success criteria: 
+   
+    The success criteria for this project are if we are able to solve all the 
+    problems of this project.
+   
+- Do not include technical details, this is high-level communication to the 
+  business not the technical staff.
+  
+- After reading this, I do not understand what you are trying to deliver. 
+  Please revise and resubmit.
