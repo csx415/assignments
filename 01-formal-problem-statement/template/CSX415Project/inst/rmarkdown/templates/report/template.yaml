@@ -1,0 +1,5 @@
+name: CSX415 Project
+description: >
+  Template for CSX415 project. This customises the basic HTML output
+  to take up as little space as possible.
+create_dir: false
