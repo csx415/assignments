@@ -1,0 +1,44 @@
+---
+title: "Formal Problem Statement-Predicting Students at Risk"
+author: "Rich McGowan"
+date: "April 10, 2018"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(echo = FALSE)
+```
+
+# Introduction
+At UC Berkeley (and throughout the higher education space as a whole), there is a need for advisors to be able to accurately predict when a student is at risk for not completing their plan of study in the appropriate length of time. Early identification of students at risk can facilitate a customized learning path for the students. Utilizing various academic and nonacademic data, a sustainable and easy to understand predictive model can be the key driver for student success at the university.
+
+# Stakeholders
+Departmental and College Advisors are the primary staff tasked with monitoring student academic progress.  Therefore a predictive model that can accurately flag students early would be an invaluable tool to intervene on a students behalf in a timely manner.  
+
+Faculty, Department Schedulers and Enrollment Managers also have a stake in the accurate identification of students at risk.  The number of students needing academic intervention (in a certain colleges or departmenta) will have a direct impact on the number of available scheduled class sections.
+
+# Metrics for Success
+If the predictive model consistently and accurately identifies students at risk and explicitly provides supporting data.  These results can then be easily acted upon by departmental and college advisors. 
+
+If faculty, advisors, administrative staff and students embrace the inevitable culture change brought about by utilizing a predictive model for identification of students at risk.
+
+If the model metrics are not adequately met, advisors and staff will still have access to the current set of SIS tools (e.g. Degree Progress Reports, Unofficial Transcripts and Transfer Credit Reports).
+
+# Risks
+UC Berkeley currently has no experience with using predictive modeling for academic advising or enrollment management.  And with such high stakes like ensuring that a student complete their academic plan of study in a timely manner, communicating with advisors and students is critical to the campus accepting the new tool.  Without clear and concise explanation of how using the predictive model can benefit the campus, it will more than likely fail to receive wide support. 
+
+Dependence upon predictive models can, in theory, lead to removing human judgment from decision making. This may result in decisions that typically require holistic review becoming 100% automated.  Advisors will need to be trained on how to balance between making decisions based on data and on human judgment.
+
+The use of a predictive model must not be seen as a profile of students based on race, gender, age, and socioeconomic status.
+
+The primary risk to the deployment the model is assuring that the target user community (Departmental and College advisors) have access to the necessary software (e.g. R and R Studio).
+
+# Timeline for Deployment
+1. Collecting, Analyzing and Visualizing Data: **3 weeks**
+2. Building the Predictive Model (training, testing and feature selection): **2 weeks**
+3. Preliminary Results: **1 week**
+4. Validating the Results of the Model: **1 week**
+Total Time to Deploy: **7 weeks**
