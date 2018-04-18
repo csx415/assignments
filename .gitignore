@@ -36,3 +36,6 @@ vignettes/*.pdf
 README.Rmd
 *_files/*
 
+# Files & Directories created acyomatically by OSX Filesystem
+.DS_Store
+**/.DS_Store/

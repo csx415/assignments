@@ -1,0 +1,149 @@
+---
+title: "Formal Problem Statement (FPS)"
+author: 'Author: Rajat Jain'
+date: 'Last Updated: `r Sys.Date()`'
+time: 'Time Spent: 12 Hrs'
+output:
+  pdf_document:
+    toc: yes
+  html_document:
+    theme: lumen
+    toc: yes
+    toc_float: yes
+---
+
+```{r, echo=FALSE}
+htmltools::img(src = knitr::image_uri(file.path("logo.jpg")), 
+               alt = 'logo', 
+               style = 'position:absolute; top:0; right:0; padding:10px;')
+
+```
+```{r, echo=FALSE}
+# HINT: blocks like this one will not show in the final knit document.
+# These are just for help while building the content for the FPS.
+```
+
+&nbsp;
+
+## 1. Goal
+```{r, echo=FALSE}
+# HINT:
+# Define: **What**
+# It should be a business description of the problem statement, not the technical aspects
+# describing the model.
+```
+
+&nbsp;
+
+## 2. Key Stakeholders
+```{r, echo=FALSE}
+# HINT:
+# Define: **Who**
+# "Business Owners" are the key stakeholders requesting the solution of the problem.
+# "SMEs" are those who know the domain well.
+# "Customers / Consumers" are the people who will consume the solution.
+# *Note*: It is often possible that the Business Owners and Customers are the same set of people.
+```  
+### a. Business Owners
+### b. SMEs
+### c. Customers
+
+&nbsp;
+
+## 3. Impact
+```{r, echo=FALSE}
+# HINT:
+# Define: **Why**
+# Quantify the importance and impact of this project. What happens if we do not do it.
+# Have both measurable and indirect impacts listed.
+```
+
+&nbsp;
+
+## 4. Execution Plan
+```{r, echo=FALSE}
+# HINT: 
+# Define: **How**
+# Remember, only define "how", not implement it. Do NOT discuss implementation details like
+# the type of models which will be used in the solution.
+```
+### a. Data Sources
+```{r, echo=FALSE}
+# HINT:
+# If it known where the data will come from, mention it. Remember, do not write the details
+# of how the data will be cleaned up and/or processed. Just list the high level sources and
+# nature of data.
+```
+
+&nbsp;
+
+## 5. Deployment Plan
+```{r, echo=FALSE}
+# HINT: 
+# Define: **How and Where**
+# Discuss how the models built will be deployed and where. What will be the process to 
+# test/update the models?
+```
+
+&nbsp;
+
+## 6. Resources
+```{r, echo=FALSE}
+# HINT:
+# It may make sense to estimate the amount of resources this project will require. If the
+# project requires any specialized environment or hardware to be deployed and run, mention it.
+```
+### a. Human Resources
+### b. Machine Resources
+
+&nbsp;
+
+## 7. Major Milestones
+```{r, echo=FALSE}
+# HINT:
+# Define: **When**
+# Define an ETA for each of the below mentioned stages of the project lifecycle.
+```
+The first version of the project will take ___ weeks to complete.
+
+| Estimated Start Date | ETA        |
+|:--------------------:|:----------:|
+| MM/DD/YYYY           | MM/DD/YYYY |
+   
+During this period, the following major milestones will be tracked.
+
+### a. **Ingest**:
+Data exploration, clean-up and ingestion will take ___ weeks and is estimated to be completed by MM/DD/YYYY.
+
+### b. **Model**:
+Model(s) will be built on the ingested data and will take ___ weeks. The will be available for validation by MM/DD/YYYY.
+
+### c. **Validate**:
+Model(s) will be tested against the new live/offline/bucketed data for validation. This test will run for ___ weeks. Estimated Start Date: MM/DD/YYYY, Estimated End Date: MM/DD/YYYY.
+
+### d. **Deploy**:
+If accepted, the model(s) will be deployed to production. Deployment plan is as discussed earlier. Deployment process will take ___ days. ETA: MM/DD/YYYY.
+
+### e. **Iterate**:
+Plans to iterate for next version, if any.
+
+*All dates are tentatively estimated based on the expected start date. Exact milestone dates will be known when the project starts.
+&nbsp;
+
+## 8. Success Criteria
+```{r, echo=FALSE}
+# HINT:
+# Define: Measurement
+# The business measurement. For example, CTR should increase by X%.
+```
+The success of this project will be measured by ___ . It's value should increase/decrease by __ %.
+
+&nbsp;
+
+## 9. Risks
+```{r, echo=FALSE}
+# HINT:
+# Define: Possibilities when things go unexpectedly
+# Risk mitigation plan, if any.
+```
+The possible risks to this project are...

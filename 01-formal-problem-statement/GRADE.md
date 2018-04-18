@@ -46,4 +46,15 @@ FPS Should:
 
 ## NOTES
 
- - ...
+ - Very well presented, I appreciate the TOC. :)
+ 
+ - You would be served well by specify how much you expect retention rates will 
+   be increased ... and perhaps tying that to the bottom-line.
+   
+ - It is also good to see you set a model performance metrics ... 70% or more 
+  accuracy. I suspect that this is trivial as there more than 70% of the 
+  customers are non-photographers. You're naive model could be to suggest that
+  everyone is a non-photographer.  Right?  And you will already have achieved
+  the goals as specified the model. You need to devise a better metric.
+  
+  
