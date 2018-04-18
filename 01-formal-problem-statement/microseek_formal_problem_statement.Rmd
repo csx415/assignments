@@ -1,13 +1,15 @@
 ---
 title: "MicroSeek Sample Classifier: Problem statement"
 author: "Benjamin Cole"
-date: "April 10, 2018"
+date: "April 17, 2018"
 output:
   html_document:
     toc: yes
 editor_options:
   chunk_output_type: console
 ---
+# Abstract
+Microseek, a microbiome analysis company, needs a classifer that, given an OTU table (abundance of taxa from 16S rRNA data) can predict where a sample originated from. The model should be at least 90% accurate, with a false positive rate below 5%. The model should be deployed as an R package.
 
 # Introduction and client information
 MicroSeek is a (fictional) microbiome sequencing and analysis company that contracts with clients in the healthcare, agricultural, and municipal sectors. Its mission is to provide its clients with accurate, comprehensive, and insightful microbial ecological information to drive decision making and discovery. The primary service that MicroSeek offers its clients is 16S ribosomal RNA (16S rRNA) sequence profiling of the microbial community in a sample (provided by the client). As all bacteria and archaea species harbor distinct 16S rRNA molecules (identifiable at the sequence level), high-throughput sequencing of the entire population of these molecules makes it possible to identify an (often) characteristic abundance profile of organismal diversity in a given sample. Using these profiles, clients can make specific determinations about the origin of their samples, including:
