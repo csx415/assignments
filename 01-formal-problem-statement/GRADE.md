@@ -4,19 +4,19 @@ output: github_document
 ---
 
 Template
- - [ ] Created an rstudio template for the *FPS*
+ - [x] Created an rstudio template for the *FPS*
  
 FPS Should:
 
  - Introduction: 
-   - [ ] State the business problem in the title/first sentence or paragraph.
-   - [ ] Identified one or more specific decision(s) that will be helped. 
+   - [x] State the business problem in the title/first sentence or paragraph.
+   - [x] Identified one or more specific decision(s) that will be helped. 
    
- - [ ] Identify key roles: management, owners, stakeholders, users, SMEs, etc.
- - [ ] Clearly articulate **why** the project is being considered
+ - [x] Identify key roles: management, owners, stakeholders, users, SMEs, etc.
+ - [x] Clearly articulate **why** the project is being considered
 
  - Define project's success
-   - [ ] State what the analysis would do
+   - [x] State what the analysis would do
    - [ ] Estimate benefits of the project 
    - [ ] Define/quantify (very precisely) a success metric for the project: a single quantifiable, unambiguous 
      metric, that will be used to determine if your project is a success. This is
@@ -33,7 +33,7 @@ FPS Should:
    - [ ] What if the model performance metric is not met?
 
  - Deployment
-   - [ ] Identify **who** the users of the model/analysis are 
+   - [x] Identify **who** the users of the model/analysis are 
    - [ ] Identify **how** the model/analysis will used 
    - [ ] Discuss what changes have to happen within the organization to deploy the model
    - [ ] Discuss risks to model deployment, (e.g. push-back by employees )
@@ -46,4 +46,14 @@ FPS Should:
 
 ## NOTES
 
- - ...
+ - This is a really good effort. 
+ 
+ - I think the *Opportunity* section is a bit buried and should be stated nearer 
+   to the *Executive Summary* or combine the two.
+   
+ - I am not sure I understand what a *memo* order from the description which is probably alright since your audience would.
+ 
+ - You get redunant in places
+ 
+ - You need to figure out how the model will be used, presumably in the hands of the sales people?
+ 
