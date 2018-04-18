@@ -31,4 +31,12 @@ vignettes/*.pdf
 # Temporary files created by R markdown
 *.utf8.md
 *.knit.md
+<<<<<<< HEAD
 .Rproj.user
+=======
+
+# RMd files
+README.Rmd
+*_files/*
+
+>>>>>>> upstream/master
