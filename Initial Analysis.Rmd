@@ -1,0 +1,89 @@
+---
+title: "Initial Analysis"
+author:
+- Anupama Navaneethan
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: 
+  html_document: 
+    theme: journal
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+## Importing Data
+
+The loan data was loaded from an excel file into a dataset. Variables that are not relavant for this study we removed. The observations/Loans were tagged as NPL VS Non-NPL based on their Loan Status. A new NPL flag was added to the dataset.
+
+```{r}
+load(file='AllData.rdata')
+str(AllData)
+library(ggplot2)
+```
+
+## Data Analysis
+
+The percentage of bad Loans is about 2%. The rest of the loans are either current or fully paid of.
+
+```{r pressure, echo=FALSE}
+ggplot(AllData, na.rm = TRUE, aes(x = factor(NPL),colour = factor(NPL), fill = factor(NPL)))+ geom_bar(aes(y = (..count..)/sum(..count..)))+ scale_y_continuous(breaks = seq(0, 500000, by = 20000))+ geom_text(aes(label= scales::percent(round(((..count..)/sum(..count..)),2)),y=((..count..)/sum(..count..))), stat="count", vjust = -.25)+ xlab("Is NPL?")+ ylab("% Of Observations") + labs(title ="Good Vs Bad Loans")+ scale_fill_brewer(palette='Pastel1')
+
+```
+
+The next step in the process would be to identity the variables that are most prominent in the defaulted loans.
+
+## Variables
+
+Following is the decription of eachc variable for NPL loans only
+###Loan Grade:
+
+Close to 29% of NPL loans have a grade C.
+
+```{r}
+g<- ggplot(AllData[AllData$NPL=="Yes",], na.rm = TRUE, aes(x = factor(grade), colour = factor(grade), fill = factor(grade)))
+g<- g + geom_bar(aes(y = (..count..)/sum(..count..))) 
+g<- g + geom_text(aes(label= scales::percent(round(((..count..)/sum(..count..)),2)),y=((..count..)/sum(..count..))), stat="count", vjust = -.25)
+g<- g + xlab("Loan Grade") + ylab("% Of NP Loans") + labs(title ="NPL - Loan Grade") +scale_fill_brewer(palette='Pastel1')
+g
+
+```
+
+###Number of Delinquent Accounts
+
+99% of the NPL loans do NOT have delinquent account in file.
+
+```{r}
+g<- ggplot(AllData[AllData$NPL=="Yes",], na.rm = TRUE, aes(x = factor(acc_now_delinq), colour = factor(acc_now_delinq), fill = factor(acc_now_delinq)))
+g<- g + geom_bar(aes(y = (..count..)/sum(..count..))) 
+g<- g + geom_text(aes(label= scales::percent(round(((..count..)/sum(..count..)),2)),y=((..count..)/sum(..count..))), stat="count", vjust = -.50)
+g<- g + xlab("Delinquent Accts") + ylab("% Of NP Loans") + labs(title ="NPL - Delinquent Accounts")+scale_fill_brewer(palette='Pastel1')
+g
+```
+
+
+### purpose
+
+Close to 83% of NPL Loans have purpose as "debt consolidation"
+
+```{r}
+g<- ggplot(AllData[AllData$NPL=="Yes",], na.rm = TRUE, aes(x = factor(purpose), colour = factor(purpose), fill = factor(purpose)))
+g<- g + geom_bar(aes(y = (..count..)/sum(..count..))) 
+g<- g + geom_text(aes(label= scales::percent(round(((..count..)/sum(..count..)),2)),y=((..count..)/sum(..count..))), stat="count", vjust = -.50)
+g<- g + xlab("Loan purpose") + ylab("% Of NP Loans") + labs(title ="NPL - purpose")
+g<- g + theme(axis.text.x = element_text(angle = 90))
+g
+```
+
+### Employment Length
+
+```{r}
+g<- ggplot(AllData[AllData$NPL=="Yes",], na.rm = TRUE, aes(x = factor(emp_length), colour = factor(emp_length), fill = factor(emp_length)))
+g<- g + geom_bar(aes(y = (..count..)/sum(..count..))) 
+g<- g + geom_text(aes(label= scales::percent(round(((..count..)/sum(..count..)),2)),y=((..count..)/sum(..count..))), stat="count", vjust = -.50)
+g<- g + xlab("employment length in years") + ylab("% Of NP Loans") + labs(title ="NPL - Employment Length of Borrower")
+g<- g + theme(axis.text.x = element_text(angle = 90))
+g
+```
+
