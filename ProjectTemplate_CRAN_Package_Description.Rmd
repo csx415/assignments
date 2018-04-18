@@ -1,0 +1,108 @@
+---
+title: 'ProjectTemplate CRAN Package Description'
+author:
+  - name: Hakan Egeli
+    email: hakanegeli@gmail.com
+date: 'April 10, 2018'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+ProjectTemplate is a system for automating the thoughtless parts of a data analysis project:
+
+* Organizing the files in your project.
+* Loading all the R packages you'll use.
+* Loading all of your data sets into memory.
+* Munging and preprocessing your data into a form that's suitable for analysis.
+
+More details can be obtained from the [CRAN](https://cran.r-project.org/web/packages/ProjectTemplate/index.html) package site or from the [Project](http://projecttemplate.net/) web site.
+
+
+## Installation
+
+ProjectTemplate is on CRAN and can be installed using a simple call to install.packages():
+
+```{r eval=FALSE}
+install.packages('ProjectTemplate')
+```
+
+## Creating a New Project
+
+Once the package is installed you will have to call the next two lines everytime you need to create a new project:
+
+```{r eval=FALSE}
+library('ProjectTemplate')
+create.project('<name_of_your_project>')
+```
+
+Running the above commands will result in creation of a folder structure similar to the one shown below helping you to organize your code, your data and your output:
+
+ ![](directories.png) 
+ 
+## Loading a New Project
+
+Besides creating an organizational structure, ProjectTemplate also offers some automation features.
+
+Here is a closer look at how this automation works. First to load the project by running the following commands at the R command line:
+
+```{r eval=FALSE}
+setwd('path_to_your_project')
+library('ProjectTemplate')
+load.project()
+```
+
+### Data Loading
+
+During the load process ProjectTemplate looks through the data directory for files with recognized extensions, such as **.csv** or **.sql**, it will load the files into the memory generally in an R data frame format and assign a variable with the same name as the file name (without the extension).
+
+### Library Loading
+
+Besides automatically loading data into the memory, the ProjectTemplate can also load required libraries for your project such as tidyr, dplyr, stringr, ggplot2, etc. To indicate which libraries you would like to load automatically, you have to edit the libraries `configuration` setting in the **config/global.dcf** file. For example:
+
+`libraries: tidyr, dplyr, stringr, ggplot2`
+
+If you want to stop auto loading libraries set the following setting to `FALSE`.
+
+`load_libraries: FALSE`
+
+In a similar way, you can control data loading as well. The data loading can be turned on or off by setting the `data_loading` to `TRUE` or `FALSE`.
+
+### Munging
+
+With munging turned on the system will execute the files in the `munge` directory sequentially using the order implied by the `sort()` function.
+
+For example, if you wanted to create some aggregates for the data file automatically loaded from the data directory, you would do the following:
+
+1. Create a file with and extension .R and place it into the munge directory (remember all files in this directory will be excuted in an alphabetical order)
+
+2. Put a line of code similart to this, assuming the `salesdata` variable is assigned to the data read from the sales_data.csv and this .csv file has a CustomerId column with unique ids for the customers: 
+
+`customer.count <- ddply(salesdata, c('CustomerId'), nrow)`
+
+### Other Features
+
+Besides the features mentioned above, ProjectTemplate template offers other features, which all can be turned on or off:
+
+* Cache Loading
+* Recursive Loading
+* Logging
+* As Factors
+* Data Tables
+* Cache Loaded Data
+* Sticky Variables
+
+## Packages Similar to ProjectTemplate
+
+Instead of writing an analysis as a single or set of R scripts, a package can be created which include the analysis as well as the data. Packages impose a relatively simple structure on your project directory. The folder /R contains the .R files, the /data can contain any .RData or .rda as well as .txt, .tab, .csv files that you might need. (or they may go in /inst/extdata). Other required files are DESCRIPTION and NAMESPACE.
+
+Using the `package.skeleton()` function provided by the `util` package gets you started with creating an R package. Using the `devtools` package also makes the "make package development easier by providing R functions that simplify common tasks".
+
+However, the ProjectTemplate project web site specifically states that ProjectTemplate is not designed to help with package development. Here is how ProjectTemplate differentiates itself from R packages:
+
+* A project is built around exactly one data set, while a package should work with many different data sets.
+* A project is something specific: your goal is to learn a specific fact about the world from a specific data set. In contrast, a package should contain general purpose tools for analyzing many different data sets.
