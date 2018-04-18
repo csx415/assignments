@@ -13,9 +13,9 @@ FPS Should:
    - [ ] Identified one or more specific decision(s) that will be helped. 
 
  
- - [ ] Identify key roles: management, owners, stakeholders, users, SMEs, etc.
- - [ ] Clearly articulate **why** the project is being considered
- - [ ] Stated how/why the analysis would do.
+ - [x] Identify key roles: management, owners, stakeholders, users, SMEs, etc.
+ - [x] Clearly articulate **why** the project is being considered
+ - [x] Stated how/why the analysis would do.
    - [ ] Specify a quantitative business goal.
    - [ ] Estimate benefits of the project 
    - [ ] Identify any non-quantifiable benefits 
