@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1524014552898.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "AB2E4FB9",
+    "lastKnownWriteTime" : 1524014704,
+    "last_content_update" : 1524014704710,
+    "path" : "C:/Users/bjcole/Desktop/data_science_certificate/csx415-assignments/01-formal-problem-statement/microseek_formal_problem_statement.Rmd",
+    "project_path" : "01-formal-problem-statement/microseek_formal_problem_statement.Rmd",
+    "properties" : {
+        "chunk_output_type" : "console",
+        "cursorPosition" : "52,15",
+        "ignored_words" : "microbiome,MicroSeek\n",
+        "scrollLine" : "66"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
