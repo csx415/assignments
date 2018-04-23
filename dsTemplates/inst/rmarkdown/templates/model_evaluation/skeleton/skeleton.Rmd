@@ -1,0 +1,40 @@
+---
+title: "Model Performance"
+author: "Benjamin Cole"
+date: "April 11, 2018"
+output: 
+  html_document: 
+    toc: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+# Model description
+```{r load_model}
+library(ProjectTemplate)
+library(knitr)
+load.project()
+run.project()
+
+current_model <- model_0
+```
+
+
+# Evaluate model fit
+
+```{r model_0_summary}
+glance(current_model) %>% kable()
+summary(current_model)$coefficients %>% kable()
+```
+
+# Evaluate model performance
+
+```{r}
+pred <- predict(current_model, biom_data_test)
+actual <- biom_data_test$env_material
+confusionMatrix(pred, actual) %>% .$overall
+```
