@@ -24,4 +24,10 @@
 
 **Logistic regression model: 5 features**
 
-* Path: 
+* Path: reports/project-performance_logistic_5_features.Rmd
+* Description: Evaluation of logistic regression model with 5 features, including a heatmap of the confusion matrix
+
+**Decision tree model: 5 features**
+
+* Path: reports/project-performance_rpart_5_features.Rmd
+* Description: Evaluation of decision tree model with the 5 most abundant features.
