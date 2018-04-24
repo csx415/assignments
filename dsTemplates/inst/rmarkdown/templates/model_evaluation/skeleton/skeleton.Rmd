@@ -18,23 +18,43 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 library(ProjectTemplate)
 library(knitr)
 load.project()
-run.project()
 
 current_model <- model_0
 ```
 
-
 # Evaluate model fit
 
-```{r model_0_summary}
-glance(current_model) %>% kable()
-summary(current_model)$coefficients %>% kable()
+```{r model_summary}
+## Look at model-specific fit features
 ```
 
 # Evaluate model performance
 
-```{r}
-pred <- predict(current_model, biom_data_test)
+```{r model_performance}
+pred <- predict(current_model, biom_data_test, type = 'class')
 actual <- biom_data_test$env_material
-confusionMatrix(pred, actual) %>% .$overall
+
+cm <- confusionMatrix(pred, actual)
+
+cm_norm <- as.data.frame(cm$table) %>%
+  as.tibble() %>%
+  group_by(Reference) %>%
+  mutate(Freq_norm = Freq/sum(Freq))
+
+ggplot(cm_norm) + 
+  geom_tile(aes(x = Prediction, y = Reference, fill = Freq_norm)) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+MR <- cm_norm %>%
+  ungroup() %>%
+  filter(Prediction != Reference) %>%
+  summarize(n = sum(Freq)) %>%
+  .$n
+CR <- cm_norm %>%
+  ungroup() %>%
+  filter(Prediction == Reference) %>%
+  summarize(n = sum(Freq)) %>%
+  .$n
+
+kable(c(cm$overall, MisclassificationRate = MR/(MR+CR)))
 ```
