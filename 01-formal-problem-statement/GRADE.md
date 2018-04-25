@@ -49,4 +49,4 @@ FPS Should:
 
 ## NOTES
 
- - ...
+ - I don't see your *FPS* or your *template* 
