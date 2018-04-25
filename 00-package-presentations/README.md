@@ -35,4 +35,9 @@ Presentation Schedule
 -   roxygen2: Rosillo, Eduardo
 -   testthat: Zhang, Jessica
 
-### Week ...
+### Week three: plots
+
+-   ggplot2: Jaiswal, Akash
+-   ggvis: Das, Sanatan
+-   plotly; Jain, Rajat
+-   maptool: Maitra, Sharmistha
