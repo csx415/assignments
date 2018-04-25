@@ -1,0 +1,66 @@
+---
+title: "NEXTSTEPS"
+author: "er637474"
+date: "April 24, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+#### Exploratory Analysis
+
+
+
+```{r include=FALSE}
+require(ggplot2)
+require(Hmisc)
+projectdata <- pd.csv <- read.csv("C:/Users/eduardo/Desktop/projectdata.csv")
+str(projectdata)
+1:12
+c(1,10,11)
+projectdata[1:12,c(1,10,11)]
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+#### Histogram of Response Variable: Cost per Month
+
+```{r response, echo=FALSE}
+hist(projectdata$Cost_Monthly,
+  main='Monthly Cost Dollars',
+  xlab='Response Variable'
+  )
+
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+
+####Next Steps in Analysis: 
+
+When implementing energy saving reccomendations, what is the overall percent reduction in energy cost as determined by energy usage? After on-site inspection and review of the facilities engineers area able to design an energy-saving strategy capable of reducing energy demand from building engineers as well as consumers by 5% (fabricated for this project). When introduced, how does this alter the energy usage and monthly cost of building operations?
+
+Initial analysis completed while reviewing project performance indicates a high correlation between the cost per month and eneryg usage by the building, now we can attempt to build a linear model describing a linear relationship between the energy demand and the cost per month, so that, we can use this formula to estimate the value of the cost per month after the inmplemenation of an energy-saving strategy, given the energy demanded.
+
+At this time I would say the model meets the success criteria set in the *FPS*.
+
+```{r linear model, echo=FALSE}
+scatter.smooth(x=projectdata$Total_Usage, y=projectdata$Cost_Monthly, main="Observered Cost")
+
+linearMod <- lm(Cost_Monthly ~ Total_Usage, data=projectdata)  # build linear regression model on full data
+print(linearMod)
+summary(linearMod)
+
+modelSummary <- summary(linearMod)  # capture model summary as an object
+modelCoeffs <- modelSummary$coefficients  # model coefficients
+beta.estimate <- modelCoeffs["Total_Usage", "Estimate"]  # get beta estimate 
+std.error <- modelCoeffs["Total_Usage", "Std. Error"]  # get std.error 
+t_value <- beta.estimate/std.error  # calc t statistic
+p_value <- 2*pt(-abs(t_value), df=nrow(projectdata)-ncol(projectdata))  # calc p Value
+f_statistic <- linearMod$fstatistic[1]  # fstatistic
+f <- summary(linearMod)$fstatistic  # parameters for model p-value calc
+model_p <- pf(f[1], f[2], f[3], lower=FALSE)
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+
