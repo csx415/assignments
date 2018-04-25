@@ -1,5 +1,5 @@
 
-# assignments
+# Comp Sci 415.1 assignments
 
 This is the repository for CSX415 assignments. 
 

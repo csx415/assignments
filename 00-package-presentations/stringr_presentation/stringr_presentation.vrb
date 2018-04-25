@@ -1,0 +1,18 @@
+\frametitle{EVALUATION OF STRINGR PACKAGE}
+
+\textbf{stringr} recreates base R functions with simpler, more
+consistent syntax. These functions are easy to learn and remember.
+
+\textbf{stringr} functions can be used with the pipe operator, since the
+first argument is always the string. This is very convenient.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{letters }\OperatorTok{%>%}\StringTok{ }\KeywordTok{str_c}\NormalTok{(}\DataTypeTok{collapse =} \StringTok{""}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{str_dup}\NormalTok{(}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+\end{verbatim}
+
