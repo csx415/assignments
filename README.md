@@ -1,5 +1,5 @@
 
-# assignments
+# CSX 415 (Data Science Principles and Practice) assignments
 
 This is the repository for CSX415 assignments. 
 

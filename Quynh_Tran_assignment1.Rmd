@@ -1,0 +1,140 @@
+---
+title: "Home purchase and high school location for optimal University of California admissions"
+author: "Quynh Tran"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+> "Education is the passport to the future, for tomorrow belongs to those who prepare for it today."
+([via](http://www.blackpast.org/1964-malcolm-x-s-speech-founding-rally-organization-afro-american-unity))
+
+
+## Table of Contents
+
+[Project Goals](#project_goals) 
+
+[About Us](#about_us)
+
+[Background](#background)
+
+[Project Details](#project_details)
+
+[Success Measures](#success_measures)
+
+[Potential Risks](#potential_risks)
+
+[Project Timeline](#timeline)
+
+[Project Results](#project_results)
+
+
+## <a id="project_goals"></a>Project Goals
+#### Stakeholders
+This proposal is for real estate firm River Trends (fictional), a San Francisco Bay Area-based firm that specializes in home purchases for non-local clients. The majority of the clients are interested in real estate in areas with strong school districts. River Trends wants a metric to help steer its clients towards the locations and their respective high schools for optimal admissions into the clients' most desired University of California campus.
+
+Previously River Trends advised clients for home purchases in school districts whose API or Academic Performance Index scores were high. These composite test score, created by the California Department of Education were posted an for each public school and school distrcit in the state. It had a maximum score of 1000 with 800 deemed as a good goal. However, the California Department of Education no longer produces this score for River Trends to use. 
+
+We will develop a new metric for River Trends for its clients. 
+
+
+#### Audience or users
+
+The audience for this project are clients of River Trends who are potential homebuyers with children in public high school, heading into public high school, or those thinking long term about public high schools and admissions into the University of California campuses.
+
+#### Purpose
+
+The purpose of this project is to:
+
+  + identify locations in Alameda County to purchase a home and its corresponding public high school that would achieve the optimal chances for admissions to the University of California campuses.
+  + make the identification specific to the targetted UC campuses.
+  + include race specific information about the home buyer in the determination of home location and campus target.
+  + remain within the client's home purchase budget.
+  
+This project will answer one of the first questions asked by those moving to the Bay Area: where they should live and buy a home?
+
+
+## <a id="about_us"></a>About Us
+
+Tesselations is a data science firm that specializes in data solutions in the areas of education and learning. It seeks to improve policy, productivity and quality of life for individuals, workplaces and institutions.
+
+## <a id="background"></a>Background
+#### Benefits
+
+College admission offers, in fact, are highly dependent on where the applicant attended high school. Selecting a high school with a higher acceptance rate to the target University of California campus is a prudent choice for families in their selection of home purchase. ^[For example, the acceptance rate to Berkeley for Castro Valley High School applicants in 2017 was about 11 percent, whereas applicants from Hayward High School were accepted at a 25% rate.]
+
+Parents and students are increasingly stressed over UC admissions but few notice the discrepancy in admissions rate between choice of high school. ^[https://www.sfchronicle.com/opinion/article/UC-needs-to-be-transparent-about-who-gets-in-12757352.php]
+
+It is expected that high schools in higher socio-economic communities like Piedmont have higher acceptance rates, but some public high schools in neighboring Oakland with much lower SES also had high acceptance rates. Compared to the availability and prices in homes in Piedmont, Oakland provides many more opportunities for home buyers, while securing a public high school with comparable acceptance rates into the UC campuses. 
+
+2018 marks the 150th anniversary of the creation of the University of California system. At the same time, applications to the University of California campuses are at an all time peak with an increase of 5.7 percent system-wide. Five UC campuses -- Berkeley, Irvine, Los Angeles, San Diego and Santa Barbara -- each received more than 100,000 applications this past year. San Diego's total is up 9.7 percent. Davis received some 95,000 applications, up 8.6 percent. UC Riverside saw the largest percentage increase -- 12.2 percent. One of the most competitive campuses, Berkeley, only received an increase of 4.6 percent. (By way of comparison, Harvard University received just under 40,000 applications last year.) Berkeley and UCLA are the most competitive campuses, accepting about one in six applicants. ^[https://www.insidehighered.com/admissions/article/2018/03/26/reports-circulate-even-more-difficult-year-be-admitted-leading]
+
+## <a id="project_details"></a>Project Details
+ 
+#### <a id ="plan"></a>Project Scope
+
+The scope of this proposal is limited to Alameda County school districts and the University of California campuses for the year 2017. Additional Bay Area counties and years of data may be contracted for additional analyses.
+
+## <a id="success_measures"></a>Success Measures
+ 
+River Trends will provide concrete information to its clients in terms of home purchase location and high school. This unique information will separate River Trends from all area real estate firms. River Trends will be able to provide information that is most important to its non-local clients who most value education in their home purchasing decision but because they are not local, do not have knowledge of the local school districts. 
+
+River Trends will be able to provide home and high school location given the best ratio of home buyers' budget and admission rates.
+
+River Trends will also be able to counsel home buyers which University of California campus are NOT likely good fit based on acceptance rates of their chosen high school. 
+
+
+#### Figures
+
+Results will be provided with figures to illustrate UC admissions rates and home prices.
+
+```{r, fig.show='hold'}
+plot(1:10)
+plot(10:1)
+```
+
+#### Tables
+
+Results will also include tables of target UC campus admissions rates and home prices.
+
+
+```{r, echo=FALSE, results='asis'}
+knitr::kable(head(mtcars, 10))
+```
+ 
+## <a id="potential_risks"></a>Potential Risks
+ 
+College admissions is rarely the only significant variable when families consider a home purchase. Many, however, do seek a high quality local school district and elementary/ middle schools. Yet ignoring the quality of the high school may be the most significant oversight when making a home purchase. The high school education builds upon the curriculum of the elementary and middle schools. It is the culmination of the entire public educational experience, which could make it the strongest marker of the true quality of the school district.  
+
+However, by identifying a particular high school based on its UC campus admissions rate, the home buyer assumes the risk that all levels of education from elementary through middle school of that district are at least as desireable and high performing as the selected high school. The quality of schools at each level could vary considerably.  
+
+The home buyer is also assuming the risk that their child is able to enroll at the desired high school. As more desireable high schools are identified, over-crowding may occur so that while the home buyer lives within the boundaries of the school, there may not be space for their student to attend.
+
+River Trends cannot forecast enrollment at any particular high school and cannot direct home buyer decisions based on guaranteed high school admissions. Likewise, River Trends cannot guarantee admissions to any target UC campus based on the work of Tesselations.
+
+A minor risk leading to project incompletion may occur if the Univeristy of California campuses no longer release its admissions data or dramatically changes the data they release.^[The University of California system recently started to release its admissions data. They are only summary statistics and not individual data but include the names of each high school and how many students apply and are admitted to each UC campus going back to 1994. The summary statistics also include the race variable.]  
+ 
+  
+## <a id ="timeline"></a>Project Timeline
+
+Preliminary results are expected at 3 weeks, May 1.
+Determination of model performance is expected at 5 weeks, May 15.
+The total timeline for this project is estimated at 7 weeks, May 29. 
+
+
+## <a id ="project_results"></a>Project Results
+
+Tesselations will provide an interface that allows River Trends to input its clients needs in terms of home purchase budget, targetted University of California campus(es), and client race. 
+
+The results will be optimal location to purchase a home and local public high school that best matches with client criteria.
+
+
