@@ -30,7 +30,7 @@ Email: JessZh@gmail.com
 
 
 # Project Goal
-Many factors, such as age, job, and loan amount can affect people's banking decisions.  Bank of Portugal believes it needs to develop a better targeted marketing strategy towards different profile groups.  The goal of this project is to provide the campaign department with meaningful grouping of its clients from past campaigning data.  
+Many factors, such as age, job, and loan amount can affect people's banking decisions.  Bank of Portugal believes it needs to develop a better targeted marketing strategy towards different profile groups.  **The goal of this project is to provide the campaign department with meaningful grouping of its clients from past campaigning data.**  
 
 Developing of the marketing strategy is outside of the scope of this project.
 

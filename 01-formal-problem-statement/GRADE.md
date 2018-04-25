@@ -4,22 +4,23 @@ output: github_document
 ---
 
 Template
- - [ ] Created an rstudio template for the *FPS*
+ - [x] Created an rstudio template for the *FPS*
  
 FPS Should:
 
  - Introduction: 
-   - [ ] State the business problem in the title/first sentence or paragraph.
-   - [ ] Identified one or more specific decision(s) that will be helped. 
+   - [x] State the business problem in the title/first sentence or paragraph.
+   - [x] Identified one or more specific decision(s) that will be helped. 
    
  - [ ] Identify key roles: management, owners, stakeholders, users, SMEs, etc.
- - [ ] Clearly articulate **why** the project is being considered
+ - [x] Clearly articulate **why** the project is being considered
  - [ ] Identified "current"" state.
 
  - Define project's success
    - [ ] State what the analysis would do
    - [ ] Estimate benefits of the project 
-   - [ ] Define/quantify (very precisely) a success metric for the project: a single quantifiable, unambiguous 
+   - [ ] Define/quantify (very precisely) a success metric for the project: a 
+     single quantifiable, unambiguous 
      metric, that will be used to determine if your project is a success. This is
      not just a technical metrics, but one use at the managerial level. This of
      this is how "the needle must move" by your solution in order to be successful.
@@ -34,7 +35,7 @@ FPS Should:
    - [ ] What if the model performance metric is not met?
 
  - Deployment
-   - [ ] Identify **who** the users of the model/analysis are 
+   - [x] Identify **who** the users of the model/analysis are 
    - [ ] Identify **how** the model/analysis will used 
    - [ ] Discuss what changes have to happen within the organization to deploy the model
    - [ ] Discuss risks to model deployment, (e.g. push-back by employees )
@@ -44,9 +45,16 @@ FPS Should:
    - [ ] **When** you need or expect to have determined whether the model performance 
    - [ ] How much effort it will take to deploy the solutions.
 
- - [ ] Is free of grammar/spelling/punctuation mistakes
+ - [x] Is free of grammar/spelling/punctuation mistakes
  
 
 ## NOTES
 
- - ...
+ - There is a lot missing from your *FPS*.  You will have to revise this as part
+   of your final project.  See the rubric above. In particular, you need to 
+   know what the benefits of the project are likely to be, the current state 
+   and what the 
+   
+ - You should probably not title this "Formal Problem Statement"   
+
+ - You need to understand how good a model to build
