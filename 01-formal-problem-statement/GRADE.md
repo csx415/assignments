@@ -49,4 +49,25 @@ FPS Should:
 
 ## NOTES
 
- - ...
+ - Love this project! You have set this up to be a successful project whether you succeed or not, though 
+   it does break the mold for evaluating the FPS, so bear with me ...
+ 
+ - Please continue to revise your FPS.
+ 
+ - It does not appear as though you understand how to evaluate your recommendations. Say that
+   your do recommend 5 hikes, what is your feedback that these are good hikes for the 
+   user. I don't know that you need this but it makes it tricky to evaluate. Thus far
+   it only seems that your success metric is to recommend five hikes and doesn't
+   consider whether these are good or not.
+   
+ - Given your data, it is unclear how your will make these recommendations (technically)
+   I can think of a number of ways and am interested in hearing what you come up with. 
+ 
+ - Where is your *FPS* template?
+ 
+ - I don't think that you need to include deployment and maintenance details in the **FPS**, 
+   at this stage you generally do not know whether your model can achieve the desired
+   results.
+   
+ - You should consider having the user enter 3 or more hikes to provide the recommendation ...
+   if you require only one, than your recommendation are going to be arbitrary
