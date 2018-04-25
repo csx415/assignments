@@ -38,3 +38,4 @@ vignettes/*.pdf
 README.Rmd
 *_files/*
 
+.Rproj.user
