@@ -3,7 +3,6 @@ title: "Assignment: Formal Problem Statement"
 author: "cbrown"
 date: "April 4, 2018"
 output: html_document
-
 ---
 
 ## Assignment One: Formal Problem Statement (*FPS*)
@@ -12,6 +11,8 @@ This assignment is to:
 
  - Develop an **Rmarkdown Template** for a *Formal Problem Statement* , and
  - Use that template to write a *Formal Problem Statement* for your class project.
+   - Name it *formal-problem-statement.(md|html|pdf)* and place it in the 
+    `01-formal-problem-statement` folder. 
 
 
 To recieve credit, you must knit the **FPS** as HTML 
@@ -51,7 +52,6 @@ template is an asset you are developing that you can use in your career.
 
  - [Reporting with R Markdown](https://www.datacamp.com/courses/reporting-with-r-markdown)
  - [Document Template](https://rmarkdown.rstudio.com/developer_document_templates.html)
-   - [Useful Tutorial](http://ismayc.github.io/ecots2k16/template_pkg/)
 
 
 ## Background
