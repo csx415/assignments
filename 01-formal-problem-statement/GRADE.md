@@ -9,15 +9,15 @@ Template
 FPS Should:
 
  - Introduction: 
-   - [ ] State the business problem in the title/first sentence or paragraph.
-   - [ ] Identified one or more specific decision(s) that will be helped. 
+   - [x] State the business problem in the title/first sentence or paragraph.
+   - [x] Identified one or more specific decision(s) that will be helped. 
    
- - [ ] Identify key roles: management, owners, stakeholders, users, SMEs, etc.
- - [ ] Clearly articulate **why** the project is being considered
- - [ ] Identified "current"" state.
+ - [-] Identify key roles: management, owners, stakeholders, users, SMEs, etc.
+ - [x] Clearly articulate **why** the project is being considered
+ - [x] Identified "current"" state.
 
  - Define project's success
-   - [ ] State what the analysis would do
+   - [x] State what the analysis would do
    - [ ] Estimate benefits of the project 
    - [ ] Define/quantify (very precisely) a success metric for the project: a single quantifiable, unambiguous 
      metric, that will be used to determine if your project is a success. This is
