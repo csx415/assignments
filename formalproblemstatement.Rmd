@@ -1,0 +1,54 @@
+---
+title: "Formal Problem Statement"
+author: "Jess Zhang"
+date: "April 9, 2018"
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+---
+
+## Problem Statement
+Bank of Portugal is the second largest commercial bank in Portugal.  In order to improve its telemarketing effeciency, Bank of Portugal needs to identify different groups within its client base and to develop better targeted telemarketing strategy. 
+
+
+
+# Stakeholder
+Bank of Portugal / Telemarketing department 
+
+Campaign manager: John Smith
+
+Email: John.Smith@bancodeprotugal.com
+
+
+
+# Project team
+Project Manager: Jessica Zhang
+
+Email: JessZh@gmail.com
+
+
+
+# Project Goal
+Many factors, such as age, job, and loan amount can affect people's banking decisions.  Bank of Portugal believes it needs to develop a better targeted marketing strategy towards different profile groups.  The goal of this project is to provide the campaign department with meaningful grouping of its clients from past campaigning data.  
+
+Developing of the marketing strategy is outside of the scope of this project.
+
+A few algorithms will be run and a model will be built to analyze the given dataset.  The analysis will be shared and discussed with the campaign manager of Bank of Portugal.  The campaign manager can continue to use the model to analyze data in the future.
+
+The delivered model will work with additional data in the dataset.  However, the model may not work if the client adds or removes columns from the dataset without conselingn this project team.
+
+
+
+# Estimated Risk
+It is reasonable to believe that there are such groups exist in the given dataset.  It is unlikely however possible that no meaningful profile groups can be identified from this project.  
+
+
+
+#Delivery Timeline
+The project team will be working on this project for the next 2 months.  2 data scientists will be working on the model and analysis full-time.  The preliminary result will be delivered and discussed with the client on 4/30/2018.  The estimated final delivery date is May 31st, 2018.  This date will be dicsussed with the client and adjusted as needed at the 4/30/2018 milestone date.
+
+
+
+# Data Source
+Bank Marketing Data from http://archive.ics.uci.edu/ml/datasets/Bank+Marketing 
