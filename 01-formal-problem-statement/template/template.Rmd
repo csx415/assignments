@@ -1,0 +1,49 @@
+---
+title: "Template"
+author: "Chongxi Wang"
+date: "April 10, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+### Background
+Introduce the Background of this specific problem.
+
+### Problem Introduction
+Introduce the problem in a general way.
+
+### Relevent Research
+Introduce former researches about this problem.
+
+## Problem Statement
+Refine the problem and state more details about the problem.
+
+### Objects
+Objects to study.
+
+### subproblems
+Divide the whole problem into several subproblems, which are easier to solve.
+
+
+## Prospect
+
+### Expectant Result
+State the prospect of this research, including identifying key roles and estimating benifits.
+
+### Stakeholders and Benefits
+List people who potentially benefit from the result of this research and state how.
+
+## implementation
+Details on how to solve this problem.
+
+State procedures to solve the problem, also the schedule of each step.
+
+## Result evaluation
+Find several ways to evaluate the result.
+
+## Risk Analysis
