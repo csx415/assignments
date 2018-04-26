@@ -1,0 +1,75 @@
+---
+title: "notes_week5"
+author: "Benjamin Cole"
+date: "April 25, 2018"
+output: html_document
+---
+
+Model measurement
+
+* What's a good metric?
+  + Metric be related to goodness of model. 
+  + Quantifiable (numeric)
+  + How model applies to domain
+  + Should be a scalar value? One number.
+    + Helps in comparing models -- don't want something complex (multiple numbers, etc.)
+  + Allow for comparison of models
+    + All models should have same response, modeling the same thing.
+    + Independent of modeling methods; should be one metric for whatever model form being used (e.g. linear, tree)
+  + Should be stationary wrt to the data
+    + if you have a training and testing set, should be able to evaluate on both sets, or some later data set.
+  + Caveats
+    + No single metric can tell which model is good or bad. Needs intuition, or comparison -- need to compare it something (naive model, previous model to improve upon).
+    + Metric should not be one used in the search function to train the model.
+      + State of the art; always been done this way; assumes much simpler loss function in most algorithms; deosn't matter as much for classification problems, but definitely matters for regression models. Linear model uses SSE, evaluating using RMSE and MAE. 
+      + Algorithms may not be optimizing for performance measure.
+  
+* What metrid do I use?
+  + Regression
+    + Takes root mean squared error of data
+    + Needs one numeric model
+  + Binomial metrics
+    + Accuracy: "how many did I get right?"; good first cut.
+    + Error rate: "how many did I get wrong?" 1-Accuracy
+    + Either metric does not describe nuances of model, does not account for state of system
+      + Trying to predict AIDS in population; incidence is 0.0003%. Accuracy can be 99.7% accurate if I say no one has AIDS.
+      + How to fix?
+        + Confusion matrices
+          + Have semi-standard names
+          + Type I: False positives
+          + Type II: False negatives
+          + Is a tool to evaluate problem.
+          + Likes to create confusion matrix for current state:
+            + At first, will only have negatives
+              + True negative: profit
+              + False negative: cost of stolen goods
+            + With model
+              + true posiive value: cost of goods
+              + false positive: minus profit of goods
+          
+        + **Cohen's Kappa**
+          + "Adjusted accuracy"
+          + k = (Observed - Expected)/(1-Expected)
+            + Ranges between 0 and 1; kappa between 0.3 and 0.5 means a good fit.
+            + Journey: model is somewhere between terrible and perfect; where do we start? that's what expected value is.
+              + Naiive model, existing model. What percentage of the way have we come?
+        + Rates
+          + True positive rate (sensitivity or recall)
+          + False pegative (FN/OP; mis-rate)
+          + False positive rate: FP/ON (fall-out)
+          + True negative rate (specificity)
+          + Positive predictive value (true positives/predicted positives): Precision
+        + In R:
+          + ModelMetrics::confusionMatrix(actual, predicted, cutoff)
+          + caret::confusionMatrix
+          + table
+    + Need two metrics
+    + Must be same type
+    + Determined by application. Should follow suit
+    + How to discriminate classes?
+      + Models always put out something mathematical (class probabilities)
+      + We have to say what determines class given a probability. Model will not do this on its own.
+      
+* How do I use metric?
+* What data do I use to calc perforamcen?
+* What do I need to communicate?
