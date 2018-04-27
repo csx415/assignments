@@ -54,7 +54,12 @@ We will have four presentation per week.
  * roxygen2: Rosillo, Eduardo
  * testthat: Zhang, Jessica
  
-### Week ... 
+### Week three: plots a
+
+ * ggplot2: Jaiswal, Akash
+ * ggvis:  Das, Sanatan
+ * plotly; Jain, Rajat
+ * maptool: Maitra, Sharmistha 
 
  
 ```{r, eval=FALSE, echo=FALSE, results='hide'}
@@ -63,9 +68,10 @@ We will have four presentation per week.
 packs <- c(
     "ProjectTemplate", "magrittr", "stringr", "lubridate"
   , "devtools", "testthat", "roxygen2", "assertthat"
+  , "ggplot2", "ggvis", "plotly", "maptool"
   , "forcats", "hash", "sets"
   , "data.table", "dplyr", "tidyr"
-  , "readxl", "readr", "DBI", "foreign"
+  , "readr", , "readxl", "DBI", "foreign"
   , "ggplot2", "ggvis", "plotly", "maptool"
   , "sp", "zoo", "xts", "forecast"
   , "rmarkdown", "ROCR", "ModelMetrics", "broom" 

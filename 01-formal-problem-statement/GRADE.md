@@ -14,6 +14,7 @@ FPS Should:
    
  - [ ] Identify key roles: management, owners, stakeholders, users, SMEs, etc.
  - [ ] Clearly articulate **why** the project is being considered
+ - [ ] Identified "current"" state.
 
  - Define project's success
    - [ ] State what the analysis would do
@@ -43,6 +44,8 @@ FPS Should:
    - [ ] **When** you need or expect to have determined whether the model performance 
    - [ ] How much effort it will take to deploy the solutions.
 
+ - [ ] Is free of grammar/spelling/punctuation mistakes
+ 
 
 ## NOTES
 
