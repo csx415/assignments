@@ -1,0 +1,42 @@
+---
+title: "Project Performance"
+author: "Jessica Zhang"
+date: "April 26, 2018"
+output: html_document
+---
+
+
+##Data Analysis
+In order to campaign more effieciently, we need to discover the correlation between client profile and campaign success. We will clean up the data and then analyze it.
+
+#Data cleaning
+Columns 9-20 contains the campaign related information and are not related to clients' profile.  So we have removed the extra information and saved the new data to another file named "updatedbankingdata.csv." In the rest of this project, we will be using data from updatedbankingdata.csv.
+
+The updated data has totally 9 columns of data:
+
+   1 - age (numeric)
+   2 - job : type of job (categorical: "admin.","blue-collar","entrepreneur","housemaid","management","retired","self-employed","services","student","technician","unemployed","unknown")
+   3 - marital : marital status (categorical: "divorced","married","single","unknown"; note: "divorced" means divorced or widowed)
+   4 - education (categorical: "basic.4y","basic.6y","basic.9y","high.school","illiterate","professional.course","university.degree","unknown")
+   5 - default: has credit in default? (categorical: "no","yes","unknown")
+   6 - housing: has housing loan? (categorical: "no","yes","unknown")
+   7 - loan: has personal loan? (categorical: "no","yes","unknown")
+   8 - contact: contact communication type (categorical: "cellular","telephone") 
+   9 - y: was the campaign successful? ("no", "yes")
+   
+   
+#Initial Analysis -- Simple Age Group
+If we assume the effectiveness of the campaign is somehow related to the age of the clients and we look at the number of success each age group generated in the past campaign, we can see the deposit distribution in the figure below:
+
+![] (bankingclientsprofile/graphs/Initial-age.jpeg)
+
+
+As we can see in the graph, the age group between 20-60 generates the most deposits. From this graph, can we conclude that we shall mainly target the people between 20-60? Let's look at the performance of this conclusion.
+
+Among 13903 people in the age group between 20 and 60, 2608 people made a deposit as result of the campaign. This makes the campain success rate to be 18.8%.  This is lower than the campaign result of 23.6%.  Therefore, this age group model is not a good model.
+
+
+#Further Analysis -- Learning Models
+
+
+
