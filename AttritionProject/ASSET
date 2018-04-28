@@ -1,0 +1,14 @@
+LIST OF ARTIFACTS:
+
+1. Source data - Final cleaned data set used for modelling. [/AttritionProject/data/HCLdata.csv] **Not uploaded on Git**
+      
+2. Data clean up and exploratory data analysis. [/AttritionProject/diagnostics/Clean up and Exploratory Data Analysis.rmd] - **not uploaded on Git**
+
+3. ModelPerformance.rmd - template to evaluate performance of model [/AttritionProject/docs]
+
+4. Model reports - Linear, Decision Tree etc. [/AttritionProject/Reports] 
+
+5. Code for fitting ML models (Linear, Decision tree etc.) [/AttritionProject/docs]
+
+6. Next action steps [/AttritionProject/docs]
+

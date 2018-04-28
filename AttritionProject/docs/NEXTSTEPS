@@ -1,0 +1,13 @@
+## HCL Employee Attrition Model - Summary & Next Steps
+
+Logistic regression and classification tree models were fitted to employee data and both have shown similar result. The decision tree showed marginally better result with AUC value of 0.79 as compared to 0.78 of logistic regression. But multiple terminal nodes are less than 25 count (n<25) hence indicating probability of high variation with change in data set. The features shown as important are also different in both models.
+
+The business target is to have inactive predict ratio of minimum 90% and precision (accurate active and inactive predictions) of more than 85%. Both models have not met these targets.
+
+**Next Steps:**
+1. Incorporate Kappa metric in the formal problem statement and respective models. Gain business agreement on target Kappa metric
+2. Fit Random Forest model to check the important features and prediction outcomes
+3 The data has class bias. The bootstrapping and bagging techniques can help in strengthening the model.
+4. Gather new data set for current month, April as validation data and compare the outcome from model predictions
+
+Apart from above steps, further effort can be put on feature selection and imputations. This will be taken up after other alternate models such as Random Forest or Support vector machines are evaluated. 

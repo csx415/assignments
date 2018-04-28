@@ -1,0 +1,221 @@
+---
+title: "HCL Employee attrition prediction using Logistic regression"
+author: "Kannu-priya"
+date: "April 20, 2018"
+output:
+  pdf_document:
+    toc: yes
+    toc_depth: 4
+  html_document:
+    toc: yes
+---
+
+```{r load_packages, include=FALSE, warning=FALSE, message=FALSE}
+library('tidyverse')
+library('broom')
+library('rpart')
+library('partykit')
+library('ROCR')
+library('caret')
+library('survey')
+```
+
+
+## 1. Data Import
+```{r dataload}
+#Import imputed data file
+dt1 <- read.csv(file = 'D:/Kannu Priya/DataScience/DataSciencePrinciples/AttritionProject/data/dataR.csv')
+
+glimpse(dt1)
+```
+
+***
+
+## 2. Create Training & testing data set
+
+```{r traindataSplit}
+#Setting a seed before taking random sample so that same sample is reproduced for future reference
+set.seed(10000)
+
+# Create training set using sample_frac
+train_set <- dt1 %>% sample_frac(.7)
+# let's create our testing set using the employee code (per.id) column
+test_set <- dt1 %>% filter(!(per.id %in% train_set$per.id))
+```
+
+***
+## 3. Logistic regression model training
+
+Using the generalized linear model, glm() function, make a logistic regression analysis using ‘Status’ feature as outcome, with the rest of key features in the training dataset as independent predictors
+
+```{r LogisticRegression}
+# Fit a logistic regression model with intercept only
+mod_1 <- glm(Status ~ Age + Gender + Band + Tenure + CTC + L1 + Project.Tenure + Performance.Rating + Time.to.allocation.expiry + Time.to.promotion + Expat.Local + Visa.Type + Time.to.visa, data = train_set, family = 'binomial')
+
+# review the features and coefficients
+tidy(mod_1)
+```
+
+### 3.1 Regression coefficients
+
+The output of the logistic regression object, mod_1, shows that categorical features, 'Expat.Local’ and ‘Visa.Type’, and the numerical features ‘Age’, ‘Tenure’,'CTC', 'Project.Tenure', 'Time.to.allocation.expiry', 'Time.to.promotion' and 'Time.to.visa' are significant features for predicting active Status outcome at alpha = 0.05 level. The rest of the model coefficients suggests insignificant contribution in status prediction. For example, increase one unit in age will decrease the log odd of status by 0.028; being on H1 visa will increase the log odd of inactive status by 2.35 compared to GC/Citizens.
+
+The rest of the model coefficients suggests insignificant contribution in status prediction. These features are: *Gender, Band, Performance.Rating, L1 (except Infra) and VisaType.Others*. 
+
+
+### 3.2 Test individual features - Wald Test
+
+Wald test on features coming as insignificant shows high p-values for Gender and Band thus confirming insignificance but Performance.Rating, L1 and Visa.Type are coming as significant with p value <0.05.
+
+Further looking at the Performance.Rating coefficients, it is observed that only 'Unrated' value is significant. This is not relevant and we can ignore Performance.Rating from the model for now. 
+
+
+```{r}
+varImp(mod_1)
+
+regTermTest(mod_1, "Gender")
+regTermTest(mod_1, "Band")
+regTermTest(mod_1, "L1")
+regTermTest(mod_1, "Performance.Rating")
+regTermTest(mod_1, "Visa.Type")
+regTermTest(mod_1, "Project.Tenure")
+```
+
+### 3.3 Refitting Logistic Model with significant features
+
+Gender, Band and Performance Rating are removed from model.
+
+```{r}
+# Fit a logistic regression model with intercept only
+mod_2 <- glm(Status ~ Age + Tenure + CTC + L1 + Project.Tenure + Time.to.allocation.expiry + Time.to.promotion + Expat.Local + Visa.Type + Time.to.visa, data = train_set, family = 'binomial')
+
+# review the features and coefficients
+tidy(mod_2)
+```
+
+***
+
+## 4. Model Performance Evaluation
+Applying the logistic regression model object and fitting all independent features of the tested dataset in the model. The test_logit is a vector that holds the predicted status outcomes of employees and we are adding the vector to test data set. The first few probability of Status are shown below.
+
+```{r}
+#Use predict function to generate predictions for the testing set and add the predictions in test data set
+test_logit <- predict(mod_2, newdata = test_set, type = 'response')
+test_set <- test_set %>% mutate(test_logit = test_logit)
+head(test_set$test_logit)
+```
+
+
+The model has low probability values due to unbalanced data. We need to identify optimal cut-off value to predict 0/ Active and 1/ Inactive status so that miss classification error is minimized.
+
+Lets look at ROC curve for getting to desired cut-off value. 
+
+### 4.1 ROC curve plot
+
+```{r ROC}
+#create the prediction objects
+pred_logit <- prediction(predictions = test_logit, labels = test_set$Status)
+
+# get the FPR and TPR for the logistic model
+perf_logit <- performance(pred_logit, measure = 'tpr', x.measure = 'fpr')
+perf_logit_tbl <- tibble(perf_logit@x.values[[1]], perf_logit@y.values[[1]])
+
+# Change the names of the columns of the tibble
+names(perf_logit_tbl) <- c('fpr', 'tpr')
+
+# Plotting function for plotting a ROC curve using ggplot
+plot_roc <- function(perf_tbl) {
+p <- ggplot(data = perf_tbl, aes(x = fpr, y = tpr)) +
+geom_line(color = 'blue') +
+geom_abline(intercept = 0, slope = 1, lty = 3) +
+labs(x = 'False positive rate', y = 'True positive rate') +
+theme_bw()
+return(p)
+}
+# Create the ROC curves using the function above
+plot_roc(perf_logit_tbl)
+
+```
+ 
+### 4.2 AUC
+
+```{r AUC}
+# calculate the AUC
+auc_logit <- performance(pred_logit, measure = 'auc')
+
+# extract the AUC value
+auc_logit@y.values[[1]]
+```
+
+**The ROC curve and AUC of greater than 0.7 reveal that model is average fit to data.**
+
+### 4.3 Confusion Matrix
+
+As per ROC curve, will take TPR (true positive rate) greater than 0.75 and FPR (false positive rate) of less than 0.4. The corresponding probability cutoff for classifying the prediction is calculated as below. 
+
+```{r}
+#create a tibble of fpr, tpr and cutoffs
+perf_logit_tbl <- tibble(fpr = perf_logit@x.values[[1]], tpr = perf_logit@y.values[[1]], cutoffs = perf_logit@alpha.values[[1]])
+
+perf_logit_tbl %>% filter(fpr < .375 & tpr > .80)
+
+```
+
+
+```{r confusionmatrix}
+# Taking cutoff value
+p_cutoff_logit <- 0.07846262
+
+#Assign the prediction outcome using above cut-off value
+test_set <- test_set %>% mutate(class_logit = case_when(
+  test_logit < p_cutoff_logit ~ 'Active', 
+  test_logit >= p_cutoff_logit ~ 'Inactive')) %>% mutate(class_logit = as.factor(class_logit))
+
+#Print confusion matrix
+(cnf_mtrx <- test_set %>% count(class_logit, Status) %>% spread(Status, n))
+```
+
+
+### 4.4 Performance against business target
+
+RECAP: Model target as agreed with business
+
+(1) Model should accurately predict 90% of actual attrites as high risk
+
+(2) Precision (True positives & true negatives) should be greater than 85%
+
+Lets calculate the performance against these measures.
+
+
+#### 4.4.1 Hit rate - Actual inactive predicted correctly 
+
+Total inactive employees in test set are 196 and correctly predicted as per confusion matrix are 152.
+
+Inactive prediction accuracy rate thus is 77.5% (target - 90%).
+
+```{r}
+#count of actual active and inactive employees in test data
+test_set %>% group_by(Status) %>% count()
+```
+
+
+
+#### 4.4.2 Precision - True positives & true negatives
+
+Our precision rate as calculated from test_set is 64% as compared to the target of 80%.
+
+```{r}
+
+correct_predic = test_set %>% filter(class_logit == Status) %>% count()
+
+total_n = test_set%>% count()
+(Precision = correct_predic / total_n * 100)
+
+```
+
+***
+
+## 5 Summary
+
+Logistic regression model is fitted on employee attrition data to predict the employees at high risk of leaving. The binary logistic regression is first performed with the glm function and the model is evaluated on different parameters. We have obtained AUC value of less than 0.80 and prediction accuracy short of business target by close to 15%. 
+There is scope to improve the performance further through alternate models and feature selection. The model should be revisited after feature selection and data sampling is updated.
