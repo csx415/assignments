@@ -3,13 +3,13 @@ title: "Formal Problem Statement"
 author: "Jess Zhang"
 date: "April 9, 2018"
 output:
-  word_document: default
   pdf_document: default
+  word_document: default
   html_document: default
 ---
 
 ## Problem Statement
-Bank of Portugal is the second largest commercial bank in Portugal.  In order to improve its telemarketing effeciency, Bank of Portugal needs to identify different groups within its client base and to develop better targeted telemarketing strategy. 
+Bank of Portugal is the second largest commercial bank in Portugal.  In order to improve its telemarketing effeciency, the campaign manager in Bank of Portugal wants to identify different groups within its client base and to develop better targeted telemarketing strategy. 
 
 
 
@@ -23,14 +23,21 @@ Email: John.Smith@bancodeprotugal.com
 
 
 # Project team
-Project Manager: Jessica Zhang
+Data Scientist: Jessica Zhang
 
 Email: JessZh@gmail.com
 
 
+Data Engineer: Nick Nolasco
+
+Email: Nick.Nolasco@gmail.com
+
+
 
 # Project Goal
-Many factors, such as age, job, and loan amount can affect people's banking decisions.  Bank of Portugal believes it needs to develop a better targeted marketing strategy towards different profile groups.  The goal of this project is to provide the campaign department with meaningful grouping of its clients from past campaigning data.  
+Many factors, such as age, job, and loan amount can affect people's banking decisions.  Bank of Portugal believes it needs to develop a better targeted marketing strategy towards different profile groups.  The goal of this project is to provide the campaign department with meaningful grouping of its clients from past campaigning data.    
+
+We have calculated the campaign success rate from this dataset to be 23.6%. **The model developed shall perform at least 20% better.  The target campaign success rate should be equal or better than 28.3%**
 
 Developing of the marketing strategy is outside of the scope of this project.
 
@@ -41,14 +48,22 @@ The delivered model will work with additional data in the dataset.  However, the
 
 
 # Estimated Risk
-It is reasonable to believe that there are such groups exist in the given dataset.  It is unlikely however possible that no meaningful profile groups can be identified from this project.  
+It is reasonable to believe that there are such groups exist in the given dataset.  It is unlikely however possible that no meaningful profile groups can be identified from given data.  
 
 
 
 #Delivery Timeline
-The project team will be working on this project for the next 2 months.  2 data scientists will be working on the model and analysis full-time.  The preliminary result will be delivered and discussed with the client on 4/30/2018.  The estimated final delivery date is May 31st, 2018.  This date will be dicsussed with the client and adjusted as needed at the 4/30/2018 milestone date.
+The project team will be working on this project for the next 2 months.  One data scientist and one data engineer will be working on the model and analysis full-time.  
+
+Milestone 1: 4/20/2018
+The preliminary result will be delivered and discussed with the client on 4/30/2018.  
+
+Final Delivery: 5/31/2018
+The estimated final delivery date is May 31st, 2018.  
+The final delivery date will be dicsussed with the client and adjusted as needed at the 4/30/2018 milestone date.
 
 
 
 # Data Source
 Bank Marketing Data from http://archive.ics.uci.edu/ml/datasets/Bank+Marketing 
+

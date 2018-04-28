@@ -1,0 +1,31 @@
+
+Call:  glm(formula = y ~ job + marital + education + loan + contact, 
+    family = binomial, data = train)
+
+Coefficients:
+                 (Intercept)                jobblue-collar  
+                    -1.07483                      -0.32906  
+             jobentrepreneur                  jobhousemaid  
+                    -0.98544                      -0.80207  
+               jobmanagement                    jobretired  
+                    -0.47488                       0.20876  
+            jobself-employed                   jobservices  
+                    -0.88812                      -0.60546  
+                  jobstudent                 jobtechnician  
+                     0.33587                      -0.24126  
+               jobunemployed                maritalmarried  
+                    -0.56344                       0.45415  
+               maritalsingle             educationbasic.6y  
+                     0.38717                      -0.21560  
+           educationbasic.9y          educationhigh.school  
+                    -0.15356                       0.11057  
+         educationilliterate  educationprofessional.course  
+                     0.14821                       0.02112  
+  educationuniversity.degree                          loan  
+                     0.35364                      -0.55181  
+            contacttelephone  
+                    -0.93525  
+
+Degrees of Freedom: 11120 Total (i.e. Null);  11100 Residual
+Null Deviance:	    11220 
+Residual Deviance: 10520 	AIC: 10560
