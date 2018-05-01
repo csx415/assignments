@@ -139,9 +139,69 @@ $(document).ready(function () {
 <div id="initial-analysis-simple-age-group" class="section level1">
 <h1>Initial Analysis – Simple Age Group</h1>
 <p>If we assume the effectiveness of the campaign is somehow related to the age of the clients and we look at the number of success each age group generated in the past campaign, we can see the deposit distribution in the figure below:</p>
-<p>[] (bankingclientsprofile/graphs/Initial-age.jpeg) [] (Initial-age.jpeg)</p>
+<p>[] (bankingclientsprofile/graphs/Initial-age.jpeg)</p>
 <p>As we can see in the graph, the age group between 20-60 generates the most deposits. From this graph, can we conclude that we shall mainly target the people between 20-60? Let’s look at the performance of this conclusion.</p>
-<p>Among 13903 people in the age group between 20 and 60, 2608 people made a deposit as result of the campaign. This makes the campain success rate to be 18.8%. This is lower than the campaign result of 23.6%. Therefore, this age group model is not a good model.</p>
+<p>Among 13903 people in the age group between 20 and 60, 2608 people made a deposit as result of the campaign. This makes the campain success rate to be 18.8%. This is lower than the campaign result of 23.6%. Therefore, this age group model is not a good model.<br />
+<br><br></p>
+</div>
+<div id="further-analysis-linear-regression" class="section level1">
+<h1>Further Analysis – Linear Regression</h1>
+<p>Next, we use the linear regression to fit the data. Below is a summary of the model.</p>
+<div id="training-summary" class="section level2">
+<h2>Training Summary</h2>
+<p>Call: glm(formula = y ~ job + marital + education + loan + contact, family = binomial, data = train)</p>
+<p>Coefficients: (Intercept) jobblue-collar<br />
+-1.07483 -0.32906<br />
+jobentrepreneur jobhousemaid<br />
+-0.98544 -0.80207<br />
+jobmanagement jobretired<br />
+-0.47488 0.20876<br />
+jobself-employed jobservices<br />
+-0.88812 -0.60546<br />
+jobstudent jobtechnician<br />
+0.33587 -0.24126<br />
+jobunemployed maritalmarried<br />
+-0.56344 0.45415<br />
+maritalsingle educationbasic.6y<br />
+0.38717 -0.21560<br />
+educationbasic.9y educationhigh.school<br />
+-0.15356 0.11057<br />
+educationilliterate educationprofessional.course<br />
+0.14821 0.02112<br />
+educationuniversity.degree loan<br />
+0.35364 -0.55181<br />
+contacttelephone<br />
+-0.93525</p>
+<p>Degrees of Freedom: 11120 Total (i.e. Null); 11100 Residual Null Deviance: 11220 Residual Deviance: 10520 AIC: 10560</p>
+<p>Confusion Matrix: FALSE TRUE no 8842 11 yes 2257 11</p>
+</div>
+<div id="observations" class="section level2">
+<h2>Observations:</h2>
+<ol style="list-style-type: decimal">
+<li>The deviance residuals are not symmetrical, which indicates the model may not fit the data well.</li>
+<li>The coefficients matrix shows that some of the parameters are more related to the results than others.<br />
+Parameters seem to be able to influence campaign output are: Job, Education, Marital, Loan, and Contact Parameters seem to be irrelevant to the output are: Age and Default.</li>
+<li>The large number of deviance and degrees of freedom further indicates that the model is not a good fit for this dataset.</li>
+<li>The confusion matrix shows that even though most “no” lables are predicted correctly, most “yes” lables are mistakenly predicted as “no.” This model adds no apparent value to our goal of improving the marketing effectiveness.</li>
+</ol>
+</div>
+</div>
+<div id="further-analysis-random-forest" class="section level1">
+<h1>Further Analysis – Random Forest</h1>
+<p>Call: randomForest(formula = y ~ age + job + marital + education + default + housing + loan + contact, data = train) Type of random forest: classification Number of trees: 500 No. of variables tried at each split: 2</p>
+<pre><code>    OOB estimate of  error rate: 20.52%</code></pre>
+<p>Confusion matrix: no yes class.error no 8799 65 0.007333032 yes 2217 40 0.982277359</p>
+<div id="observations-1" class="section level2">
+<h2>Observations:</h2>
+<ol style="list-style-type: decimal">
+<li>The accuracy of the model is good. We can predict 80 percent of the yes responses.<br />
+</li>
+<li>However, more than 90 percent of positive response was predicted as negative. The result is better than linear regression, but not good enough for improving the marketing effort successfulness.</li>
+</ol>
+</div>
+</div>
+<div id="further-analysis-expectation-analysis" class="section level1">
+<h1>Further Analysis – Expectation Analysis</h1>
 </div>
 
 
