@@ -1,0 +1,47 @@
+---
+title: "ASSETS"
+author: "er637474"
+date: "April 24, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
+#### Data
+
+Different datasets to aquire, data source, and reasoing behind aquisition:
+
+**Natural Gas utility data**: Utility companies which provide natural gas to commercial buildings will have loggers with digital analaog access installed on the premisis that the lead building engineer/manager will be able familiar with. The data scientist leading data gathering will have to communicate with this person to obtain this data; which can simply be formatted in an excel file -> csv file to be used in r,rstudio.
+
+Reason: If possible it would be ideal for the natural gas utility data to be recorded with one data point (therms) representing a duration of one day recorded for the amount of natural gas demanded. THere should be a total of 365 data points. This will allow observation of potential outliers, or a day or week in which natural gas was in high demand which can then be classified and the underlying distribution of that data is clearer. Data should be stored in file path: supplementary information located in the Project folder(not the project template folder) entitled *Supplementary DATA*
+
+
+**Electric Utility Data ( Peak, Off-Peak, and Mid-Peak)**: Utility companies which provide Electricity to commercial buildings will have loggers with digital analaog access installed on the premisis that the lead building engineer/manager will be able familiar with. The data scientist leading data gathering will have to communicate with this person to obtain this data; which can simply be formatted in an excel file -> csv file to be used in r,rstudio.
+
+Reason: If possible it would be ideal for the electric utility data to be recorded with one data point (kWh) representing a duration of one day recorded for the amount of natural gas demanded. THere should be a total of 365 data points. This will allow observation of potential outliers, or a day or week in which natural gas was in high demand which can then be classified and the underlying distribution of that data is clearer. Data should be stored in file path: supplementary information located in the Project folder(not the project template folder) entitled *Supplementary DATA*
+
+
+Utility data over a few years? Might only be to record monthly usage and prices.
+
+**R Scripts for Data Visualization**: Some necessery code compiled using r,rstudio is the code used to develop plots to understand the electric utilty data and natural gas utility data and how they behave over an annual period of time. Code should be stored in file path: supplementary information located in the Project folder(not the project template folder) entitled *Supplementary Work*
+
+**R Scripts for Data Analysis**:  Some necessery code compiled using r,rstudio is the code used to develop summary information of the electric utilty data and natural gas utility data and how they behave over an annual period of time. Aslo included is the code used to develop:
+  *Pearson PRoduct Moment Correlation Anaylsis
+  *linear model (if desired)
+  *Predictor plots
+Code should be stored in file path: supplementary information located in the Project folder(not the project template folder) entitled *Supplementary Work*
+
+*The plots produced by the data visualization and data analysis work, as well as the following write-up (knitted to html), will all be stored in the Supplementary Work file in the main project folder (Not the Project Template Folder)*
+
+
+
+
+
+
+
+
+
