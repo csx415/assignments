@@ -142,7 +142,17 @@ $(document).ready(function () {
 <h1>Data cleaning</h1>
 <p>Columns 9-20 contains the campaign related information and are not related to clients’ profile. So we have removed the extra information and saved the new data to another file named “updatedbankingdata.csv.” In the rest of this project, we will be using data from updatedbankingdata.csv.</p>
 <p>The updated data has totally 9 columns of data:</p>
-<p>1 - age (numeric) 2 - job : type of job (categorical: “admin.”,“blue-collar”,“entrepreneur”,“housemaid”,“management”,“retired”,“self-employed”,“services”,“student”,“technician”,“unemployed”,“unknown”) 3 - marital : marital status (categorical: “divorced”,“married”,“single”,“unknown”; note: “divorced” means divorced or widowed) 4 - education (categorical: “basic.4y”,“basic.6y”,“basic.9y”,“high.school”,“illiterate”,“professional.course”,“university.degree”,“unknown”) 5 - default: has credit in default? (categorical: “no”,“yes”,“unknown”) 6 - housing: has housing loan? (categorical: “no”,“yes”,“unknown”) 7 - loan: has personal loan? (categorical: “no”,“yes”,“unknown”) 8 - contact: contact communication type (categorical: “cellular”,“telephone”) 9 - y: was the campaign successful? (“no”, “yes”)</p>
+<ol style="list-style-type: decimal">
+<li>age (numeric)</li>
+<li>job : type of job (categorical: “admin.”,“blue-collar”,“entrepreneur”,“housemaid”,“management”,“retired”,“self-employed”,“services”,“student”,“technician”,“unemployed”,“unknown”)</li>
+<li>marital : marital status (categorical: “divorced”,“married”,“single”,“unknown”; note: “divorced” means divorced or widowed</li>
+<li>education (categorical: “basic.4y”,“basic.6y”,“basic.9y”,“high.school”,“illiterate”,“professional.course”,“university.degree”,“unknown”)</li>
+<li>default: has credit in default? (categorical: “no”,“yes”,“unknown”)</li>
+<li>housing: has housing loan? (categorical: “no”,“yes”,“unknown”)</li>
+<li>loan: has personal loan? (categorical: “no”,“yes”,“unknown”)</li>
+<li>contact: contact communication type (categorical: “cellular”,“telephone”)</li>
+<li>y: was the campaign successful? (“no”, “yes”)</li>
+</ol>
 <p><br><br></p>
 </div>
 <div id="naive-analysis-ghe-age-group" class="section level1">
@@ -187,11 +197,28 @@ educationuniversity.degree |                          loan
 <p>Degrees of Freedom: 11120 Total (i.e. Null); 11100 Residual<br />
 Null Deviance: 11220<br />
 Residual Deviance: 10520 AIC: 10560</p>
-<p>Confusion Matrix:<br />
-FALSE TRUE<br />
-— —– —-<br />
-no 8842 11<br />
-yes 2257 11</p>
+<p>Confusion Matrix:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right"></th>
+<th align="right">FALSE</th>
+<th align="right">TRUE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">NO</td>
+<td align="right">8842</td>
+<td align="right">11</td>
+</tr>
+<tr class="even">
+<td align="right">YES</td>
+<td align="right">2257</td>
+<td align="right">11</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="observations" class="section level2">
 <h2>Observations:</h2>
@@ -209,7 +236,31 @@ Parameters seem to be able to influence campaign output are: Job, Education, Mar
 <h1>Further Analysis – Random Forest</h1>
 <p>Call: randomForest(formula = y ~ age + job + marital + education + default + housing + loan + contact, data = train) Type of random forest: classification Number of trees: 500 No. of variables tried at each split: 2</p>
 <pre><code>    OOB estimate of  error rate: 20.52%</code></pre>
-<p>Confusion matrix: no yes class.error no 8799 65 0.007333032 yes 2217 40 0.982277359</p>
+<p>Confusion matrix:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right"></th>
+<th align="right">FALSE</th>
+<th align="right">TRUE</th>
+<th align="right">Class.error</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">NO</td>
+<td align="right">8799</td>
+<td align="right">65</td>
+<td align="right">0.00733303</td>
+</tr>
+<tr class="even">
+<td align="right">YES</td>
+<td align="right">2217</td>
+<td align="right">40</td>
+<td align="right">09.8227736</td>
+</tr>
+</tbody>
+</table>
 <div id="observations-1" class="section level2">
 <h2>Observations:</h2>
 <ol style="list-style-type: decimal">
