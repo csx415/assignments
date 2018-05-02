@@ -17,9 +17,9 @@ mydata$marital[mydata$marital =="unknown"] <- "single"
 mydata$education[mydata$education=='unknown']<-'university.degree'
 
 #Change yes/no fields: to 0/-1 fields. default, housing, loan, contact, and y.  Also clean up the missing data with dominant majority value
-mydata$default<-ifelse(mydata$default=='yes',1,0)
-mydata$housing<-ifelse(mydata$housing=='no',1,0)
-mydata$loan<-ifelse(mydata$loan=='yes',1,0)
+# mydata$default<-ifelse(mydata$default=='yes',1,0)
+# mydata$housing<-ifelse(mydata$housing=='no',1,0)
+# mydata$loan<-ifelse(mydata$loan=='yes',1,0)
 
 #Remove duplicated rows
 mydata<-unique(mydata)

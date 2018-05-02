@@ -1,0 +1,29 @@
+---
+title: "ASSETS"
+author: "Jess Zhang"
+date: "May 2, 2018"
+output: 
+  md_document:
+      variant: markdown_github
+---
+
+# Input
+
+## Data
+All data files are stored under bankingclientsprofile/data folder.
+1. bank-additional-full.csv -- The original data downloaded from http://archive.ics.uci.edu/ml/datasets/Bank+Marketing.  This data set contains Bank of Portugal's telemarketing data in total of 14,828 records.  
+2. bank-additional-names.txt -- This file contains the column names and data format for all 21 columns in the data file.  
+3. updatedbankingdata.csv -- This file contains a clean version of the data.  All training will be run on data from this file.
+  Changes in this file includes:  
+  * The information of date or time of the call has been removed.
+  * All missing data has been replaced with dominant majority value. 
+  * All duplicated rows have been removed from the dataset.
+  * The file format has been changed from semicolon separated file to comma separated file for excel.
+  
+## Code
+All code files are stored under bankingclientsprofile/srv folder.  
+1. loaddata.R -- This file contains the code to load the data from the original data file (bank-additional-full.csv) and to clean the data for modeling.
+2. initialanalysis.R -- The naive analysis is run from this file.  A histogram is generated from this block of code and is stored and displayed in project-performance.Rmd.
+3. training.R -- This file contains the majority of the code for training and modeling.  Multiple algorithms are run and compared.
+
+# Outputs:  

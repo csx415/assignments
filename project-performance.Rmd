@@ -36,11 +36,15 @@ The updated data has totally 9 columns of data:
    
 <br><br>
 
-#Naive Analysis -- Ghe Age Group
+#Naive Analysis -- The Age Group Assumption
 If we assume the effectiveness of the campaign is somehow related to the age of the clients and we look at the number of success each age group generated in the past campaign, we can see the deposit distribution in the figure below:
 
-![](bankingclientsprofile/graphs/Initial-age.jpeg)
-
+```{r echo=FALSE}
+setwd("C:/Users/jess_/Documents/GitHub/CSX415-project/bankingclientsprofile")
+mydata <- read.csv(file="updatedbankingdata.csv", header=TRUE, check.names=FALSE, sep=",")
+hist(mydata$age[mydata$y=="yes"], main="Campaign success by Age", xlab='Age', ylab='Deposits', col='lightyellow2')
+setwd("C:/Users/jess_/Documents/GitHub/CSX415-project")
+```
 
 As we can see in the graph, the age group between 20-60 generates the most deposits. From this graph, can we conclude that we shall mainly target the people between 20-60? Let's look at the performance of this conclusion.
 
