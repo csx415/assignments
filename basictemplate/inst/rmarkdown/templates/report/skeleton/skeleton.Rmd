@@ -1,0 +1,206 @@
+---
+title: "Formal Problem Statement Report"
+author: "Kannu Priya"
+date: "April 8, 2018"
+output: 
+  html_document: 
+    toc: yes
+---
+
+## SUMMARY
+
+Industries such as Technology, healthcare and Banking are currently experiencing high attrition rates. As senior management executive or HR manager, you may know some apparent causes for attrition in the company. The high costs of attrition and the negative impact it has on customer facing scenarios is also well know. It is often felt that if the organization had known earlier they could have prevented one good staffer leaving. The reactive means of doing damage control after a separation notice has been mailed is not fruitful.
+
+A certain amount of attrition is unavoidable and essentially unpredictable because you may never be
+able to get all the data that went into each decision. Nevertheless, usually there are some clear patterns in attrition. This goes beyond some known causes, and subjective perspectives employees offer in exit interviews. A targeted analytics can derive useful and actionable insights from attrition data. These insights, along with data-driven predictive models, can be used to design effective plans for reducing attrition, improving retention, reducing attrition costs and mitigating attrition effects.
+
+***
+
+## 1. About Company
+
+HCL is a global business enterprise with presence in the fields of technology and healthcare. Founded in 1976 as one of India's original IT garage start ups, the HCL enterprise has annual revenues of US $7.5 billion and over 118,000 professionals. In the technology space, HCL’s offerings span a wide range of software and hardware services and solutions including R&D, Technology Services, Enterprise and Applications Consulting, Remote Infrastructure Management, IT Hardware, Systems Integration, Distribution of Technology and Telecom Products. 
+
+Fundamental to the evolution to HCL’s existence and growth even in the times of economic downturn are its People. People who are continuously innovating, ideating and creating magic!
+
+***
+
+## 2.  Business Condition & Needs
+
+### 2.1 Macro Business Imperatives
+
+Frequent innovations and technological advancements has become a perpetual characteristic that defines and re-defines the shape of IT companies. Organizations have to constantly invest in themselves and keep upgrading in order to stay relevant. 
+
+This changing dynamics of business in knowledge industry, where human talent is of utmost importance, has resulted in even volatile workforce demand and supply dynamics. Ability to attract, build and retain right talent has become the key differentiator for companies that can deliver distinctive value add for end customers. 
+
+In IT industry to which HCL belongs, the human capital is the most important resource that brings in a differentiation. On average, 65% of the company cost is employee cost and employees are company’s brand ambassador to the customer. Technology companies are always on the lookout for right talent. 
+
+The war of talent is alive and this time it is more about retention of key talent than acquisition. In order to win the war, the company must enhance its ability to retain and groom best talent from within.
+
+At the core of HCL's exponential growth is it's empowered employees who drive the grass root innovation, ideate and contribute to making HCL a force to reckon with. There are systems and processes in place which ensure that this culture of continuous innovation is nurtured and nourished.
+With this extraordinary focus and investments that HCL puts in its people resources, the ability of the company to retain employees becomes business critical. *HCL cannot remain cost effective without strong proactive retention strategy.*
+
+### 2.2 Attrition problem statement at HCL
+
+Loss of every person impacts HCL business negatively in following ways – 
+
+  1.  Possible loss of customer billing and revenue
+  
+  2.  Loss of productivity during the exit, hiring and on boarding phase
+  
+  3.  It is difficult to get suitable replacement particularly for the high experience and niche skills
+  
+  4.  Higher wage bill for resources taken from external market
+  
+  5.  Cost of recruiting new person along with training and on boarding investment cost
+  
+  6.  Loss of high investments that company makes to train an employee for the position and cultural fit
+  
+  7.  Negative influence on team productivity and morale
+  
+  8.  May impact customer relationship as talent services form crucial part of customer contracts
+  
+  9.  At the aggregated company level, high attrition hinders market sentiments and has potential of impacting shareholder value
+
+For HCL, the voluntary attrition can be as high as 14-17% annually. This attrition happens throughout the year. Thus, the business teams spend lot of man hours in fire-fighting the attrition situation. 
+
+### 2.3 Cost of Attrition  – a theoretical ballpark figure
+
+Assuming an average cost to hire and replace a position is $5,000 and an average attrition causes 1 month of productivity and billing loss. Assuming 1000 cases of attrition per year leads to a total attrition-related expenditure of $50 million per annum. Reducing attrition by 1% will lead to a saving of about $500K, in addition to improved levels of customer satisfaction and project success rates.
+
+### 2.4 Need for change
+
+To keep a tap on employee turnover is among the TOP 3 priorities for company leadership. Means were adopted to have high employee satisfaction & engagement and inculcate a culture that is liked by growing millennial population in order to make employees have longer life span in the company. For every intent of exit, collaborative steps are taken by HR and line leadership to try and retain the employee. This may include decisions like higher pay, new role and position for better development opportunity, trainings, higher education, promotion and onsite opportunities. For leaving employees, exit interviews are conducted on last few days to take candid feedback on what can be done differently in the company and accordingly course corrections are taken.
+
+Despite significant efforts, the reactive approach of taking actions after employee puts in his/ her resignation, could not yield desired results. 
+
+**By the time employee raises resignation, the major damage is already done. There is very little room for retention strategy to work at that stage. There is need to have a proactive model that can foretell who are the employees at high risk of leaving preferably even before employees starts actively thinking about it.**
+
+***
+
+
+## 3. Business Objective and Targets
+
+### 3.1 Objective - Talent Analytics
+
+    Use machine learning to provide predictive insights on attrition. Identify levers that have highest impact potential for increasing employee satisfaction & risk mitigation planning.
+
+Goal is to have analytic insight into attrition trend, who are the people who can quit and what drivers can be pulled to have maximum return on investment (ROI) for preventing the attrition decision. To proactively plan for risk mitigation in case of inevitable attrition loss is another crucial action that is based on this model. Predicting at 100% accuracy or retaining all is not possible as personal reasons are involved. Idea is to know who can leave even before employee himself realizes the same and have back up plans ready. 
+
+End outcomes expected from Talent analytic project:
+
+  1. Classify employee groups having higher propensity of attrition
+  
+  2. What are most significant data factors influencing attrition?
+  
+  3. Predict employees at high risk of quitting
+  
+  
+
+**Tenured vs New joiners**
+
+Due to the stark difference in factors that influence attrition decision, the attrition study to be divided into two separate target groups – 
+
+  1.  New Employee turnover – employees with less than 1 year in the company
+  2.  Tenured Employee turnover – greater than 1 year of tenure in HCL
+  
+While new employee turnover model will focus on hiring background and on boarding experience of new employee, the leading factors for ‘Tenured employee turnover’ study should be Career growth opportunities, Performance, salary expectations and so on.
+
+
+### 3.2 Attrition metric
+
+Attrition % is defined as percentage of employees who quit the company in the financial year vis-a-vis overall workforce strength. It is industry standard metric that is reported in annual reports. Attrition % indicates internal health status of the company and is closely tracked by shareholder group for drawing comparisons against competition.
+
+### 3.3 Scope
+
+**Voluntary vs Involuntary**
+Attrition is divided into 2 categories – voluntary and involuntary. Voluntary turnover is where people make the decision to quit and in case of involuntary, the employees are working for specific project duration and leave the company once the project ends. For tracking and reporting purposes, the 2 categories are measured separately and our main focus is on how to curb voluntary turnover. In this document attrition or turnover word has been used synonymous with voluntary turnover. 
+
+**Regrettable Attrition**
+Not all of employee turnover is regrettable as there can be clear false positives from recruitment stage or employees quitting can be from low performing segment. To bring sharper focus to analysis, following to be taken as priority target group:
+
+  *   Attrition within first 3 months - it can be considered as a problem statement to be tackled by recruitment process. The new employee turnover prediction model to focus on employees completing the critical on boarding & training stage of 90 days but quitting before completing the first anniversary year with HCL. 
+
+  *   High performer - high potential talent - the study should focus on only top performing employees as per the annual performance review cycle. 
+  
+***
+
+## 4. Targets
+
+For HCL, employees are the 65% of total cost and losing an employee can directly lead to customer billing loss. In some cases, the customer contract can itself go into jeopardy if sustained talent resources are not available. Company incurs a cost of close to $20K per individual hired from external market and an early attrition thus has far more adverse impact on the cost, customer relationship and company brand as a whole. 
+
+Through attrition prediction project, the business can potentially achieve following end results – 
+
+  * Reduce revenue/ billing loss due to attrition by 50 basis points
+
+  * Reduce new employee attrition by 100 basis points, saving $ 5mn by FY 19
+
+  * Curb high performing – high potential employee attrition by 250 basis points by FY19
+  
+  * For Mexico centers, where new employee turnover is as high as 52% the target is to reduce it drastically to 35% in one year
+  
+  
+For the model, the target will be as follows: 
+  * Achieve 70% accuracy in attrition prediction
+      -   Precision - employees predicted at high risk, if actual exit is below 55% then model is not reliable
+      -   On the base overall exits, how accurately model predicts their attrition?
+
+
+*The actual retention and reduction of attrition will require a larger taskforce within the company and thus are out of scope for current analytics project. For our calculation, it will be assumed that employees predicted currectly are retained. Causation study to identify the reasons for attrition are also kept out of scope due to non availability of data*
+
+**Success Profiling- Analytics project**
+
+For predictions to be reliable:
+
+* Model should accurately predict 70% of actual attrites as high risk
+
+* Out of total prediction set, the precision (True positives & true negatives) should be 60%
+
+
+## 5. Voice of Stakeholder
+
+Key stakeholders for attrition analytics:
+
+  | Role | Whats in it for them | 
+  |:----------------------|:-----------------------------------------------|
+  | Senior Management | Understanding attrition trends - "groups" of people  at relatively higher risk. What is attrition forecast and are we prepared to manage it?  |
+  | Line Managers | Get outside-in view on their employees flight risk. What they can do to have best ROI for converting high risk employees to green status  | 
+  | HR managers | Domain experts/ SME for model creation. For HR managers, ask is to get data backed insights on employees at risk of attrition and plan best fit retention strategy  |
+  | HR shared service (data warehousing) | Analytics Group - Provide data feed in desired format and automate the model for analysis and predictions |
+  | Employees | Obtain higher employee satisfaction through proactive analysis and actions |
+
+
+## 6. Implementation Approach & timelines
+
+Human element is always important for any model implementation. It is thus desired by management, to have the model implemented through HR managers. The company has internal employee connect portal that can be leveraged for the model implementation. Data analytics team to publish the predictions through internal HCL employee connect portal. Concerned HR and line managers can then review the predictions in portal and front end follow up actions with target employees. 
+If HR and Line manager find the predicted employee as true risk case then they can update the feedback on the same portal. 
+
+
+Steps involved for attrition prediction and reduction are as follows:
+
+| Sr. No | Detailed step | Owner | Timelines |
+  |:---|:-------------------------------|:-------------|:-------------|
+1 | Systematically deriving an understanding of the “as-is” state of the attrition phenomenon faced by the organization | Data Scientist(primary) + HR managers focus group + Senior Management | 1 week |
+2 | Identify relevant data factors, gather data, perform data exploration and cleanup tasks | HR Shared service (primary) + HR manager focus group + Data Scientist | 2 weeks |
+3 | Building data-driven predictive models for attrition, so as to predict future attrition over time, both at aggregate levels (for example, location-wise, designation-wise and so on) as well as for identifying individuals with high risk of attrition | Data Scientist | 1 week |
+4 | Upload the list of high risk employees in Employee connect portal for HR and Line managers to track the status | HR Shared service | 2 days |
+5 | Identifying the most-likely root-cause(s) for each predicted case of attrition, so that appropriate remedial actions and incentives can be chosen to retain the employee | Data Scientist + HR manager + Line manager | 1 week |
+6 | Preparing an optimal retention plan for each employee predicted as having a high risk of attrition | HR manager (primary) + Line Manager | 2 weeks|
+7 | Track attrition over next 3 months and check the accuracy | HR shared service + Data scientist | 3-6 months
+
+### 6.1 Implementation Partners
+
+**HR Managers**: 
+HR team will be first primary users of analytics model. They will also act as domain SME for inputs on data factors. The HR managers to take the predicted employee list as action item and work with respective line managers for proactive risk mitigation planning. 
+
+**HR Shared Service Team**
+Key partner for support with data feed, derived data factors and clean ups. If new data factors are to be added, HR shared service to review that  and take it up for internal system changes.
+
+
+### 6.2 Risk
+
+  -   One crucial aspect is related to the quality and availability of the various kinds of data that is used for attrition analysis, particularly for building predictive attrition models. Extensive validation checks are needed to detect erroneous values and possibly replacing them with sensible values.If model prediction accuracy falls below 50%, then data feed to be re-evaluated and new data factors should be explored that may have strong influence on attrition.
+
+  -   We need to be conscious of privacy and legal compliance when selecting the attributes that are used for attrition data; for example, trying to use medical data can be objectionable.
+  
+  -   There is dependency on implementation partners to effectively use the insights and predictions for actions and end results.  
+  
