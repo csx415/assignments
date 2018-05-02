@@ -4,7 +4,7 @@ output: github_document
 ---
 
 Template
- - [ ] Created an rstudio template for the *FPS*
+ - [x] Created an rstudio template for the *FPS*
  
 FPS Should:
 
@@ -34,8 +34,8 @@ FPS Should:
    - [ ] What if the model performance metric is not met?
 
  - Deployment
-   - [ ] Identify **who** the users of the model/analysis are 
-   - [ ] Identify **how** the model/analysis will used 
+   - [x] Identify **who** the users of the model/analysis are 
+   - [-] Identify **how** the model/analysis will used 
    - [ ] Discuss what changes have to happen within the organization to deploy the model
    - [ ] Discuss risks to model deployment, (e.g. push-back by employees )
 
@@ -49,4 +49,19 @@ FPS Should:
 
 ## NOTES
 
- - ...
+ - This is a poor effort and needs (a lot of )work.
+ 
+ - It is not acceptable for submission as a serious project. No reasonable 
+   person proceed with this project given this level of effort. 
+   
+ - You need to re-write this completely and resubmit with your final project. If
+   you don't fix this there is no possible way this project can succeed since you
+   have really not defined success criteria.
+   
+ - Please use complete senetences
+ 
+ - Your goals are unclear; 
+ 
+ - You have failed to create a measure for evaluating your project.
+ 
+ - The audience for this is not technical.
