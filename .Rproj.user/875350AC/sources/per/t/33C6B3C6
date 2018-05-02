@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1523384635520.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3790105219",
+    "id" : "33C6B3C6",
+    "lastKnownWriteTime" : 1523384696,
+    "last_content_update" : 1523384696090,
+    "path" : "C:/Users/bjcole/Desktop/data_science_certificate/csx415-assignments/01-formal-problem-statement/template/fps_template.Rmd",
+    "project_path" : "01-formal-problem-statement/template/fps_template.Rmd",
+    "properties" : {
+        "chunk_output_type" : "console",
+        "cursorPosition" : "10,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

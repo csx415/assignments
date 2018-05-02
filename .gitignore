@@ -1,11 +1,9 @@
-.gitignore
-
-# History files
+.Rproj.user
 .Rhistory
-.Rapp.history
-
-# Session Data files
 .RData
+<<<<<<< HEAD
+.Ruserdata
+=======
 
 # Example code in package build process
 *-Ex.R
@@ -39,3 +37,4 @@ README.Rmd
 *_files/*
 
 .Rproj.user
+>>>>>>> 57dade7894a60211d6f8fc62dfa726107d6515ae

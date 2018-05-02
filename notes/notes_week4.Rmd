@@ -1,0 +1,82 @@
+---
+title: "notes_week4"
+author: "Benjamin Cole"
+date: "April 18, 2018"
+output: html_document
+---
+
+Recap of lecture from last week
+ML algorithms 3 features: restricted class, loss function, way to optimize
+
+Improving models: 3 methods
+  add features
+  add more data (observations) to reduce variance
+  change model types
+
+**robert hyndman (wrote forecast package)**
+
+Feature selection
+1.  PCA
+2.  Correlation w/ response variable, with other predictors
+3.  Feature importance
+
+Ridge, lasso (regression problems)
+
+Combine features:
+  lm(mpg ~ wt + cyl, mtcars)
+  
+Interaction terms:
+  lm(mpg ~ wt + cyl + (wt*cyl)) # weight and cylinder behave synergistically
+  lm(mpg ~ (wt + cyl)^2)
+  poly() # Does expansion
+  ?model.formula
+  ?poly
+  ?I # interaction
+  
+devtools::load_all(path) # loads packages from path
+pkgKitten() like devtools
+
+Measurement
+  quantity
+  often not important to businness
+  
+Metric
+  quantity
+  related to phenomenon
+  calculated to one or emore measurements
+  related to perceived value
+  can also be a measure
+  is important to business
+  
+  How do we id metric?
+  
+  cheap, good, fast: informs of potential measures of a project or process.
+  
+  Looking for model to dirput a process.
+  
+  Cheap
+    cost
+    return/revenue
+    profit
+    counting dollars or effort
+    
+  Good
+    high quality
+    # of good parts produced
+    # of complaints/failures
+    
+Fast
+  speed/volume
+  quantity, throughput
+  
+cost ~ quality + volume
+
+new technology can get benefits along all three axes. is disruptive force, adding new tech to existing process in disruptive way that avoids the "pick two".
+
+How to decide metrics?
+  improve one of measures
+  consider ratio metrics (e.g. cost/quality, cost/volume, volumen/quality)
+  
+  
+Classification metrics
+  pick up next week
