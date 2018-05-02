@@ -91,5 +91,5 @@ The data model's performance will improve with more data gathering and trainging
 <br><br>
  
 # Data Source
-Bank Marketing Data from http://archive.ics.uci.edu/ml/datasets/Bank+Marketing 
+Bank Marketing Data is taken from http://archive.ics.uci.edu/ml/datasets/Bank+Marketing and placed under /data folder.
 
