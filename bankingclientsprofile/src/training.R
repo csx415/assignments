@@ -2,40 +2,42 @@
 #This file shall only be run after the loaddata.r because it assumes the dataframe mydata is loaded and clean with 9 columns
 
 #split the data to training set and testing set (75/25)
+library(caret)
+# set.seed(123)
+# indexes<-createDataPartition(mydata$y, p=.75, list=FALSE)
+# or
 indexes = sample(1:nrow(mydata), size=0.25*nrow(mydata))
 test <- mydata[indexes,]
 train <- mydata[-indexes,]
-x_test<-test[1:8]
-y_test<-test[9]
 
+#######################################################################
 #Run algorithms
 #1. linear regression
-train.model<-glm(y~age+job+marital+education+default+housing+loan+contact,data=train, family=binomial)
-summary(mydata.model)
+mydata.glm<-glm(y~.,data=mydata, family=binomial)
+summary(mydata.glm)
 
-sink("glmsummary.txt")
-print(summary(train.model))
-sink()
-
-#confusion matrix:
-
-      FALSE TRUE
-  no   8842   11
-  yes  2257   11
-
+#####################################################################################3
 #typeof(train.model) == list
-predictions<-predict(train.model, x_test, type="response")
+test_x<-test
+test_x$y<-NULL
+train.glm<-glm(y~.,data=train, family=binomial)
+train.glm.predictions<-predict(train.glm, test_x, type="response")
+train.glm.predictions.f<-as.factor(ifelse(train.glm.predictions>0.5, 'yes','no'))
+train.glm.cfMatrix<-confusionMatrix(train.glm.predictions.f, test$y)
 
-# the predictions only has 11 yes, while the y_test has 737.  The model apparently doesn't fit very well.
-# first, let's remove age, default and housing and see.
-# Things are not any better
-# next, we can check if the parameters are inner-related.
+library('pROC')
+plot(roc(test$y, train.glm.predictions)) # saved to graphs directory as glm_ROC.
 
 #next algorithm to try is random forest
 
 library("randomForest")
 library("caret")
-randomForest(y~age+job+marital+education+default+housing+loan+contact, data=train, y=train$y, xtest=x_test, ytest=y_test)
+train.rf<-randomForest(y~., data=train, importance=TRUE)
+train.rf.predictions<-predict(train.rf, test_x, type="prob")
+train.rf.predictions.f<-predict(train.rf, test_x, type="response")
+train.rf.cfMatrix<-confusionMatrix(train.rf.predictions.f, test$y)
+plot(roc(test$y, train.rf.predictions[,2]))
+
 
  randomForest(y~age+job+marital+education+default+housing+loan+contact, data=train)
  Call:
@@ -50,12 +52,19 @@ Confusion matrix:
 no  8799  65 0.007333032
 yes 2217  40 0.982277359
 
-#The accuracy is 80%.  Very good.
-predict.rf<-predict(train.model, x_test, type="response")
-
-#looking at the confusion matrix, although the result is better than linear regression, most yeses were still missed by the algorithm
-# try logistic regression as the next step.  Can't use lm for classification.
-#try naive bayes, svm, multiple gaussiam.
 
 
+#use svm
+library(e1071)
+
+train.svm<- svm(y ~ . , train, probabilities=TRUE)
+train.svm.predictions.f <- predict(train.svm, test_x)
+train.svm.predictions<-attr(train.svm.predictions.f,"probabilities")
+train.svm.cfMatrix<-confusionMatrix(train.svm.predictions.f, test$y)
+plot(roc(test$y, train.svm.predictions[,2]))
+
+#combine all three plots
+plot(roc(test$y, train.glm.predictions), col="red", main="ROC Comparison")
+lines(roc(test$y, train.randomForest.predictions[,2]), col="blue")
+lines(roc(test$y, train.svm.predictions[,2]), col="green")
 

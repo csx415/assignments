@@ -2,26 +2,28 @@ setwd("C:/Users/jess_/Documents/GitHub/CSX415-project/bankingclientsprofile")
 
 
 # Read CSV into R
-mydata <- read.csv(file="C:/Users/jess_/Documents/GitHub/CSX415-project/bankingclientsprofile/data/bank-additional-full.csv", header=TRUE, check.names=FALSE, sep=";")
-#dim(mydata)
-#glympse(mydata)
-#any(is.na(mydata))
-#summary(mydata)
+mydata <- read.csv(file="data/bank-additional-full.csv", header=TRUE, check.names=FALSE, sep=";")
 
-#Remove irrelevant fields: duration (this field highly affects the outcome.  It can be only used for benchmarks but not for predict model) 
-mydata<-subset(mydata, select = -(month:nr.employed))
+#Remove poutcome as this column is same as y.  It will mess up the data.
+mydata$poutcome<-NULL
 
 #clean up unknow data with dominant majority value
-mydata$job[mydata$job == "unknown"] <- "admin."
-mydata$marital[mydata$marital =="unknown"] <- "single"
-mydata$education[mydata$education=='unknown']<-'university.degree'
+# mydata$job[mydata$job == "unknown"] <- "admin."
+# mydata$marital[mydata$marital =="unknown"] <- "single"
+# mydata$education[mydata$education=='unknown']<-'university.degree'
 
-#Change yes/no fields: to 0/-1 fields. default, housing, loan, contact, and y.  Also clean up the missing data with dominant majority value
-# mydata$default<-ifelse(mydata$default=='yes',1,0)
-# mydata$housing<-ifelse(mydata$housing=='no',1,0)
-# mydata$loan<-ifelse(mydata$loan=='yes',1,0)
+#force all char type data into factor so randomforest can be run
+library(dplyr)
+mydata<-mydata%>%mutate_if(is.character, as.factor)
 
-#Remove duplicated rows
-mydata<-unique(mydata)
-write.table(mydata, "updatedbankingdata.csv",row.names=FALSE, sep=",")
-mydata <- read.csv(file="updatedbankingdata.csv", header=TRUE, check.names=FALSE, sep=",")
+#check to see if there is any missing value
+anyNA(mydata)
+
+#Remove the'unknown' value from the default column as out of 41776 records, there are only 3 yeses and 8596 unknown.  The model will be built based on the status "unknown," which is missing data.
+#Same applies to loan
+mydata$default[mydata$default=='unknown']<-'no'
+mydata$loan[mydata$loan=="unknown"]<-"no"
+
+write.table(mydata, "data/updatedbankingdata.csv",row.names=FALSE, sep=",")
+mydata <- read.csv(file="data/updatedbankingdata.csv", header=TRUE, check.names=FALSE, sep=",")
+#5/7/2018  updatebankingdata is up-to-date
