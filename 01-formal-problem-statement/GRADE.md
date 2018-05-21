@@ -41,7 +41,7 @@ FPS Should:
 
  - [ ] Propose a timeline for delivery of your project
    - [ ] **When** you will have preliminary results of model/analysis performance
-   - [ ] **When** you need or expect to have determined whether the model performance 
+   - [ ] **When** you need or expect to have determined whether the model performance will be sufficient to solve the problem  
    - [ ] How much effort it will take to deploy the solutions.
 
  - [ ] Is free of grammar/spelling/punctuation mistakes
