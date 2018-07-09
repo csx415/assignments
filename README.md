@@ -1,5 +1,4 @@
-
-# assignments
+# csx415-assignments
 
 This is the repository for CSX415 assignments. 
 
