@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Assignment 1</title>
+
+<script src="Assignment_1_Template_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="Assignment_1_Template_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="Assignment_1_Template_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="Assignment_1_Template_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="Assignment_1_Template_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="Assignment_1_Template_files/navigation-1.1/tabsets.js"></script>
+<link href="Assignment_1_Template_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="Assignment_1_Template_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Assignment 1</h1>
+
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#executive-summary">Executive Summary</a></li>
+<li><a href="#background">Background</a></li>
+<li><a href="#project-scope">Project Scope</a></li>
+<li><a href="#success-criteria">Success Criteria</a></li>
+<li><a href="#stakeholders">Stakeholders</a></li>
+<li><a href="#risks">Risks</a></li>
+<li><a href="#model-usageimplementation">Model Usage/Implementation</a></li>
+<li><a href="#assumption-and-dependencies">Assumption and Dependencies</a></li>
+<li><a href="#business-requirements-for-future-investigationanalysis">Business Requirements for Future Investigation/Analysis</a></li>
+<li><a href="#process-flow">Process Flow</a></li>
+<li><a href="#action-plan-and-task-list">Action Plan and Task List</a><ul>
+<li><a href="#deliverables">Deliverables</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="executive-summary" class="section level2">
+<h2>Executive Summary</h2>
+<p>The purpose of this project is to identify, analyze and visualize the opportunities to increase the successful guest-host matching for Airbnb in Rio de Janeiro. We will focus on better understanding what causes guests on our platform to end up with a success booking.</p>
+</div>
+<div id="background" class="section level2">
+<h2>Background</h2>
+<p>Airbnb is a two-sided marketplace which matches guest to hosts. The booking flow at Airbnb is as follows: a guest finds an available room(listing) that they like, and then they contact the host. Once the guest finds a listing they are interested in, there are three ways to end the host an inquiry: ‘contact_me’, ‘book_it’ or ‘instant_book’. Upon receiving the inquiry, the host can then decide whether or not to accept the request (for ‘contact_me’ and ‘book_it’ methods – ‘instant_book’ is auto-accepted).</p>
+</div>
+<div id="project-scope" class="section level2">
+<h2>Project Scope</h2>
+<p>The project scope focuses on bookings made via contact_me, book_it or instant_book. The project will not focus on improving listing, improving guest’s profiles, providing pricing recommendation or any other attribute that does not focus on successful booking.</p>
+</div>
+<div id="success-criteria" class="section level2">
+<h2>Success Criteria</h2>
+<p>The three key metrics that would determine the success of the project are</p>
+<ul>
+<li>Percentage increase in ‘instant_book’ and ‘book_it’</li>
+<li>Percentage drop in ‘contact_me’</li>
+<li>Repeat customer bookings</li>
+<li>Reduced cancellations of bookings</li>
+<li>Increased guest bookings (overall)</li>
+<li>Increased guest and host satisfaction rate</li>
+<li>Increased visit to booking conversation ratio</li>
+</ul>
+</div>
+<div id="stakeholders" class="section level2">
+<h2>Stakeholders</h2>
+<p>This project is essential for Airbnb as it focuses on improving the organizations revenue and achieve business objective. The stakeholders will differ in the analysis/recommendation stage and the implementation stage. This document only captures the initial stakeholders. The stakeholder departments who will consume and benefit from this analysis are Product, Marketing, Web design, UX and Business Operations.</p>
+</div>
+<div id="risks" class="section level2">
+<h2>Risks</h2>
+<p>Here are some of the Risks associated with not meeting the success metrics</p>
+<ul>
+<li>Loss of revenue if the booking was not successful</li>
+<li>Increased Guest and host dissatisfaction with inappropriate matches</li>
+<li>Reputation loss as we might lose hosts and guest to competitors</li>
+</ul>
+</div>
+<div id="model-usageimplementation" class="section level2">
+<h2>Model Usage/Implementation</h2>
+<p>We will be focusing on the aspects below to build the model and its usage</p>
+<ul>
+<li>We will establish the relationship between key features/attributes that contribute towards a successful booking</li>
+<li>We will determine and segment guests and hosts to understanding clusters and personas</li>
+<li>We will build an optimization model to determine the best choice based on all the available options</li>
+</ul>
+</div>
+<div id="assumption-and-dependencies" class="section level2">
+<h2>Assumption and Dependencies</h2>
+<p>The following assumptions and dependencies have been identified</p>
+<ul>
+<li>We have access to the required data</li>
+<li>The project resources will be allocated</li>
+<li>The scope of the project will not be changed</li>
+<li>The project is funded and identified as a key initiative</li>
+<li>The project recommendations will be implemented if the model is successful</li>
+</ul>
+</div>
+<div id="business-requirements-for-future-investigationanalysis" class="section level2">
+<h2>Business Requirements for Future Investigation/Analysis</h2>
+<p>In future the project can include other factors that are not controlled and managed by AirBnb that may influence the bookings like the weather, time of the year, cost, guest and host ratings.</p>
+</div>
+<div id="process-flow" class="section level2">
+<h2>Process Flow</h2>
+<p>Here is the current process flow diagram with the various components</p>
+<div class="figure">
+<img src="Images/Screenshot_2.png" alt="Process Flow" />
+<p class="caption">Process Flow</p>
+</div>
+</div>
+<div id="action-plan-and-task-list" class="section level2">
+<h2>Action Plan and Task List</h2>
+<div class="figure">
+<img src="Images/Screenshot_1.png" alt="Action Plan" />
+<p class="caption">Action Plan</p>
+</div>
+<div id="deliverables" class="section level3">
+<h3>Deliverables</h3>
+<ul>
+<li>Data Summary Report (7 Days) : This report shows the findings from exploratory data analysis.</li>
+<li>Model Report ( 7 Days) : The Model report explains the findings and recommendations of the model including the test/train data performance</li>
+<li>Dashboard (7 Days ) : This dashboard will help track and monitor key metrics</li>
+<li>Project Deployment ( 7 Days ) : After approval, final documentation and transition to deployment team</li>
+</ul>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
